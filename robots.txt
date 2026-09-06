@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ifixmyspeaker.github.io/sitemap.xml

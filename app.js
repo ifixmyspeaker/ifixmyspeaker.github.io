@@ -70,7 +70,7 @@ function playPulsedTone(frequency, durationMs, pulseMs = 1000, gapMs = 300) {
   oscillator.stop(startTime + totalSec);
 }
 
-// 2. Continuous Tone
+// 2. Continuous Tone (with smooth fade-in/fade-out)
 function playTone(frequency, durationMs) {
   setupAudioGraph(frequency);
   const now = audioContext.currentTime;
@@ -182,14 +182,21 @@ function animateProgress(durationMs, statusMsg) {
 }
 
 function updateProgressBar(percent, status) {
-  document.getElementById("progressFill").style.width = `${percent}%`;
-  document.getElementById("progressPercent").textContent = `${Math.round(percent)}%`;
-  document.getElementById("statusText").textContent = status;
+  const fill = document.getElementById("progressFill");
+  const percentTxt = document.getElementById("progressPercent");
+  const statusTxt = document.getElementById("statusText");
+
+  if (fill) fill.style.width = `${percent}%`;
+  if (percentTxt) percentTxt.textContent = `${Math.round(percent)}%`;
+  if (statusTxt) statusTxt.textContent = status;
 }
 
 function updateUI(running) {
-  document.getElementById("startBtn").disabled = running;
-  document.getElementById("stopBtn").disabled = !running;
+  const startBtn = document.getElementById("startBtn");
+  const stopBtn = document.getElementById("stopBtn");
+  if (startBtn) startBtn.disabled = running;
+  if (stopBtn) stopBtn.disabled = !running;
+  
   document.querySelectorAll(".mode-btn, .speaker-btn").forEach(btn => {
     btn.disabled = running;
   });
@@ -200,11 +207,14 @@ function sleep(ms) {
 }
 
 // -------------------------------------------------------------
-// Interactive Sound Diagnostic Tests (Added EEAT / Value Feature)
+// Interactive Sound Diagnostic Tests
 // -------------------------------------------------------------
-function playDiagnosticTone(frequency, durationMs) {
+function playDiagnosticTone(frequency, durationMs, buttonElement) {
   initAudio();
   stopAudio();
+
+  const originalText = buttonElement ? buttonElement.textContent : "";
+  if (buttonElement) buttonElement.textContent = "🔊 Playing...";
 
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
@@ -222,11 +232,18 @@ function playDiagnosticTone(frequency, durationMs) {
 
   osc.start();
   osc.stop(audioContext.currentTime + durationMs / 1000);
+
+  setTimeout(() => {
+    if (buttonElement) buttonElement.textContent = originalText;
+  }, durationMs);
 }
 
-function playStereoCheck() {
+function playStereoCheck(buttonElement) {
   initAudio();
   stopAudio();
+
+  const originalText = buttonElement ? buttonElement.textContent : "";
+  if (buttonElement) buttonElement.textContent = "🔊 Panning Left ➔ Right...";
 
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
@@ -235,7 +252,6 @@ function playStereoCheck() {
   osc.type = "triangle";
   osc.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5 note
 
-  // Pan from Left to Right over 3 seconds
   panner.pan.setValueAtTime(-1, audioContext.currentTime);
   panner.pan.linearRampToValueAtTime(1, audioContext.currentTime + 3);
 
@@ -247,11 +263,15 @@ function playStereoCheck() {
 
   osc.start();
   osc.stop(audioContext.currentTime + 3);
+
+  setTimeout(() => {
+    if (buttonElement) buttonElement.textContent = originalText;
+  }, 3000);
 }
 
-// Event Listeners
+// Setup Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
-  // Mode selection
+  // Mode selection buttons
   document.querySelectorAll(".mode-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
@@ -260,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Speaker selection
+  // Speaker channel buttons
   document.querySelectorAll(".speaker-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".speaker-btn").forEach(b => b.classList.remove("active"));
@@ -269,14 +289,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Controls
-  document.getElementById("startBtn").addEventListener("click", startCleaning);
-  document.getElementById("stopBtn").addEventListener("click", stopCleaning);
+  // Main cleaning controls
+  document.getElementById("startBtn")?.addEventListener("click", startCleaning);
+  document.getElementById("stopBtn")?.addEventListener("click", stopCleaning);
 
-  // Diagnostic Test Buttons
-  document.getElementById("testMidBtn")?.addEventListener("click", () => playDiagnosticTone(440, 2500));
-  document.getElementById("testHighBtn")?.addEventListener("click", () => playDiagnosticTone(2500, 2500));
-  document.getElementById("testStereoBtn")?.addEventListener("click", playStereoCheck);
+  // Sound Diagnostic buttons with live UI feedback
+  const testMidBtn = document.getElementById("testMidBtn");
+  testMidBtn?.addEventListener("click", () => playDiagnosticTone(440, 2500, testMidBtn));
+
+  const testHighBtn = document.getElementById("testHighBtn");
+  testHighBtn?.addEventListener("click", () => playDiagnosticTone(2500, 2500, testHighBtn));
+
+  const testStereoBtn = document.getElementById("testStereoBtn");
+  testStereoBtn?.addEventListener("click", () => playStereoCheck(testStereoBtn));
 
   // FAQ Accordion
   document.querySelectorAll(".faq-question").forEach(q => {

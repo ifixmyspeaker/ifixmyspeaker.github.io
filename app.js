@@ -1,15 +1,21 @@
-// Web Audio API State
+// Web Audio API State & Sound Engine
 let audioContext = null;
 let oscillator = null;
 let gainNode = null;
 let pannerNode = null;
+let analyserNode = null;
 let isPlaying = false;
 let currentMode = "water";
 let currentSpeaker = "both";
-let progressInterval = null;
+let countdownInterval = null;
 let vibrationInterval = null;
+let animFrameId = null;
 
-// Initialize Audio Context on user gesture
+const TOTAL_DURATION_SEC = 60;
+let remainingSec = TOTAL_DURATION_SEC;
+const CIRCLE_CIRCUMFERENCE = 565.48; // 2 * Math.PI * 90
+
+// Initialize or resume AudioContext safely on user gesture
 function initAudio() {
   if (!audioContext) {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -20,15 +26,17 @@ function initAudio() {
   }
 }
 
-// Build Audio Graph: Oscillator -> Gain -> StereoPanner -> Destination
+// Build Audio Node Graph: Oscillator -> Gain -> Panner -> Analyser -> Destination
 function setupAudioGraph(frequency) {
-  stopAudio();
+  stopAudioNodes();
 
   oscillator = audioContext.createOscillator();
   gainNode = audioContext.createGain();
   pannerNode = audioContext.createStereoPanner();
+  analyserNode = audioContext.createAnalyser();
+  analyserNode.fftSize = 256;
 
-  // Channel balance: Left (-1), Right (+1), Both (0)
+  // Channel balance: Left / Earpiece (-1), Right / Bottom (+1), Both (0)
   if (currentSpeaker === "left") {
     pannerNode.pan.value = -1;
   } else if (currentSpeaker === "right") {
@@ -43,18 +51,19 @@ function setupAudioGraph(frequency) {
 
   oscillator.connect(gainNode);
   gainNode.connect(pannerNode);
-  pannerNode.connect(audioContext.destination);
+  pannerNode.connect(analyserNode);
+  analyserNode.connect(audioContext.destination);
 }
 
-// 1. Water Eject Mode: 165Hz Pulsed Tone
-function playPulsedTone(frequency, durationMs, pulseMs = 1000, gapMs = 300) {
+// 1. Water Eject Mode: 165Hz Pulsed Tone (Acoustic Excursion Wave)
+function playPulsedTone(frequency, durationMs, pulseMs = 1000, gapMs = 250) {
   setupAudioGraph(frequency);
 
   const startTime = audioContext.currentTime;
   const totalSec = durationMs / 1000;
   const pulseSec = pulseMs / 1000;
   const cycleSec = (pulseMs + gapMs) / 1000;
-  const ramp = 0.04;
+  const ramp = 0.03;
 
   for (let t = 0; t < totalSec; t += cycleSec) {
     const pStart = startTime + t;
@@ -70,22 +79,22 @@ function playPulsedTone(frequency, durationMs, pulseMs = 1000, gapMs = 300) {
   oscillator.stop(startTime + totalSec);
 }
 
-// 2. Continuous Tone (with smooth fade-in/fade-out)
+// 2. Continuous Tone
 function playTone(frequency, durationMs) {
   setupAudioGraph(frequency);
   const now = audioContext.currentTime;
   const stopTime = now + durationMs / 1000;
 
   gainNode.gain.setValueAtTime(0, now);
-  gainNode.gain.linearRampToValueAtTime(1, now + 0.08);
-  gainNode.gain.setValueAtTime(1, stopTime - 0.08);
+  gainNode.gain.linearRampToValueAtTime(1, now + 0.05);
+  gainNode.gain.setValueAtTime(1, stopTime - 0.05);
   gainNode.gain.linearRampToValueAtTime(0, stopTime);
 
   oscillator.start(now);
   oscillator.stop(stopTime);
 }
 
-function stopAudio() {
+function stopAudioNodes() {
   if (oscillator) {
     try {
       oscillator.stop();
@@ -94,110 +103,173 @@ function stopAudio() {
     oscillator = null;
   }
   if (gainNode) {
-    gainNode.disconnect();
+    try {
+      gainNode.disconnect();
+    } catch (e) {}
     gainNode = null;
+  }
+  if (pannerNode) {
+    try {
+      pannerNode.disconnect();
+    } catch (e) {}
+    pannerNode = null;
   }
 }
 
 // Start Main Cleaning Process
 async function startCleaning() {
-  if (isPlaying) return;
-  initAudio();
+  if (isPlaying) {
+    stopCleaning();
+    return;
+  }
 
+  initAudio();
   isPlaying = true;
+  remainingSec = TOTAL_DURATION_SEC;
   updateUI(true);
+  startWaveformVisualizer();
+
+  const totalMs = TOTAL_DURATION_SEC * 1000;
+  startCountdown(TOTAL_DURATION_SEC);
 
   if (currentMode === "water") {
-    const duration = 60000; // 60s
-    playPulsedTone(165, duration, 1000, 300);
-    animateProgress(duration, "Ejecting water (165Hz pulsed wave)...");
-    await sleep(duration);
+    playPulsedTone(165, totalMs, 1000, 250);
+    updateStatusText("Ejecting water droplets (165Hz pulse)...");
+    await sleep(totalMs);
 
   } else if (currentMode === "dust") {
     const frequencies = [200, 300, 450, 700, 1000, 1500];
-    const stepDuration = 7000;
-    const totalDuration = frequencies.length * stepDuration;
+    const stepDuration = Math.floor(totalMs / frequencies.length);
 
     for (let i = 0; i < frequencies.length && isPlaying; i++) {
       const freq = frequencies[i];
       playTone(freq, stepDuration);
-      
-      const startTime = Date.now();
-      while (Date.now() - startTime < stepDuration && isPlaying) {
-        const elapsed = i * stepDuration + (Date.now() - startTime);
-        updateProgressBar((elapsed / totalDuration) * 100, `Dust sweep active: ${freq} Hz`);
-        await sleep(100);
-      }
-      stopAudio();
-      await sleep(200);
+      updateStatusText(`Dislodging dust & debris: ${freq} Hz sweep...`);
+      await sleep(stepDuration);
+      stopAudioNodes();
+      await sleep(150);
     }
 
   } else if (currentMode === "vibrate") {
-    const duration = 30000;
-    playTone(80, duration);
+    playTone(80, totalMs);
+    updateStatusText("Bass vibration active (80Hz rumble)...");
 
     if ("vibrate" in navigator) {
       vibrationInterval = setInterval(() => {
-        if (isPlaying) navigator.vibrate([200, 100]);
-      }, 300);
+        if (isPlaying) {
+          navigator.vibrate([250, 100]);
+        }
+      }, 350);
     }
 
-    animateProgress(duration, "Vibrating and loosening moisture...");
-    await sleep(duration);
+    await sleep(totalMs);
   }
 
   if (isPlaying) {
-    stopCleaning();
-    updateProgressBar(100, "Cleaning cycle complete! Run Sound Test below.");
+    completeCleaning();
   }
+}
+
+// Timer Countdown & SVG Progress Ring
+function startCountdown(durationSec) {
+  clearInterval(countdownInterval);
+  updateProgressRing(0);
+
+  countdownInterval = setInterval(() => {
+    if (!isPlaying) {
+      clearInterval(countdownInterval);
+      return;
+    }
+
+    remainingSec--;
+    const percent = ((durationSec - remainingSec) / durationSec) * 100;
+    updateProgressRing(percent);
+
+    const timerSpan = document.getElementById("countdownTimer");
+    if (timerSpan) {
+      timerSpan.textContent = `${remainingSec}s`;
+    }
+
+    if (remainingSec <= 0) {
+      clearInterval(countdownInterval);
+    }
+  }, 1000);
+}
+
+function updateProgressRing(percent) {
+  const circle = document.getElementById("progressCircle");
+  if (circle) {
+    const offset = CIRCLE_CIRCUMFERENCE - (percent / 100) * CIRCLE_CIRCUMFERENCE;
+    circle.style.strokeDashoffset = offset;
+  }
+}
+
+function completeCleaning() {
+  isPlaying = false;
+  stopAudioNodes();
+  clearInterval(countdownInterval);
+  if (vibrationInterval) clearInterval(vibrationInterval);
+
+  updateProgressRing(100);
+  updateUI(false);
+  updateStatusText("Cleaning complete! Run Sound Test below to verify clarity.");
+
+  const timerSpan = document.getElementById("countdownTimer");
+  if (timerSpan) timerSpan.textContent = "DONE";
 }
 
 function stopCleaning() {
   isPlaying = false;
-  stopAudio();
+  stopAudioNodes();
   if (vibrationInterval) {
     clearInterval(vibrationInterval);
     vibrationInterval = null;
   }
-  if (progressInterval) {
-    clearInterval(progressInterval);
-    progressInterval = null;
+  if (countdownInterval) {
+    clearInterval(countdownInterval);
+    countdownInterval = null;
   }
+  updateProgressRing(0);
   updateUI(false);
-  updateProgressBar(0, "Ready for cleaning cycle");
+  updateStatusText("Ready to clean phone speaker");
+
+  const timerSpan = document.getElementById("countdownTimer");
+  if (timerSpan) timerSpan.textContent = "60s";
 }
 
-function animateProgress(durationMs, statusMsg) {
-  const start = Date.now();
-  progressInterval = setInterval(() => {
-    if (!isPlaying) {
-      clearInterval(progressInterval);
-      return;
-    }
-    const elapsed = Date.now() - start;
-    const percent = Math.min(100, (elapsed / durationMs) * 100);
-    updateProgressBar(percent, statusMsg);
-    if (percent >= 100) clearInterval(progressInterval);
-  }, 100);
-}
-
-function updateProgressBar(percent, status) {
-  const fill = document.getElementById("progressFill");
-  const percentTxt = document.getElementById("progressPercent");
-  const statusTxt = document.getElementById("statusText");
-
-  if (fill) fill.style.width = `${percent}%`;
-  if (percentTxt) percentTxt.textContent = `${Math.round(percent)}%`;
-  if (statusTxt) statusTxt.textContent = status;
+function updateStatusText(text) {
+  const statusEl = document.getElementById("statusText");
+  if (statusEl) statusEl.textContent = text;
 }
 
 function updateUI(running) {
-  const startBtn = document.getElementById("startBtn");
-  const stopBtn = document.getElementById("stopBtn");
-  if (startBtn) startBtn.disabled = running;
-  if (stopBtn) stopBtn.disabled = !running;
-  
-  document.querySelectorAll(".mode-btn, .speaker-btn").forEach(btn => {
+  const masterBtn = document.getElementById("masterEjectBtn");
+  const startBtn = document.getElementById("btnCleanStart");
+  const stopBtn = document.getElementById("btnCleanStop");
+  const statusBadge = document.getElementById("statusBadge");
+  const progressCircle = document.getElementById("progressCircle");
+  const btnSubtext = document.getElementById("btnSubtext");
+  const btnTitle = document.getElementById("btnPrimaryText");
+
+  if (running) {
+    masterBtn.classList.add("running");
+    progressCircle?.classList.add("active-pulse");
+    statusBadge?.classList.add("active-clean");
+    if (btnTitle) btnTitle.textContent = "STOP";
+    if (btnSubtext) btnSubtext.textContent = "Tap to halt";
+    if (startBtn) startBtn.disabled = true;
+    if (stopBtn) stopBtn.disabled = false;
+  } else {
+    masterBtn.classList.remove("running");
+    progressCircle?.classList.remove("active-pulse");
+    statusBadge?.classList.remove("active-clean");
+    if (btnTitle) btnTitle.textContent = "START";
+    if (btnSubtext) btnSubtext.textContent = "Tap to eject";
+    if (startBtn) startBtn.disabled = false;
+    if (stopBtn) stopBtn.disabled = true;
+  }
+
+  document.querySelectorAll(".mode-tab, .channel-btn").forEach(btn => {
     btn.disabled = running;
   });
 }
@@ -207,14 +279,78 @@ function sleep(ms) {
 }
 
 // -------------------------------------------------------------
-// Interactive Sound Diagnostic Tests
+// Real-Time Waveform Visualizer (Canvas Oscilloscope)
 // -------------------------------------------------------------
-function playDiagnosticTone(frequency, durationMs, buttonElement) {
-  initAudio();
-  stopAudio();
+function startWaveformVisualizer() {
+  const canvas = document.getElementById("waveformCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
 
-  const originalText = buttonElement ? buttonElement.textContent : "";
-  if (buttonElement) buttonElement.textContent = "🔊 Playing...";
+  function draw() {
+    animFrameId = requestAnimationFrame(draw);
+
+    const width = canvas.width;
+    const height = canvas.height;
+
+    ctx.clearRect(0, 0, width, height);
+
+    if (!isPlaying || !analyserNode) {
+      // Draw subtle idle breathing line
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "rgba(6, 182, 212, 0.25)";
+      ctx.beginPath();
+      const mid = height / 2;
+      const t = Date.now() / 600;
+      ctx.moveTo(0, mid);
+      for (let x = 0; x < width; x += 10) {
+        ctx.lineTo(x, mid + Math.sin(x * 0.03 + t) * 3);
+      }
+      ctx.stroke();
+      return;
+    }
+
+    const bufferLength = analyserNode.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    analyserNode.getByteTimeDomainData(dataArray);
+
+    ctx.lineWidth = 2.5;
+    ctx.strokeStyle = "#22c55e";
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#06b6d4";
+
+    ctx.beginPath();
+    const sliceWidth = (width * 1.0) / bufferLength;
+    let x = 0;
+
+    for (let i = 0; i < bufferLength; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = (v * height) / 2;
+
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+
+      x += sliceWidth;
+    }
+
+    ctx.lineTo(width, height / 2);
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+
+  if (!animFrameId) {
+    draw();
+  }
+}
+
+// -------------------------------------------------------------
+// Interactive Sound Diagnostic Tests (Clarity Checkers)
+// -------------------------------------------------------------
+function playDiagnosticTone(frequency, durationMs) {
+  initAudio();
+  stopAudioNodes();
 
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
@@ -232,18 +368,11 @@ function playDiagnosticTone(frequency, durationMs, buttonElement) {
 
   osc.start();
   osc.stop(audioContext.currentTime + durationMs / 1000);
-
-  setTimeout(() => {
-    if (buttonElement) buttonElement.textContent = originalText;
-  }, durationMs);
 }
 
-function playStereoCheck(buttonElement) {
+function playStereoCheck() {
   initAudio();
-  stopAudio();
-
-  const originalText = buttonElement ? buttonElement.textContent : "";
-  if (buttonElement) buttonElement.textContent = "🔊 Panning Left ➔ Right...";
+  stopAudioNodes();
 
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
@@ -252,6 +381,7 @@ function playStereoCheck(buttonElement) {
   osc.type = "triangle";
   osc.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5 note
 
+  // Pan from Left (-1) to Right (+1) over 3 seconds
   panner.pan.setValueAtTime(-1, audioContext.currentTime);
   panner.pan.linearRampToValueAtTime(1, audioContext.currentTime + 3);
 
@@ -263,45 +393,51 @@ function playStereoCheck(buttonElement) {
 
   osc.start();
   osc.stop(audioContext.currentTime + 3);
-
-  setTimeout(() => {
-    if (buttonElement) buttonElement.textContent = originalText;
-  }, 3000);
 }
 
-// Setup Event Listeners
+// -------------------------------------------------------------
+// DOM Event Initializations
+// -------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  // Mode selection buttons
-  document.querySelectorAll(".mode-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".mode-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentMode = btn.dataset.mode;
+  // Fix Canvas resolution for Retina Displays
+  const canvas = document.getElementById("waveformCanvas");
+  if (canvas) {
+    canvas.width = canvas.offsetWidth * window.devicePixelRatio || 600;
+    canvas.height = canvas.offsetHeight * window.devicePixelRatio || 60;
+    startWaveformVisualizer();
+  }
+
+  // Master circular button tap
+  document.getElementById("masterEjectBtn")?.addEventListener("click", startCleaning);
+
+  // Footer clean controls
+  document.getElementById("btnCleanStart")?.addEventListener("click", startCleaning);
+  document.getElementById("btnCleanStop")?.addEventListener("click", stopCleaning);
+
+  // Mode tabs
+  document.querySelectorAll(".mode-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      if (isPlaying) return;
+      document.querySelectorAll(".mode-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      currentMode = tab.dataset.mode;
     });
   });
 
-  // Speaker channel buttons
-  document.querySelectorAll(".speaker-btn").forEach(btn => {
+  // Channel buttons
+  document.querySelectorAll(".channel-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".speaker-btn").forEach(b => b.classList.remove("active"));
+      if (isPlaying) return;
+      document.querySelectorAll(".channel-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      currentSpeaker = btn.dataset.speaker;
+      currentSpeaker = btn.dataset.channel;
     });
   });
 
-  // Main cleaning controls
-  document.getElementById("startBtn")?.addEventListener("click", startCleaning);
-  document.getElementById("stopBtn")?.addEventListener("click", stopCleaning);
-
-  // Sound Diagnostic buttons with live UI feedback
-  const testMidBtn = document.getElementById("testMidBtn");
-  testMidBtn?.addEventListener("click", () => playDiagnosticTone(440, 2500, testMidBtn));
-
-  const testHighBtn = document.getElementById("testHighBtn");
-  testHighBtn?.addEventListener("click", () => playDiagnosticTone(2500, 2500, testHighBtn));
-
-  const testStereoBtn = document.getElementById("testStereoBtn");
-  testStereoBtn?.addEventListener("click", () => playStereoCheck(testStereoBtn));
+  // Sound Diagnostic Buttons
+  document.getElementById("testVoiceBtn")?.addEventListener("click", () => playDiagnosticTone(440, 2500));
+  document.getElementById("testTrebleBtn")?.addEventListener("click", () => playDiagnosticTone(2500, 2500));
+  document.getElementById("testStereoBtn")?.addEventListener("click", playStereoCheck);
 
   // FAQ Accordion
   document.querySelectorAll(".faq-question").forEach(q => {

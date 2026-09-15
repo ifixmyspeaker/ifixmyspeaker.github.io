@@ -1272,3 +1272,161 @@ body {
   background: rgba(255, 255, 255, 0.16);
   color: #fff;
 }
+
+/* =============================================================
+   Multilingual & Horizontal Footer Language Switcher Styles
+   ============================================================= */
+.footer-languages-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.footer-lang-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan);
+  margin-bottom: 1rem;
+}
+
+.footer-lang-heading svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-lang-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.lang-link-item {
+  display: inline-flex;
+}
+
+.footer-lang-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.84rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer-lang-link:hover {
+  color: #fff;
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(6, 182, 212, 0.35);
+  transform: translateY(-1px);
+}
+
+.footer-lang-link.active {
+  color: #fff;
+  background: rgba(6, 182, 212, 0.2);
+  border-color: var(--cyan);
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+.footer-lang-link.active::before {
+  content: "•";
+  color: var(--cyan);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Navbar Language Pill */
+.nav-lang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--card-border);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-lang-pill:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--cyan);
+  color: #fff;
+}
+
+/* =============================================================
+   Right-To-Left (RTL) Layout Support (Arabic)
+   ============================================================= */
+html[dir="rtl"] {
+  text-align: right;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Segoe UI', Tahoma, Arial, 'Noto Sans Arabic', sans-serif;
+}
+
+html[dir="rtl"] .nav-wrapper {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .action-card.dos {
+  border-left: none;
+  border-right: 4px solid var(--lime);
+}
+
+html[dir="rtl"] .action-card.donts {
+  border-left: none;
+  border-right: 4px solid var(--accent-red);
+}
+
+html[dir="rtl"] .checklist li {
+  padding-left: 0;
+  padding-right: 1.75rem;
+}
+
+html[dir="rtl"] .action-card.dos .checklist li::before,
+html[dir="rtl"] .action-card.donts .checklist li::before {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .warning-box {
+  text-align: right;
+}
+
+html[dir="rtl"] .faq-question {
+  text-align: right;
+}
+
+html[dir="rtl"] .canvas-label {
+  right: auto;
+  left: 10px;
+}
+
+html[dir="rtl"] .diagnostic-grid .diag-item {
+  text-align: right;
+}

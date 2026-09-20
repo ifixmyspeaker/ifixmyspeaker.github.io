@@ -614,6 +614,12 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnCleanStart")?.addEventListener("click", startCleaning);
   document.getElementById("btnCleanStop")?.addEventListener("click", stopCleaning);
 
+  // Initialize mode from active tab if defined
+  const initialModeTab = document.querySelector(".mode-tab.active");
+  if (initialModeTab && initialModeTab.dataset.mode) {
+    currentMode = initialModeTab.dataset.mode;
+  }
+
   // Mode tabs
   document.querySelectorAll(".mode-tab").forEach(tab => {
     tab.addEventListener("click", () => {
@@ -621,6 +627,12 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".mode-tab").forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
       currentMode = tab.dataset.mode;
+      const sub = document.getElementById("btnSubtext");
+      if (sub) {
+        if (currentMode === "dust") sub.textContent = "Tap to remove dust";
+        else if (currentMode === "vibrate") sub.textContent = "Tap to vibrate";
+        else sub.textContent = t("tapEject");
+      }
     });
   });
 

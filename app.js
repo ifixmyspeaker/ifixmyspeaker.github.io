@@ -316,6 +316,25 @@ function stopAudioNodes() {
   }
 }
 
+// -------------------------------------------------------------
+// Google Analytics 4 (GA4) Behavioral Reader & Event Dispatcher
+// -------------------------------------------------------------
+function trackGAEvent(eventName, params = {}) {
+  const payload = {
+    page_path: window.location.pathname,
+    page_title: document.title,
+    timestamp: new Date().toISOString(),
+    ...params
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, payload);
+  }
+  if (window.dataLayer && Array.isArray(window.dataLayer)) {
+    window.dataLayer.push({ event: eventName, ...payload });
+  }
+}
+
 // Start Main Cleaning Process
 async function startCleaning() {
   if (isPlaying) {
@@ -328,6 +347,12 @@ async function startCleaning() {
   remainingSec = TOTAL_DURATION_SEC;
   updateUI(true);
   startWaveformVisualizer();
+
+  trackGAEvent("cleaning_cycle_start", {
+    mode: currentMode,
+    channel: currentSpeaker,
+    duration_seconds: TOTAL_DURATION_SEC
+  });
 
   const totalMs = TOTAL_DURATION_SEC * 1000;
   startCountdown(TOTAL_DURATION_SEC);
@@ -414,6 +439,11 @@ function completeCleaning() {
   updateUI(false);
   updateStatusText(t("complete"));
 
+  trackGAEvent("cleaning_cycle_complete", {
+    mode: currentMode,
+    channel: currentSpeaker
+  });
+
   const timerSpan = document.getElementById("countdownTimer");
   if (timerSpan) timerSpan.textContent = t("done");
 }
@@ -429,6 +459,13 @@ function stopCleaning() {
     clearInterval(countdownInterval);
     countdownInterval = null;
   }
+
+  trackGAEvent("cleaning_cycle_cancel", {
+    mode: currentMode,
+    channel: currentSpeaker,
+    seconds_remaining: remainingSec
+  });
+
   updateProgressRing(0);
   updateUI(false);
   updateStatusText(t("ready"));
@@ -552,6 +589,11 @@ function playDiagnosticTone(frequency, durationMs) {
   initAudio();
   stopAudioNodes();
 
+  trackGAEvent("sound_diagnostic_play", {
+    frequency_hz: frequency,
+    duration_ms: durationMs
+  });
+
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
 
@@ -657,7 +699,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = q.parentElement;
       const isOpen = item.classList.contains("active");
       document.querySelectorAll(".faq-item").forEach(el => el.classList.remove("active"));
-      if (!isOpen) item.classList.add("active");
+      if (!isOpen) {
+        item.classList.add("active");
+        trackGAEvent("faq_accordion_open", {
+          question: q.innerText.trim().slice(0, 60)
+        });
+      }
+    });
+  });
+
+  // Global GA Behavioral Event Reader for data-ga-event attributes
+  document.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-ga-event], [data-analytics]");
+    if (!target) return;
+
+    const eventName = target.dataset.gaEvent || target.dataset.analytics || "user_click";
+    const category = target.dataset.gaCategory || "interaction";
+    const action = target.dataset.gaAction || "click";
+    const label = target.dataset.gaLabel || target.innerText.trim().slice(0, 60);
+
+    trackGAEvent(eventName, {
+      event_category: category,
+      event_action: action,
+      event_label: label
     });
   });
 });

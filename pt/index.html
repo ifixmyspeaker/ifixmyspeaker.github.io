@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0T1M3JLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3R0T1M3JLQ');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Fix My Speaker - Ejetar Água e Limpar Poeira do Alto-Falante (Grátis)</title>
@@ -94,14 +103,11 @@
         <span>Fix My Speaker</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#cleaner" class="nav-link">Limpador</a></li>
-        <li><a href="/deep-clean/" class="nav-link">Deep Clean</a></li>
-        <li><a href="#how-it-works" class="nav-link">Como Funciona</a></li>
-        <li><a href="#steps" class="nav-link">Guia de 5 Passos</a></li>
-        <li><a href="#sound-test" class="nav-link">Teste de Som</a></li>
-        <li><a href="#first-aid" class="nav-link">Primeiros Socorros</a></li>
-        <li><a href="#faq" class="nav-link">Perguntas</a></li>
-        <li><a href="#languages" class="nav-lang-pill" title="Alterar Idioma">🌐 Português</a></li>
+        <li><a href="#cleaner" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="speaker_cleaner">Limpador</a></li>
+        <li><a href="/deep-clean/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="deep_clean">Deep Clean</a></li>
+        <li><a href="#steps" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="5_step_guide">Guia de 5 Passos</a></li>
+        <li><a href="#first-aid" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="water_first_aid">Primeiros Socorros</a></li>
+        <li><a href="#languages" class="nav-lang-pill" title="Alterar Idioma" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="change_language">🌐 Português</a></li>
       </ul>
     </div>
   </nav>
@@ -133,17 +139,17 @@
           <div class="mode-container">
             <span class="mode-label">Selecione o Modo de Limpeza</span>
             <div class="mode-grid">
-              <button class="mode-tab active" data-mode="water" title="Ejete água presa com ondas pulsadas de 165Hz">
+              <button class="mode-tab active" data-mode="water" title="Ejete água presa com ondas pulsadas de 165Hz" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="water_eject">
                 <span class="mode-icon">💧</span>
                 <strong>Ejetar Água</strong>
                 <small>Onda Pulsada 165Hz</small>
               </button>
-              <button class="mode-tab" data-mode="dust" title="Remova poeira e fiapos com varreduras dinâmicas">
+              <button class="mode-tab" data-mode="dust" title="Remova poeira e fiapos com varreduras dinâmicas" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="dust_removal">
                 <span class="mode-icon">🌪️</span>
                 <strong>Remover Poeira</strong>
                 <small>Varredura 200Hz - 1500Hz</small>
               </button>
-              <button class="mode-tab" data-mode="vibrate" title="Combine tons graves com vibração do aparelho">
+              <button class="mode-tab" data-mode="vibrate" title="Combine tons graves com vibração do aparelho" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="bass_vibrate">
                 <span class="mode-icon">📳</span>
                 <strong>Graves e Vibração</strong>
                 <small>Graves 80Hz + Motores</small>
@@ -155,9 +161,9 @@
           <div class="channel-container">
             <span class="mode-label">Canal do Alto-Falante</span>
             <div class="channel-grid">
-              <button class="channel-btn active" data-channel="both">🔊 Ambos os Alto-Falantes</button>
-              <button class="channel-btn" data-channel="left">📱 Alto-Falante Superior</button>
-              <button class="channel-btn" data-channel="right">🔈 Alto-Falante Inferior</button>
+              <button class="channel-btn active" data-channel="both" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="both_speakers">🔊 Ambos os Alto-Falantes</button>
+              <button class="channel-btn" data-channel="left" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="top_earpiece">📱 Alto-Falante Superior</button>
+              <button class="channel-btn" data-channel="right" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="bottom_grille">🔈 Alto-Falante Inferior</button>
             </div>
           </div>
 
@@ -176,7 +182,7 @@
               </svg>
 
               <!-- Master Central Button -->
-              <button class="master-eject-btn" id="masterEjectBtn" aria-label="Iniciar ejeção de água">
+              <button class="master-eject-btn" id="masterEjectBtn" aria-label="Iniciar ejeção de água" data-ga-event="start_cleaning" data-ga-category="cleaner_control" data-ga-label="master_eject_button">
                 <span class="btn-emoji">💨 💦</span>
                 <span class="btn-primary-text" id="btnPrimaryText">INICIAR</span>
                 <span class="btn-subtext" id="btnSubtext">Toque para ejetar</span>
@@ -204,13 +210,13 @@
 
           <!-- Quick Action Buttons -->
           <div class="tool-footer-controls">
-            <button class="tool-control-btn btn-clean-start" id="btnCleanStart">
+            <button class="tool-control-btn btn-clean-start" id="btnCleanStart" data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="start_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>
               <span>Iniciar Ciclo de Limpeza</span>
             </button>
-            <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled>
+            <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="stop_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="6" y="6" width="12" height="12" rx="2" />
               </svg>
@@ -328,7 +334,7 @@
       <div class="container">
         <div class="section-title">
           <h2>Diagnóstico de Áudio e Teste de Som Interativo</h2>
-          <p>Teste a nitidez do seu alto-falante antes e depois <a title="Phone Sound Cleaning" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank">do ciclo de limpeza</a> para comprovar o resultado.</p>
+          <p>Teste a nitidez do seu alto-falante antes e depois <a title="Phone Sound Cleaning" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">do ciclo de limpeza</a> para comprovar o resultado.</p>
         </div>
 
         <div class="diagnostic-grid">
@@ -337,7 +343,7 @@
               <h3>1. Clareza de Voz (440 Hz)</h3>
               <p>Testa frequências médias onde vivem podcasts, chamadas e vocais, onde a água abafada é mais perceptível.</p>
             </div>
-            <button class="diag-btn" id="testVoiceBtn">▶ Testar Voz</button>
+            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ Testar Voz</button>
           </div>
 
           <div class="diag-item">
@@ -345,7 +351,7 @@
               <h3>2. Agudos Altos (2500 Hz)</h3>
               <p>Testa frequências altas para garantir que o alto-falante atinja notas nítidas sem chiados ou distorções.</p>
             </div>
-            <button class="diag-btn" id="testTrebleBtn">▶ Testar Agudos</button>
+            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ Testar Agudos</button>
           </div>
 
           <div class="diag-item">
@@ -353,7 +359,7 @@
               <h3>3. Pan Estéreo Esquerda &amp; Direita</h3>
               <p>Emite um tom que desliza do alto-falante auricular ao inferior para garantir que ambos os canais funcionem bem.</p>
             </div>
-            <button class="diag-btn" id="testStereoBtn">▶ Testar Estéreo</button>
+            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ Testar Estéreo</button>
           </div>
         </div>
       </div>
@@ -488,13 +494,27 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="../pt/">Início</a> &bull;
-        <a href="/deep-clean/">Deep Clean</a> &bull;
-        <a href="../about.html">Sobre Nós</a> &bull;
-        <a href="../privacy-policy.html">Política de Privacidade</a> &bull;
-        <a href="../terms.html">Termos de Serviço</a> &bull;
-        <a href="../contact.html">Contato</a>
+            <div class="footer-links">
+        <div class="footer-nav-row resources-row">
+          <a href="#how-it-works" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="how_it_works">Como Funciona</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="#sound-test" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="sound_test">Teste de Som</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="#faq" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="faq">Perguntas</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/deep-clean/" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="deep_clean">Deep Clean</a>
+        </div>
+        <div class="footer-nav-row legal-row">
+          <a href="../pt/" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="home">Início</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../about.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="about_us">Sobre Nós</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../privacy-policy.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="privacy_policy">Política de Privacidade</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../terms.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="terms">Termos de Serviço</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../contact.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="contact_us">Contato</a>
+        </div>
       </div>
 
       <!-- Horizontal Footer Language Switcher -->

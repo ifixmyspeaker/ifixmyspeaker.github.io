@@ -1,6 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0T1M3JLQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3R0T1M3JLQ');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Fix My Speaker - 스마트폰 스피커 물빼기 &amp; 먼지 청소 (무료 도구)</title>
@@ -94,14 +103,11 @@
         <span>Fix My Speaker</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#cleaner" class="nav-link">스피커 클리너</a></li>
-        <li><a href="/deep-clean/" class="nav-link">Deep Clean</a></li>
-        <li><a href="#how-it-works" class="nav-link">작동 원리</a></li>
-        <li><a href="#steps" class="nav-link">5단계 가이드</a></li>
-        <li><a href="#sound-test" class="nav-link">사운드 테스트</a></li>
-        <li><a href="#first-aid" class="nav-link">침수 응급조치</a></li>
-        <li><a href="#faq" class="nav-link">자주 묻는 질문</a></li>
-        <li><a href="#languages" class="nav-lang-pill" title="언어 변경">🌐 한국어</a></li>
+        <li><a href="#cleaner" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="speaker_cleaner">스피커 클리너</a></li>
+        <li><a href="/deep-clean/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="deep_clean">Deep Clean</a></li>
+        <li><a href="#steps" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="5_step_guide">5단계 가이드</a></li>
+        <li><a href="#first-aid" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="water_first_aid">침수 응급조치</a></li>
+        <li><a href="#languages" class="nav-lang-pill" title="언어 변경" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="change_language">🌐 한국어</a></li>
       </ul>
     </div>
   </nav>
@@ -133,17 +139,17 @@
           <div class="mode-container">
             <span class="mode-label">클리닝 모드 선택</span>
             <div class="mode-grid">
-              <button class="mode-tab active" data-mode="water" title="165Hz 펄스 음파로 갇힌 물 배출">
+              <button class="mode-tab active" data-mode="water" title="165Hz 펄스 음파로 갇힌 물 배출" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="water_eject">
                 <span class="mode-icon">💧</span>
                 <strong>물 배출</strong>
                 <small>165Hz 펄스파</small>
               </button>
-              <button class="mode-tab" data-mode="dust" title="다이내믹 주파수 스윕으로 먼지 털어내기">
+              <button class="mode-tab" data-mode="dust" title="다이내믹 주파수 스윕으로 먼지 털어내기" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="dust_removal">
                 <span class="mode-icon">🌪️</span>
                 <strong>먼지 제거</strong>
                 <small>200Hz - 1500Hz 스윕</small>
               </button>
-              <button class="mode-tab" data-mode="vibrate" title="초저음과 스마트폰 진동 모터 결합">
+              <button class="mode-tab" data-mode="vibrate" title="초저음과 스마트폰 진동 모터 결합" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="bass_vibrate">
                 <span class="mode-icon">📳</span>
                 <strong>베이스 &amp; 진동</strong>
                 <small>80Hz 베이스 + 모터</small>
@@ -155,9 +161,9 @@
           <div class="channel-container">
             <span class="mode-label">스피커 채널</span>
             <div class="channel-grid">
-              <button class="channel-btn active" data-channel="both">🔊 양쪽 스피커</button>
-              <button class="channel-btn" data-channel="left">📱 상단 수화부</button>
-              <button class="channel-btn" data-channel="right">🔈 하단 메인 스피커</button>
+              <button class="channel-btn active" data-channel="both" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="both_speakers">🔊 양쪽 스피커</button>
+              <button class="channel-btn" data-channel="left" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="top_earpiece">📱 상단 수화부</button>
+              <button class="channel-btn" data-channel="right" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="bottom_grille">🔈 하단 메인 스피커</button>
             </div>
           </div>
 
@@ -176,7 +182,7 @@
               </svg>
 
               <!-- Master Central Button -->
-              <button class="master-eject-btn" id="masterEjectBtn" aria-label="물 배출 소리 시작">
+              <button class="master-eject-btn" id="masterEjectBtn" aria-label="물 배출 소리 시작" data-ga-event="start_cleaning" data-ga-category="cleaner_control" data-ga-label="master_eject_button">
                 <span class="btn-emoji">💨 💦</span>
                 <span class="btn-primary-text" id="btnPrimaryText">시작</span>
                 <span class="btn-subtext" id="btnSubtext">탭하여 물 배출</span>
@@ -204,13 +210,13 @@
 
           <!-- Quick Action Buttons -->
           <div class="tool-footer-controls">
-            <button class="tool-control-btn btn-clean-start" id="btnCleanStart">
+            <button class="tool-control-btn btn-clean-start" id="btnCleanStart" data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="start_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>
               <span>클리닝 시작</span>
             </button>
-            <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled>
+            <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="stop_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="6" y="6" width="12" height="12" rx="2" />
               </svg>
@@ -328,7 +334,7 @@
       <div class="container">
         <div class="section-title">
           <h2>인터랙티브 오디오 진단 &amp; 사운드 테스트</h2>
-          <p><a title="Phone Sound Cleaning" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank">클리닝</a> 전후로 스피커의 투명도를 테스트하여 음질이 정상 회복되었는지 확인하세요.</p>
+          <p><a title="Phone Sound Cleaning" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">클리닝</a> 전후로 스피커의 투명도를 테스트하여 음질이 정상 회복되었는지 확인하세요.</p>
         </div>
 
         <div class="diagnostic-grid">
@@ -337,7 +343,7 @@
               <h3>1. 음성 선명도 테스트 (440 Hz)</h3>
               <p>통화 및 팟캐스트가 위치한 중간 음역대를 테스트합니다. 물이 찼을 때 먹먹함이 가장 크게 느껴지는 주파수입니다.</p>
             </div>
-            <button class="diag-btn" id="testVoiceBtn">▶ 음성 테스트 재생</button>
+            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ 음성 테스트 재생</button>
           </div>
 
           <div class="diag-item">
@@ -345,7 +351,7 @@
               <h3>2. 고음 차임벨 테스트 (2500 Hz)</h3>
               <p>스피커가 찢어지는 소리나 노이즈 없이 선명하고 맑은 고음을 재생할 수 있는지 점검합니다.</p>
             </div>
-            <button class="diag-btn" id="testTrebleBtn">▶ 고음 테스트 재생</button>
+            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ 고음 테스트 재생</button>
           </div>
 
           <div class="diag-item">
@@ -353,7 +359,7 @@
               <h3>3. 좌우 스테레오 패닝</h3>
               <p>상단 수화부 스피커에서 하단 메인 스피커로 매끄럽게 이동하는 음을 재생하여 양쪽 스피커를 점검합니다.</p>
             </div>
-            <button class="diag-btn" id="testStereoBtn">▶ 스테레오 테스트</button>
+            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ 스테레오 테스트</button>
           </div>
         </div>
       </div>
@@ -488,13 +494,27 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-links">
-        <a href="../ko/">홈</a> &bull;
-        <a href="/deep-clean/">Deep Clean</a> &bull;
-        <a href="../about.html">소개</a> &bull;
-        <a href="../privacy-policy.html">개인정보처리방침</a> &bull;
-        <a href="../terms.html">이용약관</a> &bull;
-        <a href="../contact.html">문의하기</a>
+            <div class="footer-links">
+        <div class="footer-nav-row resources-row">
+          <a href="#how-it-works" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="how_it_works">작동 원리</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="#sound-test" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="sound_test">사운드 테스트</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="#faq" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="faq">자주 묻는 질문</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/deep-clean/" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="deep_clean">Deep Clean</a>
+        </div>
+        <div class="footer-nav-row legal-row">
+          <a href="../ko/" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="home">홈</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../about.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="about_us">소개</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../privacy-policy.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="privacy_policy">개인정보처리방침</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../terms.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="terms">이용약관</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="../contact.html" data-ga-event="footer_click" data-ga-category="footer_company" data-ga-label="contact_us">문의하기</a>
+        </div>
       </div>
 
       <!-- Horizontal Footer Language Switcher -->

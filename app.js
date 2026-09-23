@@ -534,7 +534,7 @@ function startWaveformVisualizer() {
     if (!isPlaying || !analyserNode) {
       // Draw subtle idle breathing line
       ctx.lineWidth = 2;
-      ctx.strokeStyle = "rgba(6, 182, 212, 0.25)";
+      ctx.strokeStyle = "rgba(6, 182, 212, 0.45)";
       ctx.beginPath();
       const mid = height / 2;
       const t = Date.now() / 600;

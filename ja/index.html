@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -170,99 +170,110 @@
         <li><a href="#cleaner" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="speaker_cleaner">スピーカー掃除</a></li>
         <li><a href="/remove-water-from-speaker-sound/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="water_sound_guide">水抜き音ガイド</a></li>
         <li><a href="/deep-clean/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="deep_clean">Deep Clean</a></li>
-        <li><a href="#spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">音波周波数</a></li>
-        <li><a href="#playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">機種別ガイド</a></li>
+        <li><a href="#frequency-spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">音波周波数</a></li>
+        <li><a href="#device-playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">機種別ガイド</a></li>
         <li><a href="#faq" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="faq_nav">よくある質問</a></li>
         <li><a href="#languages" class="nav-lang-pill" title="言語切替" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="change_language">🌐 日本語</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Jump Navigation Sub-Bar -->
-  <div class="jump-nav-bar">
-    <div class="container jump-nav-inner">
-      <span class="jump-nav-label">クイックジャンプ:</span>
-      <a href="#cleaner" class="jump-nav-link">🔊 クリーナー</a>
-      <a href="#spectrum" class="jump-nav-link">📊 音響スペクトル＆安全規格</a>
-      <a href="#playbooks" class="jump-nav-link">📱 機種別プレイブック</a>
-      <a href="#myths" class="jump-nav-link">❌ 米びつ等の誤解</a>
-      <a href="#matrix" class="jump-nav-link">⚖️ 排水方法の比較</a>
-      <a href="#repair-guide" class="jump-nav-link">🛠️ 修理判断基準</a>
-      <a href="#sound-test" class="jump-nav-link">🎧 サウンドテスト</a>
-      <a href="#faq" class="jump-nav-link">❓ よくある質問</a>
-    </div>
-  </div>
-
   <!-- Main Content -->
   <main>
+
     <!-- Hero Section -->
     <section class="hero-section" id="cleaner">
       <div class="container">
         
-        <div class="hero-header">
-          <div class="hero-badge">
+        <!-- Trust Badge -->
+        <div class="trust-badge-wrapper">
+          <div class="trust-badge">
             <span class="badge-dot"></span>
-            <span>165Hz音波＆共鳴パルス排水技術</span>
+            <span>165Hz音響ウォーターエジェクト技術 &bull; 完全無料オンラインスピーカークリーナー</span>
           </div>
+        </div>
+
+        <div class="hero-header">
           <h1>Fix My Speaker - スマホスピーカーの水抜き＆ホコリ掃除</h1>
           <p class="hero-subtitle">
             お風呂や水たまりにスマホを落として、スピーカーの音がこもっていませんか？本ツールは<strong>165Hzの特殊音波振動</strong>を発生させ、スピーカーグリル内に詰まった水滴や微細なホコリを数秒で強力に押し出します。
           </p>
         </div>
 
-        <!-- Main Cleaner Box Component -->
-        <div class="cleaner-box">
+        <!-- Master Floating Cleaner Card -->
+        <div class="master-tool-card">
           
-          <!-- Mode Tabs -->
-          <div class="mode-tabs">
-            <button class="mode-tab active" id="tabWater" data-mode="water" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="water_eject">
-              <span class="tab-icon">💧</span>
-              <div class="tab-text">
-                <span class="tab-title">水抜きモード (165Hz)</span>
-                <span class="tab-desc">こもった音を即座に解消</span>
-              </div>
-            </button>
-            <button class="mode-tab" id="tabDust" data-mode="dust" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="dust_clean">
-              <span class="tab-icon">💨</span>
-              <div class="tab-text">
-                <span class="tab-title">ホコリ掃除 (スイープ)</span>
-                <span class="tab-desc">ゴミや糸くずを排出</span>
-              </div>
-            </button>
+          <!-- Mode Selection -->
+          <div class="mode-container">
+            <span class="mode-label">クリーニングモードの選択</span>
+            <div class="mode-grid">
+              <button class="mode-tab active" data-mode="water" title="165Hzのパルス音波でスピーカー内の水を強力に排出" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="water_eject">
+                <span class="mode-icon">💧</span>
+                <strong>水を排出</strong>
+                <small>165Hzパルス音</small>
+              </button>
+              <button class="mode-tab" data-mode="dust" title="可変周波数スイープで内部のホコリや糸くずを除去" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="dust_removal">
+                <span class="mode-icon">🌪️</span>
+                <strong>ホコリ除去</strong>
+                <small>200Hz - 1500Hzスイープ</small>
+              </button>
+              <button class="mode-tab" data-mode="vibrate" title="低音周波数とバイブレーションを組み合わせた強力振動" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="bass_vibrate">
+                <span class="mode-icon">📳</span>
+                <strong>低音＆振動</strong>
+                <small>80Hz重低音+バイブ</small>
+              </button>
+            </div>
           </div>
 
-          <!-- Central Pulsing Speaker Ring -->
-          <div class="speaker-action-area">
-            <div class="speaker-ripple-halo" id="rippleHalo"></div>
-            <div class="speaker-ring-outer">
-              <div class="speaker-ring-inner">
-                <button class="btn-speaker-trigger" id="mainTriggerBtn" aria-label="クリーニングの開始または停止" data-ga-event="toggle_cleaner" data-ga-category="cleaner_interaction" data-ga-label="central_speaker_button">
-                  <div class="btn-content">
-                    <div class="action-icon" id="actionIcon">
-                      <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                      </svg>
-                    </div>
-                    <span class="action-text" id="actionText">クリーニング開始</span>
-                    <span class="action-subtext" id="actionSubtext">タップして再生</span>
-                  </div>
-                </button>
-              </div>
+          <!-- Channel Selection -->
+          <div class="channel-container">
+            <span class="mode-label">スピーカーチャンネル</span>
+            <div class="channel-grid">
+              <button class="channel-btn active" data-channel="both" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="both_speakers">🔊 両方のスピーカー</button>
+              <button class="channel-btn" data-channel="left" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="top_earpiece">📱 上部イヤースピーカー</button>
+              <button class="channel-btn" data-channel="right" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="bottom_grille">🔈 下部スピーカー</button>
+            </div>
+          </div>
+
+          <!-- Central Action Dial -->
+          <div class="hero-action-dial-wrapper">
+            <div class="dial-svg-container">
+              <svg class="dial-svg" viewBox="0 0 200 200">
+                <defs>
+                  <linearGradient id="cyanBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#06b6d4" />
+                    <stop offset="100%" stop-color="#22c55e" />
+                  </linearGradient>
+                </defs>
+                <circle class="dial-circle-bg" cx="100" cy="100" r="90" />
+                <circle class="dial-circle-progress" id="progressCircle" cx="100" cy="100" r="90" />
+              </svg>
+
+              <!-- Master Central Button -->
+              <button class="master-eject-btn" id="masterEjectBtn" aria-label="スピーカー排水音を開始" data-ga-event="start_cleaning" data-ga-category="cleaner_control" data-ga-label="master_eject_button">
+                <span class="btn-emoji">💨 💦</span>
+                <span class="btn-primary-text" id="btnPrimaryText">開始</span>
+                <span class="btn-subtext" id="btnSubtext">タップして排出</span>
+              </button>
+
+              <div class="ripple-wave ripple-wave-1"></div>
+              <div class="ripple-wave ripple-wave-2"></div>
+              <div class="ripple-wave ripple-wave-3"></div>
             </div>
 
             <!-- Dynamic Live Status Pill -->
             <div class="status-pill-container">
               <div class="status-badge" id="statusBadge">
                 <span class="countdown-timer-text" id="countdownTimer">60s</span>
-                <span id="statusText">スピーカー清掃の準備完了</span>
+                <span id="statusText">スピーカーのクリーニング準備完了</span>
               </div>
             </div>
           </div>
 
-          <!-- Waveform Visualizer Canvas -->
+          <!-- Real-Time Waveform Visualizer Canvas -->
           <div class="waveform-container">
             <canvas id="waveformCanvas"></canvas>
-            <span class="canvas-label">リアルタイム音波周波数モニター</span>
+            <span class="canvas-label">リアルタイム周波数モニター</span>
           </div>
 
           <!-- Quick Action Buttons -->
@@ -271,7 +282,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>
-              <span>清掃を開始</span>
+              <span>クリーニング開始</span>
             </button>
             <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="stop_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -285,8 +296,12 @@
           <div class="warning-box">
             <span class="warning-icon">💡</span>
             <div>
-              <strong>効果を高めるコツ:</strong> スマホのメディア音量を<strong>100%</strong>にし、スピーカー穴を<strong>下向き</strong>にして乾いたタオルの上に置いてください。重力と空気圧の相乗効果で水滴が抜けやすくなります。詳しくは<a href="/remove-water-from-speaker-sound/" class="context-link">水抜き音完全解説ガイド</a>をご覧ください。
+              <strong>最良の結果を得るために：</strong> メディア音量を<strong>100%</strong>に設定し、スマートフォンのスピーカー穴を<strong>下に向けて</strong>乾いたタオルの上に置いてください。
             </div>
+          </div>
+
+          <div style="margin-top: 1rem; text-align: center; font-size: 0.88rem; color: var(--text-muted);">
+            <span>ホコリや糸くずの清掃が必要ですか？当社の <a href="/deep-clean/" class="context-link">Deep Dust Clean (200Hz&ndash;1500Hzスイープ)</a> または <a href="/remove-water-from-speaker-sound/" class="context-link">165Hz排水音の技術解説</a> をご覧ください。</span>
           </div>
 
         </div>
@@ -297,34 +312,121 @@
             <h3>500,000+</h3>
             <p>改善されたスピーカー</p>
           </div>
-          <div class="stat-card">
-            <h3>165 Hz</h3>
-            <p>最適排水周波数</p>
-          </div>
-          <div class="stat-card">
-            <h3>100% 無料</h3>
-            <p>アプリ不要・即時再生</p>
-          </div>
-          <div class="stat-card">
-            <h3>全機種対応</h3>
-            <p>iPhone・Android・Apple Watch</p>
-          </div>
-        </div>
 
       </div>
     </section>
 
-    <!-- Contextual Internal Linking Banner -->
-    <section class="content-section" style="padding-top: 1rem; padding-bottom: 1rem;">
+
+<!-- How It Works Section -->
+    <section class="content-section" id="how-it-works">
       <div class="container">
-        <div class="context-link-bar">
-          <span>🚀 <strong>より頑固な汚れや砂の除去に:</strong> 高域スイープ専用の <a href="/deep-clean/" class="context-link">Deep Clean周波数ジェネレーター</a> を実行するか、専用の <a href="/remove-water-from-speaker-sound/" class="context-link">水抜きサウンド技術ガイド</a> をご覧ください。</span>
+        <div class="section-title">
+          <h2>Fix My Speakerの排水メカニズム</h2>
+          <p>本体を分解する必要はありません。物理学に基づく音波振動が水とゴミを押し出す科学的プロセス。</p>
+        </div>
+
+        <div class="cards-3col">
+          <div class="feature-card">
+            <div class="card-icon">🔊</div>
+            <h3>1. 165Hz空気圧ピストン</h3>
+            <p>スマートフォンの小型スピーカー振動板は、<strong>165Hzの正弦波</strong>で駆動されると物理的な可動範囲の限界まで大きく前後にストロークし、連続した空気のピストン噴流を作り出します。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">💧</div>
+            <h3>2. 表面張力の強制切断</h3>
+            <p>水滴は表面張力によりグリルの網目に強く吸着しています。急激な低周波圧力波がその分子間結合をせん断し、球状の水滴として外部へ跳ね飛ばします。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">🌪️</div>
+            <h3>3. 広帯域スイープで微粒子排除</h3>
+            <p>「ホコリ掃除モード」は200Hzから1500Hzまで周波数をリニアに変化させ、様々な質量・共振点を持つ砂埃や繊維くずを浮き上がらせて除去します。さらに徹底した清掃には <a href="/deep-clean/" class="context-link">Deep Cleanツール</a> をご活用ください。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
-    <section class="content-section" id="spectrum">
+    <!-- 5-Step Guide Section -->
+    <section class="content-section" id="steps">
+      <div class="container">
+        <div class="section-title">
+          <h2>スピーカーから水を抜く5つのステップ</h2>
+          <p>スマートフォンが水に濡れた瞬間に実行すべき緊急対応チェックリスト。</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-number">ステップ 1</span>
+            <h3>外側の水分を拭き取る</h3>
+            <p>清潔なタオルやクロスで外側を丁寧に拭きます。端子に水分が残っている間は充電ケーブルを絶対に挿さないでください。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">ステップ 2</span>
+            <h3>音量を最大100%にする</h3>
+            <p>マナーモードを解除し、メディア音量を最大にします。十分な空気圧を生み出すために大音量が必要です。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">ステップ 3</span>
+            <h3>スピーカー穴を下に向ける</h3>
+            <p>重力による自然落下を利用するため、スピーカーの開口部を下に向けて持ち、布の上に構えます。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">ステップ 4</span>
+            <h3>水抜き音を再生する</h3>
+            <p><strong>水抜きモード</strong>を60秒間再生します。布の上に水滴が飛び散るのが確認できます。必要に応じて2〜3回繰り返します。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">ステップ 5</span>
+            <h3>サウンドテストで音質確認</h3>
+            <p>下記のサウンド診断ツールを使って音のクリアさを確認します。まだ少しこもっている場合はホコリモードを実行します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Audio Diagnostic / Sound Test -->
+    <section class="content-section" id="sound-test">
+      <div class="container">
+        <div class="section-title">
+          <h2>インタラクティブ音響診断＆サウンドテスト</h2>
+          <p>清掃の前後でスピーカーの音質と動作状態をリアルタイムに診断します（詳細は <a title="スマホスピーカー清掃" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">Medium解説記事</a> もご参照ください）。</p>
+        </div>
+
+        <div class="diagnostic-grid">
+          <div class="diag-item">
+            <div>
+              <h3>1. 声の明瞭度テスト (440 Hz)</h3>
+              <p>通話やポッドキャストの主周波数帯である中音域をテストし、水膜による声のこもりを検知します。</p>
+            </div>
+            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ ボイステスト再生</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>2. 高域クリアチャイム (2500 Hz)</h3>
+              <p>着信音やメロディの高音域をテストし、異物によるチリチリとした音割れノイズがないか確認します。</p>
+            </div>
+            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ トレブルテスト再生</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>3. ステレオバランスパンニング</h3>
+              <p>上部受話スピーカーと下部メインスピーカーへ交互に音を移動させ、両系統の動作バランスを診断します。</p>
+            </div>
+            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ ステレオテスト再生</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
+    <section class="content-section" id="frequency-spectrum">
       <div class="container">
         <div class="section-title">
           <h2>音波周波数スペクトルと音響安全規格</h2>
@@ -377,8 +479,8 @@
       </div>
     </section>
 
-    <!-- Section 2: Device-Specific Field Playbooks -->
-    <section class="content-section" id="playbooks">
+<!-- Section 2: Device-Specific Field Playbooks -->
+    <section class="content-section" id="device-playbooks">
       <div class="container">
         <div class="section-title">
           <h2>機種別スピーカー水抜きプレイブック</h2>
@@ -497,7 +599,7 @@
       </div>
     </section>
 
-    <!-- Section 3: Debunking Smartphone Water Myths -->
+<!-- Section 3: Debunking Smartphone Water Myths -->
     <section class="content-section" id="myths">
       <div class="container">
         <div class="section-title">
@@ -575,8 +677,8 @@
       </div>
     </section>
 
-    <!-- Section 4: Multi-Method Comparison Matrix -->
-    <section class="content-section" id="matrix">
+<!-- Section 4: Multi-Method Comparison Matrix -->
+    <section class="content-section" id="comparison-matrix">
       <div class="container">
         <div class="section-title">
           <h2>排水・乾燥手法の科学的比較マトリクス</h2>
@@ -650,7 +752,40 @@
       </div>
     </section>
 
-    <!-- Section 5: When to Seek Professional Hardware Repair -->
+<!-- Emergency Water First-Aid Section -->
+    <section class="content-section" id="first-aid">
+      <div class="container">
+        <div class="section-title">
+          <h2>水没時の応急処置：やるべきこと・やってはいけないこと</h2>
+          <p>トイレ、お風呂、雨水に端末を落とした直後の初動対応マニュアル。</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="action-card dos">
+            <h3>✅ 直ちに行うべきこと（正解）</h3>
+            <ul class="checklist">
+              <li><strong>水深が深かった場合は電源を切る</strong>：ショートによる基板焼損を防ぎます。</li>
+              <li><strong>外側の水分を丁寧に拭く</strong>：マイクロファイバークロス等で余分な水を吸い取ります。</li>
+              <li><strong>ケースとSIMトレイを外す</strong>：内部の湿気の逃げ道を確保します。</li>
+              <li><strong>手のひらに軽く叩いて水滴を出す</strong>：スピーカー穴を下にしてトントンと優しく叩きます。</li>
+              <li><strong>Fix My Speakerで音波排水する</strong>：2〜3回再生して微細な水滴を吹き飛ばします。</li>
+            </ul>
+          </div>
+
+          <div class="action-card donts">
+            <h3>❌ 絶対にしてはいけない重大ミス（不正解）</h3>
+            <ul class="checklist">
+              <li><strong>米びつに入れない</strong>：米の粉末が端子を塞ぎ、内部で腐食を招きます。</li>
+              <li><strong>最低4〜5時間は充電器を挿さない</strong>：端子が濡れているとショートして壊れます。</li>
+              <li><strong>ドライヤーやヒーターを当てない</strong>：熱で防水パッキンが溶け、水が内部に押し込まれます。</li>
+              <li><strong>端末を激しく振り回さない</strong>：水滴が基板の奥深くへ拡散してしまいます。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 5: When to Seek Professional Hardware Repair -->
     <section class="content-section" id="repair-guide">
       <div class="container">
         <div class="section-title">
@@ -688,148 +823,7 @@
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="content-section" id="how-it-works">
-      <div class="container">
-        <div class="section-title">
-          <h2>Fix My Speakerの排水メカニズム</h2>
-          <p>本体を分解する必要はありません。物理学に基づく音波振動が水とゴミを押し出す科学的プロセス。</p>
-        </div>
-
-        <div class="cards-3col">
-          <div class="feature-card">
-            <div class="card-icon">🔊</div>
-            <h3>1. 165Hz空気圧ピストン</h3>
-            <p>スマートフォンの小型スピーカー振動板は、<strong>165Hzの正弦波</strong>で駆動されると物理的な可動範囲の限界まで大きく前後にストロークし、連続した空気のピストン噴流を作り出します。</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">💧</div>
-            <h3>2. 表面張力の強制切断</h3>
-            <p>水滴は表面張力によりグリルの網目に強く吸着しています。急激な低周波圧力波がその分子間結合をせん断し、球状の水滴として外部へ跳ね飛ばします。</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">🌪️</div>
-            <h3>3. 広帯域スイープで微粒子排除</h3>
-            <p>「ホコリ掃除モード」は200Hzから1500Hzまで周波数をリニアに変化させ、様々な質量・共振点を持つ砂埃や繊維くずを浮き上がらせて除去します。さらに徹底した清掃には <a href="/deep-clean/" class="context-link">Deep Cleanツール</a> をご活用ください。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5-Step Guide Section -->
-    <section class="content-section" id="steps">
-      <div class="container">
-        <div class="section-title">
-          <h2>スピーカーから水を抜く5つのステップ</h2>
-          <p>スマートフォンが水に濡れた瞬間に実行すべき緊急対応チェックリスト。</p>
-        </div>
-
-        <div class="steps-container">
-          <div class="step-card">
-            <span class="step-number">ステップ 1</span>
-            <h3>外側の水分を拭き取る</h3>
-            <p>清潔なタオルやクロスで外側を丁寧に拭きます。端子に水分が残っている間は充電ケーブルを絶対に挿さないでください。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">ステップ 2</span>
-            <h3>音量を最大100%にする</h3>
-            <p>マナーモードを解除し、メディア音量を最大にします。十分な空気圧を生み出すために大音量が必要です。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">ステップ 3</span>
-            <h3>スピーカー穴を下に向ける</h3>
-            <p>重力による自然落下を利用するため、スピーカーの開口部を下に向けて持ち、布の上に構えます。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">ステップ 4</span>
-            <h3>水抜き音を再生する</h3>
-            <p><strong>水抜きモード</strong>を60秒間再生します。布の上に水滴が飛び散るのが確認できます。必要に応じて2〜3回繰り返します。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">ステップ 5</span>
-            <h3>サウンドテストで音質確認</h3>
-            <p>下記のサウンド診断ツールを使って音のクリアさを確認します。まだ少しこもっている場合はホコリモードを実行します。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Audio Diagnostic / Sound Test -->
-    <section class="content-section" id="sound-test">
-      <div class="container">
-        <div class="section-title">
-          <h2>インタラクティブ音響診断＆サウンドテスト</h2>
-          <p>清掃の前後でスピーカーの音質と動作状態をリアルタイムに診断します（詳細は <a title="スマホスピーカー清掃" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">Medium解説記事</a> もご参照ください）。</p>
-        </div>
-
-        <div class="diagnostic-grid">
-          <div class="diag-item">
-            <div>
-              <h3>1. 声の明瞭度テスト (440 Hz)</h3>
-              <p>通話やポッドキャストの主周波数帯である中音域をテストし、水膜による声のこもりを検知します。</p>
-            </div>
-            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ ボイステスト再生</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>2. 高域クリアチャイム (2500 Hz)</h3>
-              <p>着信音やメロディの高音域をテストし、異物によるチリチリとした音割れノイズがないか確認します。</p>
-            </div>
-            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ トレブルテスト再生</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>3. ステレオバランスパンニング</h3>
-              <p>上部受話スピーカーと下部メインスピーカーへ交互に音を移動させ、両系統の動作バランスを診断します。</p>
-            </div>
-            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ ステレオテスト再生</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Emergency Water First-Aid Section -->
-    <section class="content-section" id="first-aid">
-      <div class="container">
-        <div class="section-title">
-          <h2>水没時の応急処置：やるべきこと・やってはいけないこと</h2>
-          <p>トイレ、お風呂、雨水に端末を落とした直後の初動対応マニュアル。</p>
-        </div>
-
-        <div class="grid-2col">
-          <div class="action-card dos">
-            <h3>✅ 直ちに行うべきこと（正解）</h3>
-            <ul class="checklist">
-              <li><strong>水深が深かった場合は電源を切る</strong>：ショートによる基板焼損を防ぎます。</li>
-              <li><strong>外側の水分を丁寧に拭く</strong>：マイクロファイバークロス等で余分な水を吸い取ります。</li>
-              <li><strong>ケースとSIMトレイを外す</strong>：内部の湿気の逃げ道を確保します。</li>
-              <li><strong>手のひらに軽く叩いて水滴を出す</strong>：スピーカー穴を下にしてトントンと優しく叩きます。</li>
-              <li><strong>Fix My Speakerで音波排水する</strong>：2〜3回再生して微細な水滴を吹き飛ばします。</li>
-            </ul>
-          </div>
-
-          <div class="action-card donts">
-            <h3>❌ 絶対にしてはいけない重大ミス（不正解）</h3>
-            <ul class="checklist">
-              <li><strong>米びつに入れない</strong>：米の粉末が端子を塞ぎ、内部で腐食を招きます。</li>
-              <li><strong>最低4〜5時間は充電器を挿さない</strong>：端子が濡れているとショートして壊れます。</li>
-              <li><strong>ドライヤーやヒーターを当てない</strong>：熱で防水パッキンが溶け、水が内部に押し込まれます。</li>
-              <li><strong>端末を激しく振り回さない</strong>：水滴が基板の奥深くへ拡散してしまいます。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Device Compatibility Chips -->
+<!-- Device Compatibility Chips -->
     <section class="content-section">
       <div class="container">
         <div class="section-title">
@@ -849,7 +843,7 @@
       </div>
     </section>
 
-    <!-- Frequently Asked Questions (Expanded 18 FAQs) -->
+<!-- Frequently Asked Questions (Expanded 18 FAQs) -->
     <section class="content-section" id="faq">
       <div class="container">
         <div class="section-title">
@@ -1040,33 +1034,6 @@
         </div>
       </div>
     </section>
-
-    <!-- EEAT Technical Verification Box -->
-    <section class="content-section">
-      <div class="container">
-        <div class="eeat-box">
-          <div class="eeat-header">
-            <div class="eeat-badge">🔬 音響工学ラボによる検証済み</div>
-            <h3>科学的根拠および安全技術規格</h3>
-            <p>Fix My Speakerの音響信号は、微小流体力学の物理モデルおよび国際コンシューマーエレクトロニクス安全基準に基づいて設計・校正されています。</p>
-          </div>
-          <div class="eeat-grid">
-            <div class="eeat-card">
-              <h4>ヘルムホルツ共鳴と空気流体力学</h4>
-              <p>スマートフォンの音響キャビティはヘルムホルツ共鳴器として作用します。165Hzにおいて開口部の空気流速が最大化し、水の表面張力（72.8 mN/m）を安全に打ち破ります。</p>
-            </div>
-            <div class="eeat-card">
-              <h4>IEC 60268-5国際安全基準準拠</h4>
-              <p>音圧レベル（SPL）およびコーン変位は、スマートフォン用マイクロトランスデューサーの許容範囲内に厳密に制御されており、ボイスコイルの熱破壊や機械的破損を防ぎます。</p>
-            </div>
-            <div class="eeat-card">
-              <h4>実機ラボテストと98%の改善率</h4>
-              <p>主要メーカーのIP67/IP68防水スマートフォンを用いた検証実験において、60〜120秒の音波照射で98%の音響透過率回復が実証されています。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Site Footer -->
@@ -1080,9 +1047,9 @@
           <span class="footer-sep">&bull;</span>
           <a href="/deep-clean/" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="deep_clean">Deep Clean</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">音波スペクトル</a>
+          <a href="#frequency-spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">音波スペクトル</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">機種別プレイブック</a>
+          <a href="#device-playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">機種別プレイブック</a>
           <span class="footer-sep">&bull;</span>
           <a href="#sound-test" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="sound_test">サウンドテスト</a>
           <span class="footer-sep">&bull;</span>

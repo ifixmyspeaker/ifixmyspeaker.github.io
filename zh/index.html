@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -170,99 +170,110 @@
         <li><a href="#cleaner" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="speaker_cleaner">扬声器清理</a></li>
         <li><a href="/remove-water-from-speaker-sound/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="water_sound_guide">排水声原理</a></li>
         <li><a href="/deep-clean/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="deep_clean">Deep Clean</a></li>
-        <li><a href="#spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">声波频谱</a></li>
-        <li><a href="#playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">机型指南</a></li>
+        <li><a href="#frequency-spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">声波频谱</a></li>
+        <li><a href="#device-playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">机型指南</a></li>
         <li><a href="#faq" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="faq_nav">常见问答</a></li>
         <li><a href="#languages" class="nav-lang-pill" title="切换语言" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="change_language">🌐 简体中文</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Jump Navigation Sub-Bar -->
-  <div class="jump-nav-bar">
-    <div class="container jump-nav-inner">
-      <span class="jump-nav-label">快捷导航:</span>
-      <a href="#cleaner" class="jump-nav-link">🔊 清理工具</a>
-      <a href="#spectrum" class="jump-nav-link">📊 声频与安全标准</a>
-      <a href="#playbooks" class="jump-nav-link">📱 机型排水手册</a>
-      <a href="#myths" class="jump-nav-link">❌ 大米与进水误区</a>
-      <a href="#matrix" class="jump-nav-link">⚖️ 排水方案对比</a>
-      <a href="#repair-guide" class="jump-nav-link">🛠️ 售后送修准则</a>
-      <a href="#sound-test" class="jump-nav-link">🎧 声音检测</a>
-      <a href="#faq" class="jump-nav-link">❓ 常见问答</a>
-    </div>
-  </div>
-
   <!-- Main Content -->
   <main>
+
     <!-- Hero Section -->
     <section class="hero-section" id="cleaner">
       <div class="container">
         
-        <div class="hero-header">
-          <div class="hero-badge">
+        <!-- Trust Badge -->
+        <div class="trust-badge-wrapper">
+          <div class="trust-badge">
             <span class="badge-dot"></span>
-            <span>165Hz 声学脉冲震荡除水技术</span>
+            <span>165Hz声波排水与除尘技术 &bull; 100%免费在线扬声器清理工具</span>
           </div>
+        </div>
+
+        <div class="hero-header">
           <h1>Fix My Speaker - 手机扬声器排水与灰尘清理</h1>
           <p class="hero-subtitle">
             手机进水导致听筒和喇叭发闷无声？本在线工具生成精密计算的 <strong>165Hz声学正弦脉冲</strong>，在几秒内将附着在扬声器防尘网孔上的积水与灰尘强力震飞吹出。
           </p>
         </div>
 
-        <!-- Main Cleaner Box Component -->
-        <div class="cleaner-box">
+        <!-- Master Floating Cleaner Card -->
+        <div class="master-tool-card">
           
-          <!-- Mode Tabs -->
-          <div class="mode-tabs">
-            <button class="mode-tab active" id="tabWater" data-mode="water" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="water_eject">
-              <span class="tab-icon">💧</span>
-              <div class="tab-text">
-                <span class="tab-title">声波排水模式 (165Hz)</span>
-                <span class="tab-desc">即刻解决声音发闷变小</span>
-              </div>
-            </button>
-            <button class="mode-tab" id="tabDust" data-mode="dust" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="dust_clean">
-              <span class="tab-icon">💨</span>
-              <div class="tab-text">
-                <span class="tab-title">高频除尘模式 (扫频)</span>
-                <span class="tab-desc">震落微尘与纤维杂质</span>
-              </div>
-            </button>
+          <!-- Mode Selection -->
+          <div class="mode-container">
+            <span class="mode-label">选择清理模式</span>
+            <div class="mode-grid">
+              <button class="mode-tab active" data-mode="water" title="利用165Hz脉冲声波排出被困水分" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="water_eject">
+                <span class="mode-icon">💧</span>
+                <strong>排出水分</strong>
+                <small>165Hz脉冲波</small>
+              </button>
+              <button class="mode-tab" data-mode="dust" title="通过动态扫频震落灰尘与纤维杂质" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="dust_removal">
+                <span class="mode-icon">🌪️</span>
+                <strong>灰尘清理</strong>
+                <small>200Hz - 1500Hz扫频</small>
+              </button>
+              <button class="mode-tab" data-mode="vibrate" title="结合超低音频与马达振动" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="bass_vibrate">
+                <span class="mode-icon">📳</span>
+                <strong>低音与振动</strong>
+                <small>80Hz重低音+振动</small>
+              </button>
+            </div>
           </div>
 
-          <!-- Central Pulsing Speaker Ring -->
-          <div class="speaker-action-area">
-            <div class="speaker-ripple-halo" id="rippleHalo"></div>
-            <div class="speaker-ring-outer">
-              <div class="speaker-ring-inner">
-                <button class="btn-speaker-trigger" id="mainTriggerBtn" aria-label="启动或停止清理" data-ga-event="toggle_cleaner" data-ga-category="cleaner_interaction" data-ga-label="central_speaker_button">
-                  <div class="btn-content">
-                    <div class="action-icon" id="actionIcon">
-                      <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                      </svg>
-                    </div>
-                    <span class="action-text" id="actionText">开始声波清理</span>
-                    <span class="action-subtext" id="actionSubtext">点击立即运行</span>
-                  </div>
-                </button>
-              </div>
+          <!-- Channel Selection -->
+          <div class="channel-container">
+            <span class="mode-label">扬声器声道</span>
+            <div class="channel-grid">
+              <button class="channel-btn active" data-channel="both" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="both_speakers">🔊 双扬声器</button>
+              <button class="channel-btn" data-channel="left" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="top_earpiece">📱 顶部听筒</button>
+              <button class="channel-btn" data-channel="right" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="bottom_grille">🔈 底部扬声器</button>
+            </div>
+          </div>
+
+          <!-- Central Action Dial -->
+          <div class="hero-action-dial-wrapper">
+            <div class="dial-svg-container">
+              <svg class="dial-svg" viewBox="0 0 200 200">
+                <defs>
+                  <linearGradient id="cyanBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#06b6d4" />
+                    <stop offset="100%" stop-color="#22c55e" />
+                  </linearGradient>
+                </defs>
+                <circle class="dial-circle-bg" cx="100" cy="100" r="90" />
+                <circle class="dial-circle-progress" id="progressCircle" cx="100" cy="100" r="90" />
+              </svg>
+
+              <!-- Master Central Button -->
+              <button class="master-eject-btn" id="masterEjectBtn" aria-label="开始播放手机扬声器排水声音" data-ga-event="start_cleaning" data-ga-category="cleaner_control" data-ga-label="master_eject_button">
+                <span class="btn-emoji">💨 💦</span>
+                <span class="btn-primary-text" id="btnPrimaryText">开始</span>
+                <span class="btn-subtext" id="btnSubtext">点击排出</span>
+              </button>
+
+              <div class="ripple-wave ripple-wave-1"></div>
+              <div class="ripple-wave ripple-wave-2"></div>
+              <div class="ripple-wave ripple-wave-3"></div>
             </div>
 
             <!-- Dynamic Live Status Pill -->
             <div class="status-pill-container">
               <div class="status-badge" id="statusBadge">
                 <span class="countdown-timer-text" id="countdownTimer">60s</span>
-                <span id="statusText">扬声器清理已准备就绪</span>
+                <span id="statusText">已就绪，随时清理手机扬声器</span>
               </div>
             </div>
           </div>
 
-          <!-- Waveform Visualizer Canvas -->
+          <!-- Real-Time Waveform Visualizer Canvas -->
           <div class="waveform-container">
             <canvas id="waveformCanvas"></canvas>
-            <span class="canvas-label">实时声波音频震荡监视器</span>
+            <span class="canvas-label">实时声波频率监测器</span>
           </div>
 
           <!-- Quick Action Buttons -->
@@ -271,7 +282,7 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>
-              <span>开始运行周期</span>
+              <span>开始清理</span>
             </button>
             <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="stop_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -285,8 +296,12 @@
           <div class="warning-box">
             <span class="warning-icon">💡</span>
             <div>
-              <strong>使用关键诀窍:</strong> 请务必将媒体播放音量调至 <strong>100% 最大</strong>，并使手机扬声器孔 <strong>朝下</strong> 悬在纸巾上方，利用声压与重力促使水滴快速甩出。详情请查阅我们的 <a href="/remove-water-from-speaker-sound/" class="context-link">手机排水声音深度指南</a>。
+              <strong>最佳效果提示：</strong> 将手机媒体音量调至<strong>100%</strong>，并将扬声器开孔<strong>朝下放置</strong>在干毛巾上，使水珠受重力和气流共同作用顺畅流出。
             </div>
+          </div>
+
+          <div style="margin-top: 1rem; text-align: center; font-size: 0.88rem; color: var(--text-muted);">
+            <span>需要清理顽固灰尘或纤维？请使用我们的 <a href="/deep-clean/" class="context-link">Deep Dust Clean 深度除尘工具 (200Hz&ndash;1500Hz扫频)</a> 或查看 <a href="/remove-water-from-speaker-sound/" class="context-link">165Hz排水音技术指南</a>。</span>
           </div>
 
         </div>
@@ -297,34 +312,121 @@
             <h3>500,000+</h3>
             <p>成功修复的喇叭</p>
           </div>
-          <div class="stat-card">
-            <h3>165 Hz</h3>
-            <p>黄金排水共振频率</p>
-          </div>
-          <div class="stat-card">
-            <h3>100% 免费</h3>
-            <p>无需安装任何 App</p>
-          </div>
-          <div class="stat-card">
-            <h3>全机型兼容</h3>
-            <p>iPhone、安卓、手表与电脑</p>
-          </div>
-        </div>
 
       </div>
     </section>
 
-    <!-- Contextual Internal Linking Banner -->
-    <section class="content-section" style="padding-top: 1rem; padding-bottom: 1rem;">
+
+<!-- How It Works Section -->
+    <section class="content-section" id="how-it-works">
       <div class="container">
-        <div class="context-link-bar">
-          <span>🚀 <strong>需要强力深度清灰？</strong> 启动专用的 <a href="/deep-clean/" class="context-link">Deep Clean 扫频发生器</a> 震出陈年油垢与积尘，或参阅权威的 <a href="/remove-water-from-speaker-sound/" class="context-link">声波排水技术白皮书</a>。</span>
+        <div class="section-title">
+          <h2>Fix My Speaker 的声学工作机理</h2>
+          <p>无需拆卸手机螺丝。解析音频物理力学如何安全高效地将水珠与积尘喷射排出。</p>
+        </div>
+
+        <div class="cards-3col">
+          <div class="feature-card">
+            <div class="card-icon">🔊</div>
+            <h3>1. 165Hz 声学活塞气泵</h3>
+            <p>手机微型扬声器基于振膜与电磁驱动。播放 <strong>165Hz 纯正弦波</strong> 时，振膜往复振幅达到物理极限，形成类似于微型空气活塞的喷气脉冲，向外推开液体。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">💧</div>
+            <h3>2. 撕裂液体表面张力</h3>
+            <p>水珠由于毛细张力牢牢粘结在微小的防尘滤网表面。低频高冲程冲击波瞬间切断水分子间的张力链，将水滴打散成微粒并甩出孔外。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">🌪️</div>
+            <h3>3. 宽频带连续除尘扫频</h3>
+            <p>“高频除尘模式”在 200Hz 至 1500Hz 之间以对数形态扫频，能够激发不同质量、不同共振频率的干性灰尘颗粒共振脱离。更多高级扫频技术可访问 <a href="/deep-clean/" class="context-link">Deep Clean 工具</a>。</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
-    <section class="content-section" id="spectrum">
+    <!-- 5-Step Guide Section -->
+    <section class="content-section" id="steps">
+      <div class="container">
+        <div class="section-title">
+          <h2>排出扬声器水分的 5 个关键步骤</h2>
+          <p>手机进水黄金抢救时间内，请按部就班执行本操作清单以确保设备安全。</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-number">第 1 步</span>
+            <h3>擦干外部多余水分</h3>
+            <p>用干净的超细纤维毛巾轻柔擦干机身。只要开孔处还有水迹，切勿插入任何数据线进行充电。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">第 2 步</span>
+            <h3>将媒体音量调至 100%</h3>
+            <p>关闭手机静音模式，将媒体播放音量开到最大，以确保声波产生足够强劲的空气压强。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">第 3 步</span>
+            <h3>喇叭开孔朝向下方</h3>
+            <p>手持手机保持扬声器孔朝下悬停在纸巾上方，让空气脉冲与地球引力协同加速排液。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">第 4 步</span>
+            <h3>启动声波排水周期</h3>
+            <p>点击运行 <strong>声波排水模式</strong> 60 秒。纸巾上将能观察到被喷出的细小水珠，视情况可重复 2 至 3 次。</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">第 5 步</span>
+            <h3>全面测试声音音质</h3>
+            <p>使用下方的音频诊断工具验证中频人声与高频清脆度。若仍有轻微低沉，可切换到除尘模式再运行一次。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Audio Diagnostic / Sound Test -->
+    <section class="content-section" id="sound-test">
+      <div class="container">
+        <div class="section-title">
+          <h2>交互式音频声学诊断与音质测试</h2>
+          <p>在清理前后即时校验扬声器音响性能（亦可参考我们在 <a title="手机声音清洁" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">Medium 发布的权威清理长文</a>）。</p>
+        </div>
+
+        <div class="diagnostic-grid">
+          <div class="diag-item">
+            <div>
+              <h3>1. 中频人声清晰度测试 (440 Hz)</h3>
+              <p>测试电话通话与播客最核心的中音人声频段，迅速检验是否仍有水膜导致的声音发闷发沉。</p>
+            </div>
+            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ 运行人声测试</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>2. 高频通透度铃声测试 (2500 Hz)</h3>
+              <p>测试铃声与提示音的高音区域，精准检测防尘网微孔中是否含有杂质造成的破音或滋滋底噪。</p>
+            </div>
+            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ 运行高音测试</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>3. 左右立体声声像平衡测试</h3>
+              <p>在顶部听筒与底部扬声器之间交替滑动声音，以确认双扬声器工作状态完全平衡一致。</p>
+            </div>
+            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ 运行立体声测试</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
+    <section class="content-section" id="frequency-spectrum">
       <div class="container">
         <div class="section-title">
           <h2>声波频率谱图与电声安全认证标准</h2>
@@ -377,8 +479,8 @@
       </div>
     </section>
 
-    <!-- Section 2: Device-Specific Field Playbooks -->
-    <section class="content-section" id="playbooks">
+<!-- Section 2: Device-Specific Field Playbooks -->
+    <section class="content-section" id="device-playbooks">
       <div class="container">
         <div class="section-title">
           <h2>不同主流品牌机型专业排水实操手册</h2>
@@ -497,7 +599,7 @@
       </div>
     </section>
 
-    <!-- Section 3: Debunking Smartphone Water Myths -->
+<!-- Section 3: Debunking Smartphone Water Myths -->
     <section class="content-section" id="myths">
       <div class="container">
         <div class="section-title">
@@ -575,8 +677,8 @@
       </div>
     </section>
 
-    <!-- Section 4: Multi-Method Comparison Matrix -->
-    <section class="content-section" id="matrix">
+<!-- Section 4: Multi-Method Comparison Matrix -->
+    <section class="content-section" id="comparison-matrix">
       <div class="container">
         <div class="section-title">
           <h2>多种除水方案效率与安全性综合对比</h2>
@@ -650,7 +752,40 @@
       </div>
     </section>
 
-    <!-- Section 5: When to Seek Professional Hardware Repair -->
+<!-- Emergency Water First-Aid Section -->
+    <section class="content-section" id="first-aid">
+      <div class="container">
+        <div class="section-title">
+          <h2>手机进水应急第一现场：做与不做的准则</h2>
+          <p>手机意外掉入马桶、洗手池或雨水水洼中后，务必遵守以下操作纪律。</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="action-card dos">
+            <h3>✅ 正确急救准则（必做）</h3>
+            <ul class="checklist">
+              <li><strong>若浸水严重立即关机</strong>：切断电源防止内部元器件发生致命短路击穿。</li>
+              <li><strong>迅速擦干外壳所有水渍</strong>：使用不掉屑的吸水纸巾或棉布擦拭表面。</li>
+              <li><strong>取下保护壳与 SIM 卡托</strong>：打开气流循环通道，防止水汽在保护套与机身缝隙间二次倒灌。</li>
+              <li><strong>朝下手掌轻拍辅助脱水</strong>：让喇叭孔朝向掌心轻轻拍击几下甩出大水珠。</li>
+              <li><strong>运行 Fix My Speaker 声波排水</strong>：重复 2 至 3 次，利用气流脉冲将网罩微滴震出。</li>
+            </ul>
+          </div>
+
+          <div class="action-card donts">
+            <h3>❌ 致命错误操作（严禁）</h3>
+            <ul class="checklist">
+              <li><strong>严禁埋入大米</strong>：大米粉尘会深入内部引发板路腐蚀糊死开孔。</li>
+              <li><strong>至少 4-5 小时内切勿充电</strong>：接口湿润通电必烧芯片。</li>
+              <li><strong>严禁使用吹风机热风烘烤</strong>：热量会熔毁防水胶条并将水滴吹向芯片。</li>
+              <li><strong>严禁大力甩动手机</strong>：甩动的离心力会促使水珠在主板内部快速飞溅扩散。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 5: When to Seek Professional Hardware Repair -->
     <section class="content-section" id="repair-guide">
       <div class="container">
         <div class="section-title">
@@ -688,148 +823,7 @@
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="content-section" id="how-it-works">
-      <div class="container">
-        <div class="section-title">
-          <h2>Fix My Speaker 的声学工作机理</h2>
-          <p>无需拆卸手机螺丝。解析音频物理力学如何安全高效地将水珠与积尘喷射排出。</p>
-        </div>
-
-        <div class="cards-3col">
-          <div class="feature-card">
-            <div class="card-icon">🔊</div>
-            <h3>1. 165Hz 声学活塞气泵</h3>
-            <p>手机微型扬声器基于振膜与电磁驱动。播放 <strong>165Hz 纯正弦波</strong> 时，振膜往复振幅达到物理极限，形成类似于微型空气活塞的喷气脉冲，向外推开液体。</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">💧</div>
-            <h3>2. 撕裂液体表面张力</h3>
-            <p>水珠由于毛细张力牢牢粘结在微小的防尘滤网表面。低频高冲程冲击波瞬间切断水分子间的张力链，将水滴打散成微粒并甩出孔外。</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">🌪️</div>
-            <h3>3. 宽频带连续除尘扫频</h3>
-            <p>“高频除尘模式”在 200Hz 至 1500Hz 之间以对数形态扫频，能够激发不同质量、不同共振频率的干性灰尘颗粒共振脱离。更多高级扫频技术可访问 <a href="/deep-clean/" class="context-link">Deep Clean 工具</a>。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5-Step Guide Section -->
-    <section class="content-section" id="steps">
-      <div class="container">
-        <div class="section-title">
-          <h2>排出扬声器水分的 5 个关键步骤</h2>
-          <p>手机进水黄金抢救时间内，请按部就班执行本操作清单以确保设备安全。</p>
-        </div>
-
-        <div class="steps-container">
-          <div class="step-card">
-            <span class="step-number">第 1 步</span>
-            <h3>擦干外部多余水分</h3>
-            <p>用干净的超细纤维毛巾轻柔擦干机身。只要开孔处还有水迹，切勿插入任何数据线进行充电。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">第 2 步</span>
-            <h3>将媒体音量调至 100%</h3>
-            <p>关闭手机静音模式，将媒体播放音量开到最大，以确保声波产生足够强劲的空气压强。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">第 3 步</span>
-            <h3>喇叭开孔朝向下方</h3>
-            <p>手持手机保持扬声器孔朝下悬停在纸巾上方，让空气脉冲与地球引力协同加速排液。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">第 4 步</span>
-            <h3>启动声波排水周期</h3>
-            <p>点击运行 <strong>声波排水模式</strong> 60 秒。纸巾上将能观察到被喷出的细小水珠，视情况可重复 2 至 3 次。</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">第 5 步</span>
-            <h3>全面测试声音音质</h3>
-            <p>使用下方的音频诊断工具验证中频人声与高频清脆度。若仍有轻微低沉，可切换到除尘模式再运行一次。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Audio Diagnostic / Sound Test -->
-    <section class="content-section" id="sound-test">
-      <div class="container">
-        <div class="section-title">
-          <h2>交互式音频声学诊断与音质测试</h2>
-          <p>在清理前后即时校验扬声器音响性能（亦可参考我们在 <a title="手机声音清洁" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">Medium 发布的权威清理长文</a>）。</p>
-        </div>
-
-        <div class="diagnostic-grid">
-          <div class="diag-item">
-            <div>
-              <h3>1. 中频人声清晰度测试 (440 Hz)</h3>
-              <p>测试电话通话与播客最核心的中音人声频段，迅速检验是否仍有水膜导致的声音发闷发沉。</p>
-            </div>
-            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ 运行人声测试</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>2. 高频通透度铃声测试 (2500 Hz)</h3>
-              <p>测试铃声与提示音的高音区域，精准检测防尘网微孔中是否含有杂质造成的破音或滋滋底噪。</p>
-            </div>
-            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ 运行高音测试</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>3. 左右立体声声像平衡测试</h3>
-              <p>在顶部听筒与底部扬声器之间交替滑动声音，以确认双扬声器工作状态完全平衡一致。</p>
-            </div>
-            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ 运行立体声测试</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Emergency Water First-Aid Section -->
-    <section class="content-section" id="first-aid">
-      <div class="container">
-        <div class="section-title">
-          <h2>手机进水应急第一现场：做与不做的准则</h2>
-          <p>手机意外掉入马桶、洗手池或雨水水洼中后，务必遵守以下操作纪律。</p>
-        </div>
-
-        <div class="grid-2col">
-          <div class="action-card dos">
-            <h3>✅ 正确急救准则（必做）</h3>
-            <ul class="checklist">
-              <li><strong>若浸水严重立即关机</strong>：切断电源防止内部元器件发生致命短路击穿。</li>
-              <li><strong>迅速擦干外壳所有水渍</strong>：使用不掉屑的吸水纸巾或棉布擦拭表面。</li>
-              <li><strong>取下保护壳与 SIM 卡托</strong>：打开气流循环通道，防止水汽在保护套与机身缝隙间二次倒灌。</li>
-              <li><strong>朝下手掌轻拍辅助脱水</strong>：让喇叭孔朝向掌心轻轻拍击几下甩出大水珠。</li>
-              <li><strong>运行 Fix My Speaker 声波排水</strong>：重复 2 至 3 次，利用气流脉冲将网罩微滴震出。</li>
-            </ul>
-          </div>
-
-          <div class="action-card donts">
-            <h3>❌ 致命错误操作（严禁）</h3>
-            <ul class="checklist">
-              <li><strong>严禁埋入大米</strong>：大米粉尘会深入内部引发板路腐蚀糊死开孔。</li>
-              <li><strong>至少 4-5 小时内切勿充电</strong>：接口湿润通电必烧芯片。</li>
-              <li><strong>严禁使用吹风机热风烘烤</strong>：热量会熔毁防水胶条并将水滴吹向芯片。</li>
-              <li><strong>严禁大力甩动手机</strong>：甩动的离心力会促使水珠在主板内部快速飞溅扩散。</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Device Compatibility Chips -->
+<!-- Device Compatibility Chips -->
     <section class="content-section">
       <div class="container">
         <div class="section-title">
@@ -850,7 +844,7 @@
       </div>
     </section>
 
-    <!-- Frequently Asked Questions (Expanded 18 FAQs) -->
+<!-- Frequently Asked Questions (Expanded 18 FAQs) -->
     <section class="content-section" id="faq">
       <div class="container">
         <div class="section-title">
@@ -1041,33 +1035,6 @@
         </div>
       </div>
     </section>
-
-    <!-- EEAT Technical Verification Box -->
-    <section class="content-section">
-      <div class="container">
-        <div class="eeat-box">
-          <div class="eeat-header">
-            <div class="eeat-badge">🔬 电声工程实验室权威验证</div>
-            <h3>科学原理基石与严苛工程技术规范</h3>
-            <p>Fix My Speaker 所输出的声学信号，完全基于微流体力学物理模型以及国际消费电子产品电声安全规范校准。</p>
-          </div>
-          <div class="eeat-grid">
-            <div class="eeat-card">
-              <h4>亥姆霍兹共振与微流体力学</h4>
-              <p>手机微型音腔构成典型的亥姆霍兹声学谐振腔体。165Hz 音频激发空气共振，出口流速达到临界极大值，从而克服水的表面张力（72.8 mN/m）实现排液。</p>
-            </div>
-            <div class="eeat-card">
-              <h4>IEC 60268-5 声学安全合规</h4>
-              <p>声音能量与振膜位移严格限制在电声换能器的额定安全阈值以内，杜绝了音圈过热、机械冲撞打底和永久形变失真风险。</p>
-            </div>
-            <div class="eeat-card">
-              <h4>真机实验室多机型 98% 修复率</h4>
-              <p>在包括苹果、三星、华为、小米等主流 IP67/IP68 防水手机的真机受控潮湿实验中，声波播放 60 至 120 秒实现了 98% 的声学通透率恢复。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Site Footer -->
@@ -1081,9 +1048,9 @@
           <span class="footer-sep">&bull;</span>
           <a href="/deep-clean/" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="deep_clean">Deep Clean</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">声波频谱</a>
+          <a href="#frequency-spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">声波频谱</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">机型手册</a>
+          <a href="#device-playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">机型手册</a>
           <span class="footer-sep">&bull;</span>
           <a href="#sound-test" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="sound_test">声音测试</a>
           <span class="footer-sep">&bull;</span>

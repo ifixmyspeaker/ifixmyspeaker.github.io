@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -170,99 +170,110 @@
         <li><a href="#cleaner" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="speaker_cleaner">Vệ Sinh Loa</a></li>
         <li><a href="/remove-water-from-speaker-sound/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="water_sound_guide">Âm Thanh Đẩy Nước</a></li>
         <li><a href="/deep-clean/" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="deep_clean">Deep Clean</a></li>
-        <li><a href="#spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">Tần Số Âm Thanh</a></li>
-        <li><a href="#playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">Hướng Dẫn Dòng Máy</a></li>
+        <li><a href="#frequency-spectrum" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="sound_spectrum">Tần Số Âm Thanh</a></li>
+        <li><a href="#device-playbooks" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="device_guides">Hướng Dẫn Dòng Máy</a></li>
         <li><a href="#faq" class="nav-link" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="faq_nav">Hỏi Đáp FAQ</a></li>
         <li><a href="#languages" class="nav-lang-pill" title="Đổi ngôn ngữ" data-ga-event="nav_click" data-ga-category="navigation" data-ga-label="change_language">🌐 Tiếng Việt</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Jump Navigation Sub-Bar -->
-  <div class="jump-nav-bar">
-    <div class="container jump-nav-inner">
-      <span class="jump-nav-label">Chuyển Nhanh:</span>
-      <a href="#cleaner" class="jump-nav-link">🔊 Công Cụ Đẩy Nước</a>
-      <a href="#spectrum" class="jump-nav-link">📊 Tần Số &amp; Tiêu Chuẩn</a>
-      <a href="#playbooks" class="jump-nav-link">📱 Cẩm Nang Từng Dòng Máy</a>
-      <a href="#myths" class="jump-nav-link">❌ Thùng Gạo &amp; Sai Lầm</a>
-      <a href="#matrix" class="jump-nav-link">⚖️ So Sánh Giải Pháp</a>
-      <a href="#repair-guide" class="jump-nav-link">🛠️ Khi Nào Cần Đi Sửa</a>
-      <a href="#sound-test" class="jump-nav-link">🎧 Test Loa</a>
-      <a href="#faq" class="jump-nav-link">❓ Câu Hỏi Thường Gặp</a>
-    </div>
-  </div>
-
   <!-- Main Content -->
   <main>
+
     <!-- Hero Section -->
     <section class="hero-section" id="cleaner">
       <div class="container">
         
-        <div class="hero-header">
-          <div class="hero-badge">
+        <!-- Trust Badge -->
+        <div class="trust-badge-wrapper">
+          <div class="trust-badge">
             <span class="badge-dot"></span>
-            <span>Công Nghệ Sóng Âm Xung Lực 165Hz Đẩy Nước Đọng</span>
+            <span>Công Nghệ Đẩy Nước Bằng Sóng Âm 165Hz &bull; 100% Miễn Phí Trực Tuyến</span>
           </div>
+        </div>
+
+        <div class="hero-header">
           <h1>Fix My Speaker - Đẩy Nước &amp; Vệ Sinh Bụi Loa Điện Thoại</h1>
           <p class="hero-subtitle">
             Điện thoại bị rơi vào nước khiến âm thanh loa ngoài bị nghẹt, rè hoặc nhỏ tiếng? Công cụ trực tuyến miễn phí này phát ra <strong>sóng âm tần số 165Hz</strong> tạo luồng khí xung lực đẩy sạch nước và bụi bẩn ra khỏi lưới loa chỉ trong 60 giây.
           </p>
         </div>
 
-        <!-- Main Cleaner Box Component -->
-        <div class="cleaner-box">
+        <!-- Master Floating Cleaner Card -->
+        <div class="master-tool-card">
           
-          <!-- Mode Tabs -->
-          <div class="mode-tabs">
-            <button class="mode-tab active" id="tabWater" data-mode="water" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="water_eject">
-              <span class="tab-icon">💧</span>
-              <div class="tab-text">
-                <span class="tab-title">Chế Độ Đẩy Nước (165Hz)</span>
-                <span class="tab-desc">Khắc phục loa rè, nghẹt tiếng</span>
-              </div>
-            </button>
-            <button class="mode-tab" id="tabDust" data-mode="dust" data-ga-event="switch_mode" data-ga-category="cleaner_mode" data-ga-label="dust_clean">
-              <span class="tab-icon">💨</span>
-              <div class="tab-text">
-                <span class="tab-title">Chế Độ Làm Sạch Bụi (Sweep)</span>
-                <span class="tab-desc">Thổi sạch bụi bẩn và xơ vải</span>
-              </div>
-            </button>
+          <!-- Mode Selection -->
+          <div class="mode-container">
+            <span class="mode-label">Chọn Chế Độ Làm Sạch</span>
+            <div class="mode-grid">
+              <button class="mode-tab active" data-mode="water" title="Đẩy các giọt nước mắc kẹt bằng sóng xung 165Hz" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="water_eject">
+                <span class="mode-icon">💧</span>
+                <strong>Đẩy Nước</strong>
+                <small>Sóng Xung 165Hz</small>
+              </button>
+              <button class="mode-tab" data-mode="dust" title="Làm bong bụi bẩn và xơ vải bằng dải quét tần số" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="dust_removal">
+                <span class="mode-icon">🌪️</span>
+                <strong>Làm Sạch Bụi</strong>
+                <small>Quét 200Hz - 1500Hz</small>
+              </button>
+              <button class="mode-tab" data-mode="vibrate" title="Kết hợp âm trầm 80Hz và động cơ rung haptic" data-ga-event="select_mode" data-ga-category="cleaning_mode" data-ga-label="bass_vibrate">
+                <span class="mode-icon">📳</span>
+                <strong>Âm Trầm & Rung</strong>
+                <small>80Hz Bass + Rung</small>
+              </button>
+            </div>
           </div>
 
-          <!-- Central Pulsing Speaker Ring -->
-          <div class="speaker-action-area">
-            <div class="speaker-ripple-halo" id="rippleHalo"></div>
-            <div class="speaker-ring-outer">
-              <div class="speaker-ring-inner">
-                <button class="btn-speaker-trigger" id="mainTriggerBtn" aria-label="Bật hoặc dừng làm sạch" data-ga-event="toggle_cleaner" data-ga-category="cleaner_interaction" data-ga-label="central_speaker_button">
-                  <div class="btn-content">
-                    <div class="action-icon" id="actionIcon">
-                      <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-                      </svg>
-                    </div>
-                    <span class="action-text" id="actionText">Bắt Đầu Đẩy Nước</span>
-                    <span class="action-subtext" id="actionSubtext">Chạm để phát âm thanh</span>
-                  </div>
-                </button>
-              </div>
+          <!-- Channel Selection -->
+          <div class="channel-container">
+            <span class="mode-label">Kênh Loa</span>
+            <div class="channel-grid">
+              <button class="channel-btn active" data-channel="both" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="both_speakers">🔊 Cả Hai Loa</button>
+              <button class="channel-btn" data-channel="left" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="top_earpiece">📱 Loa Thoại Trên</button>
+              <button class="channel-btn" data-channel="right" data-ga-event="select_channel" data-ga-category="speaker_channel" data-ga-label="bottom_grille">🔈 Loa Dưới</button>
+            </div>
+          </div>
+
+          <!-- Central Action Dial -->
+          <div class="hero-action-dial-wrapper">
+            <div class="dial-svg-container">
+              <svg class="dial-svg" viewBox="0 0 200 200">
+                <defs>
+                  <linearGradient id="cyanBlueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#06b6d4" />
+                    <stop offset="100%" stop-color="#22c55e" />
+                  </linearGradient>
+                </defs>
+                <circle class="dial-circle-bg" cx="100" cy="100" r="90" />
+                <circle class="dial-circle-progress" id="progressCircle" cx="100" cy="100" r="90" />
+              </svg>
+
+              <!-- Master Central Button -->
+              <button class="master-eject-btn" id="masterEjectBtn" aria-label="Bắt đầu phát âm thanh đẩy nước khỏi loa" data-ga-event="start_cleaning" data-ga-category="cleaner_control" data-ga-label="master_eject_button">
+                <span class="btn-emoji">💨 💦</span>
+                <span class="btn-primary-text" id="btnPrimaryText">BẮT ĐẦU</span>
+                <span class="btn-subtext" id="btnSubtext">Chạm để đẩy nước</span>
+              </button>
+
+              <div class="ripple-wave ripple-wave-1"></div>
+              <div class="ripple-wave ripple-wave-2"></div>
+              <div class="ripple-wave ripple-wave-3"></div>
             </div>
 
             <!-- Dynamic Live Status Pill -->
             <div class="status-pill-container">
               <div class="status-badge" id="statusBadge">
                 <span class="countdown-timer-text" id="countdownTimer">60s</span>
-                <span id="statusText">Sẵn sàng vệ sinh loa điện thoại</span>
+                <span id="statusText">Sẵn sàng làm sạch loa điện thoại</span>
               </div>
             </div>
           </div>
 
-          <!-- Waveform Visualizer Canvas -->
+          <!-- Real-Time Waveform Visualizer Canvas -->
           <div class="waveform-container">
             <canvas id="waveformCanvas"></canvas>
-            <span class="canvas-label">Màn Hình Dao Động Tần Số Trực Tiếp</span>
+            <span class="canvas-label">Bộ Giám Sát Tần Số Trực Tiếp</span>
           </div>
 
           <!-- Quick Action Buttons -->
@@ -271,13 +282,13 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>
-              <span>Chạy Chu Kỳ</span>
+              <span>Bắt Đầu Làm Sạch</span>
             </button>
             <button class="tool-control-btn btn-clean-stop" id="btnCleanStop" disabled data-ga-event="control_cleaning" data-ga-category="cleaner_control" data-ga-label="stop_btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <rect x="6" y="6" width="12" height="12" rx="2" />
               </svg>
-              <span>Dừng Lại</span>
+              <span>Dừng</span>
             </button>
           </div>
 
@@ -285,8 +296,12 @@
           <div class="warning-box">
             <span class="warning-icon">💡</span>
             <div>
-              <strong>Mẹo Đạt Hiệu Quả Tối Đa:</strong> Hãy mở âm lượng media ở mức <strong>100% lớn nhất</strong> và giữ màng loa điện thoại <strong>hướng xuống dưới</strong> trên một chiếc khăn khô để nước dễ dàng thoát ra ngoài. Đọc hướng dẫn chi tiết tại <a href="/remove-water-from-speaker-sound/" class="context-link">Cẩm Nang Âm Thanh Đẩy Nước Loa</a>.
+              <strong>Mẹo đạt hiệu quả cao nhất:</strong> Bật âm lượng đa phương tiện lên <strong>100%</strong> và hướng lỗ loa <strong>xuống dưới</strong> trên khăn khô để nước dễ dàng thoát ra ngoài.
             </div>
+          </div>
+
+          <div style="margin-top: 1rem; text-align: center; font-size: 0.88rem; color: var(--text-muted);">
+            <span>Cần làm sạch bụi bẩn hoặc xơ vải cứng đầu? Dùng thử công cụ <a href="/deep-clean/" class="context-link">Deep Dust Clean (Quét 200Hz&ndash;1500Hz)</a> hoặc tham khảo <a href="/remove-water-from-speaker-sound/" class="context-link">Hướng Dẫn Kỹ Thuật Âm 165Hz</a>.</span>
           </div>
 
         </div>
@@ -297,34 +312,121 @@
             <h3>500.000+</h3>
             <p>Loa Được Khắc Phục</p>
           </div>
-          <div class="stat-card">
-            <h3>165 Hz</h3>
-            <p>Tần Số Đẩy Nước Chuẩn</p>
-          </div>
-          <div class="stat-card">
-            <h3>100% Miễn Phí</h3>
-            <p>Không Cần Cài Ứng Dụng</p>
-          </div>
-          <div class="stat-card">
-            <h3>Mọi Thiết Bị</h3>
-            <p>iPhone, Android, Watch &amp; Mac</p>
-          </div>
-        </div>
 
       </div>
     </section>
 
-    <!-- Contextual Internal Linking Banner -->
-    <section class="content-section" style="padding-top: 1rem; padding-bottom: 1rem;">
+
+<!-- How It Works Section -->
+    <section class="content-section" id="how-it-works">
       <div class="container">
-        <div class="context-link-bar">
-          <span>🚀 <strong>Cần làm sạch bụi bẩn và xơ vải bám chặt?</strong> Khởi chạy <a href="/deep-clean/" class="context-link">Bộ Tạo Tần Số Deep Clean</a> để quét sạch cặn bẩn, hoặc đọc tài liệu <a href="/remove-water-from-speaker-sound/" class="context-link">Nguyên Lý Sóng Âm Đẩy Nước</a>.</span>
+        <div class="section-title">
+          <h2>Fix My Speaker Hoạt Động Như Thế Nào?</h2>
+          <p>Không cần tháo ốc hay đem đi thợ. Tìm hiểu cơ chế vật lý sóng âm giúp đẩy sạch nước và bụi bẩn an toàn.</p>
+        </div>
+
+        <div class="cards-3col">
+          <div class="feature-card">
+            <div class="card-icon">🔊</div>
+            <h3>1. Piston Khí Nén 165Hz</h3>
+            <p>Màng loa điện thoại dao động liên tục khi phát <strong>sóng sin 165Hz</strong>, đạt biên độ co giãn cơ học tối đa để tạo ra các luồng khí nén liên tục thổi mạnh ra ngoài.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">💧</div>
+            <h3>2. Phá Vỡ Sức Căng Bề Mặt</h3>
+            <p>Giọt nước bám chặt vào các lỗ lưới li ti nhờ sức căng bề mặt. Sóng xung lực tần số thấp sẽ đập tan liên kết này, khiến các giọt nước văng ra ngoài.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="card-icon">🌪️</div>
+            <h3>3. Quét Tần Số Tách Bụi Bẩn</h3>
+            <p>Bụi cát và xơ vải có kích thước và khối lượng đa dạng. <strong>Chế Độ Làm Sạch Bụi</strong> quét dải tần từ 200Hz đến 1500Hz giúp rung lắc mọi loại hạt bụi. Để vệ sinh chuyên sâu hơn, hãy dùng <a href="/deep-clean/" class="context-link">Công Cụ Deep Clean</a>.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
-    <section class="content-section" id="spectrum">
+    <!-- 5-Step Guide Section -->
+    <section class="content-section" id="steps">
+      <div class="container">
+        <div class="section-title">
+          <h2>5 Bước Cứu Loa Bị Vào Nước Nhanh Chóng</h2>
+          <p>Hãy làm theo danh sách kiểm tra này ngay khi điện thoại bị ướt để bảo vệ phần cứng tốt nhất.</p>
+        </div>
+
+        <div class="steps-container">
+          <div class="step-card">
+            <span class="step-number">Bước 1</span>
+            <h3>Lau Khô Vỏ Máy</h3>
+            <p>Dùng khăn mềm lau sạch nước đọng xung quanh máy. Tuyệt đối không cắm dây sạc khi các cổng còn ướt.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">Bước 2</span>
+            <h3>Bật Âm Lượng 100%</h3>
+            <p>Tắt chế độ im lặng và tăng âm lượng phương tiện lên mức cao nhất để sóng âm tạo lực đẩy khí nén tối đa.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">Bước 3</span>
+            <h3>Úp Loa Hướng Xuống</h3>
+            <p>Cầm máy sao cho lỗ loa hướng xuống mặt khăn để trọng lực tự nhiên giúp nước dễ dàng nhỏ ra.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">Bước 4</span>
+            <h3>Phát Âm Thanh Đẩy Nước</h3>
+            <p>Chạy chế độ <strong>Đẩy Nước</strong> trong 60 giây. Bạn sẽ thấy các giọt nước bắn ra khăn. Có thể lặp lại 2-3 lần nếu cần.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">Bước 5</span>
+            <h3>Kiểm Tra Độ Trong Của Loa</h3>
+            <p>Sử dụng phần kiểm tra âm thanh bên dưới để thử giọng nói và âm cao. Nếu còn hơi nghẹt, hãy chạy thêm chế độ bụi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Audio Diagnostic / Sound Test -->
+    <section class="content-section" id="sound-test">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kiểm Tra Âm Thanh Tương Tác &amp; Chẩn Đoán Loa</h2>
+          <p>Kiểm tra chất lượng loa trước và sau khi làm sạch (xem thêm <a title="Vệ Sinh Loa Điện Thoại" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">bài hướng dẫn chi tiết trên Medium</a>).</p>
+        </div>
+
+        <div class="diagnostic-grid">
+          <div class="diag-item">
+            <div>
+              <h3>1. Kiểm Tra Độ Trong Giọng Nói (440 Hz)</h3>
+              <p>Kiểm tra dải âm trung vokal thường dùng cho đàm thoại và podcast, giúp phát hiện ngay loa còn bị nghẹt nước hay không.</p>
+            </div>
+            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ Chạy Thử Giọng Nói</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>2. Âm Chuông Tần Số Cao Treble (2500 Hz)</h3>
+              <p>Kiểm tra dải âm cao và tiếng chuông reo, đảm bảo loa không bị rè hay phát ra tiếng lạo xạo khó chịu.</p>
+            </div>
+            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ Chạy Thử Âm Treble</button>
+          </div>
+
+          <div class="diag-item">
+            <div>
+              <h3>3. Kiểm Tra Cân Bằng Stereo Trái &amp; Phải</h3>
+              <p>Đảo âm thanh lần lượt giữa loa thoại trên đỉnh và loa chính dưới đáy để đảm bảo cả hai cụm loa đều hoạt động tốt.</p>
+            </div>
+            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ Chạy Thử Stereo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 1: Sound Frequency Spectrum & Safety Standards Table -->
+    <section class="content-section" id="frequency-spectrum">
       <div class="container">
         <div class="section-title">
           <h2>Dải Tần Số Âm Học và Tiêu Chuẩn An Toàn Quốc Tế</h2>
@@ -377,8 +479,8 @@
       </div>
     </section>
 
-    <!-- Section 2: Device-Specific Field Playbooks -->
-    <section class="content-section" id="playbooks">
+<!-- Section 2: Device-Specific Field Playbooks -->
+    <section class="content-section" id="device-playbooks">
       <div class="container">
         <div class="section-title">
           <h2>Cẩm Nang Đẩy Nước Loa Theo Từng Dòng Thiết Bị</h2>
@@ -497,7 +599,7 @@
       </div>
     </section>
 
-    <!-- Section 3: Debunking Smartphone Water Myths -->
+<!-- Section 3: Debunking Smartphone Water Myths -->
     <section class="content-section" id="myths">
       <div class="container">
         <div class="section-title">
@@ -575,8 +677,8 @@
       </div>
     </section>
 
-    <!-- Section 4: Multi-Method Comparison Matrix -->
-    <section class="content-section" id="matrix">
+<!-- Section 4: Multi-Method Comparison Matrix -->
+    <section class="content-section" id="comparison-matrix">
       <div class="container">
         <div class="section-title">
           <h2>Bảng So Sánh Khoa Học Các Phương Pháp Xử Lý Nước</h2>
@@ -650,7 +752,40 @@
       </div>
     </section>
 
-    <!-- Section 5: When to Seek Professional Hardware Repair -->
+<!-- Emergency Water First-Aid Section -->
+    <section class="content-section" id="first-aid">
+      <div class="container">
+        <div class="section-title">
+          <h2>Sơ Cứu Khẩn Cấp Khi Điện Thoại Rơi Vào Nước</h2>
+          <p>Những nguyên tắc vàng bạn cần thực hiện ngay lập tức khi máy bị rơi vào bồn tắm, bồn rửa hoặc vũng nước mưa.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="action-card dos">
+            <h3>✅ Việc Nên Làm Ngay Lập Tức</h3>
+            <ul class="checklist">
+              <li><strong>Tắt nguồn điện thoại ngay</strong> nếu máy ngập sâu để ngăn ngừa chập cháy mạch.</li>
+              <li><strong>Lau sạch nước bên ngoài</strong> bằng khăn mềm không xơ hoặc khăn giấy.</li>
+              <li><strong>Tháo ốp lưng và khay SIM</strong> để tạo khe hở cho hơi ẩm bên trong thoát ra ngoài.</li>
+              <li><strong>Vỗ nhẹ vào lòng bàn tay</strong> với phần loa hướng xuống để giọt nước lớn rơi bớt.</li>
+              <li><strong>Chạy Fix My Speaker</strong> từ 2 đến 3 lần để đẩy sạch các giọt nước nhỏ sót lại.</li>
+            </ul>
+          </div>
+
+          <div class="action-card donts">
+            <h3>❌ Sai Lầm Nghiêm Trọng Cần Tránh</h3>
+            <ul class="checklist">
+              <li><strong>Không vùi vào thùng gạo</strong>: Bột cám gạo sẽ lọt vào cổng sạc và lưới loa gây hỏng máy.</li>
+              <li><strong>Không cắm sạc ít nhất 4-5 tiếng</strong>: Cổng sạc còn ẩm mà cắm điện sẽ làm chập cháy chân tiếp xúc.</li>
+              <li><strong>Không dùng máy sấy tóc</strong>: Nhiệt độ cao làm chảy keo chống nước và đẩy nước vào trong.</li>
+              <li><strong>Không lắc vẩy máy quá mạnh</strong>: Lực vẩy làm nước bắn tung tóe vào camera và bo mạch.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Section 5: When to Seek Professional Hardware Repair -->
     <section class="content-section" id="repair-guide">
       <div class="container">
         <div class="section-title">
@@ -688,148 +823,7 @@
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="content-section" id="how-it-works">
-      <div class="container">
-        <div class="section-title">
-          <h2>Fix My Speaker Hoạt Động Như Thế Nào?</h2>
-          <p>Không cần tháo ốc hay đem đi thợ. Tìm hiểu cơ chế vật lý sóng âm giúp đẩy sạch nước và bụi bẩn an toàn.</p>
-        </div>
-
-        <div class="cards-3col">
-          <div class="feature-card">
-            <div class="card-icon">🔊</div>
-            <h3>1. Piston Khí Nén 165Hz</h3>
-            <p>Màng loa điện thoại dao động liên tục khi phát <strong>sóng sin 165Hz</strong>, đạt biên độ co giãn cơ học tối đa để tạo ra các luồng khí nén liên tục thổi mạnh ra ngoài.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">💧</div>
-            <h3>2. Phá Vỡ Sức Căng Bề Mặt</h3>
-            <p>Giọt nước bám chặt vào các lỗ lưới li ti nhờ sức căng bề mặt. Sóng xung lực tần số thấp sẽ đập tan liên kết này, khiến các giọt nước văng ra ngoài.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="card-icon">🌪️</div>
-            <h3>3. Quét Tần Số Tách Bụi Bẩn</h3>
-            <p>Bụi cát và xơ vải có kích thước và khối lượng đa dạng. <strong>Chế Độ Làm Sạch Bụi</strong> quét dải tần từ 200Hz đến 1500Hz giúp rung lắc mọi loại hạt bụi. Để vệ sinh chuyên sâu hơn, hãy dùng <a href="/deep-clean/" class="context-link">Công Cụ Deep Clean</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5-Step Guide Section -->
-    <section class="content-section" id="steps">
-      <div class="container">
-        <div class="section-title">
-          <h2>5 Bước Cứu Loa Bị Vào Nước Nhanh Chóng</h2>
-          <p>Hãy làm theo danh sách kiểm tra này ngay khi điện thoại bị ướt để bảo vệ phần cứng tốt nhất.</p>
-        </div>
-
-        <div class="steps-container">
-          <div class="step-card">
-            <span class="step-number">Bước 1</span>
-            <h3>Lau Khô Vỏ Máy</h3>
-            <p>Dùng khăn mềm lau sạch nước đọng xung quanh máy. Tuyệt đối không cắm dây sạc khi các cổng còn ướt.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">Bước 2</span>
-            <h3>Bật Âm Lượng 100%</h3>
-            <p>Tắt chế độ im lặng và tăng âm lượng phương tiện lên mức cao nhất để sóng âm tạo lực đẩy khí nén tối đa.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">Bước 3</span>
-            <h3>Úp Loa Hướng Xuống</h3>
-            <p>Cầm máy sao cho lỗ loa hướng xuống mặt khăn để trọng lực tự nhiên giúp nước dễ dàng nhỏ ra.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">Bước 4</span>
-            <h3>Phát Âm Thanh Đẩy Nước</h3>
-            <p>Chạy chế độ <strong>Đẩy Nước</strong> trong 60 giây. Bạn sẽ thấy các giọt nước bắn ra khăn. Có thể lặp lại 2-3 lần nếu cần.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-number">Bước 5</span>
-            <h3>Kiểm Tra Độ Trong Của Loa</h3>
-            <p>Sử dụng phần kiểm tra âm thanh bên dưới để thử giọng nói và âm cao. Nếu còn hơi nghẹt, hãy chạy thêm chế độ bụi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Audio Diagnostic / Sound Test -->
-    <section class="content-section" id="sound-test">
-      <div class="container">
-        <div class="section-title">
-          <h2>Kiểm Tra Âm Thanh Tương Tác &amp; Chẩn Đoán Loa</h2>
-          <p>Kiểm tra chất lượng loa trước và sau khi làm sạch (xem thêm <a title="Vệ Sinh Loa Điện Thoại" href="https://medium.com/@asifshahzad4995/fix-my-speaker-how-to-remove-water-and-clean-your-phone-speaker-c35903048f01" target="_blank" data-ga-event="outbound_article" data-ga-category="external_resource" data-ga-label="medium_cleaning_guide">bài hướng dẫn chi tiết trên Medium</a>).</p>
-        </div>
-
-        <div class="diagnostic-grid">
-          <div class="diag-item">
-            <div>
-              <h3>1. Kiểm Tra Độ Trong Giọng Nói (440 Hz)</h3>
-              <p>Kiểm tra dải âm trung vokal thường dùng cho đàm thoại và podcast, giúp phát hiện ngay loa còn bị nghẹt nước hay không.</p>
-            </div>
-            <button class="diag-btn" id="testVoiceBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="voice_test_440hz">▶ Chạy Thử Giọng Nói</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>2. Âm Chuông Tần Số Cao Treble (2500 Hz)</h3>
-              <p>Kiểm tra dải âm cao và tiếng chuông reo, đảm bảo loa không bị rè hay phát ra tiếng lạo xạo khó chịu.</p>
-            </div>
-            <button class="diag-btn" id="testTrebleBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="treble_test_2500hz">▶ Chạy Thử Âm Treble</button>
-          </div>
-
-          <div class="diag-item">
-            <div>
-              <h3>3. Kiểm Tra Cân Bằng Stereo Trái &amp; Phải</h3>
-              <p>Đảo âm thanh lần lượt giữa loa thoại trên đỉnh và loa chính dưới đáy để đảm bảo cả hai cụm loa đều hoạt động tốt.</p>
-            </div>
-            <button class="diag-btn" id="testStereoBtn" data-ga-event="sound_diagnostic" data-ga-category="audio_test" data-ga-label="stereo_pan">▶ Chạy Thử Stereo</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Emergency Water First-Aid Section -->
-    <section class="content-section" id="first-aid">
-      <div class="container">
-        <div class="section-title">
-          <h2>Sơ Cứu Khẩn Cấp Khi Điện Thoại Rơi Vào Nước</h2>
-          <p>Những nguyên tắc vàng bạn cần thực hiện ngay lập tức khi máy bị rơi vào bồn tắm, bồn rửa hoặc vũng nước mưa.</p>
-        </div>
-
-        <div class="grid-2col">
-          <div class="action-card dos">
-            <h3>✅ Việc Nên Làm Ngay Lập Tức</h3>
-            <ul class="checklist">
-              <li><strong>Tắt nguồn điện thoại ngay</strong> nếu máy ngập sâu để ngăn ngừa chập cháy mạch.</li>
-              <li><strong>Lau sạch nước bên ngoài</strong> bằng khăn mềm không xơ hoặc khăn giấy.</li>
-              <li><strong>Tháo ốp lưng và khay SIM</strong> để tạo khe hở cho hơi ẩm bên trong thoát ra ngoài.</li>
-              <li><strong>Vỗ nhẹ vào lòng bàn tay</strong> với phần loa hướng xuống để giọt nước lớn rơi bớt.</li>
-              <li><strong>Chạy Fix My Speaker</strong> từ 2 đến 3 lần để đẩy sạch các giọt nước nhỏ sót lại.</li>
-            </ul>
-          </div>
-
-          <div class="action-card donts">
-            <h3>❌ Sai Lầm Nghiêm Trọng Cần Tránh</h3>
-            <ul class="checklist">
-              <li><strong>Không vùi vào thùng gạo</strong>: Bột cám gạo sẽ lọt vào cổng sạc và lưới loa gây hỏng máy.</li>
-              <li><strong>Không cắm sạc ít nhất 4-5 tiếng</strong>: Cổng sạc còn ẩm mà cắm điện sẽ làm chập cháy chân tiếp xúc.</li>
-              <li><strong>Không dùng máy sấy tóc</strong>: Nhiệt độ cao làm chảy keo chống nước và đẩy nước vào trong.</li>
-              <li><strong>Không lắc vẩy máy quá mạnh</strong>: Lực vẩy làm nước bắn tung tóe vào camera và bo mạch.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Device Compatibility Chips -->
+<!-- Device Compatibility Chips -->
     <section class="content-section">
       <div class="container">
         <div class="section-title">
@@ -849,7 +843,7 @@
       </div>
     </section>
 
-    <!-- Frequently Asked Questions (Expanded 18 FAQs) -->
+<!-- Frequently Asked Questions (Expanded 18 FAQs) -->
     <section class="content-section" id="faq">
       <div class="container">
         <div class="section-title">
@@ -1040,33 +1034,6 @@
         </div>
       </div>
     </section>
-
-    <!-- EEAT Technical Verification Box -->
-    <section class="content-section">
-      <div class="container">
-        <div class="eeat-box">
-          <div class="eeat-header">
-            <div class="eeat-badge">🔬 Thử Nghiệm &amp; Chứng Thực Kỹ Thuật Âm Học</div>
-            <h3>Nền Tảng Khoa Học &amp; Tiêu Chuẩn Kỹ Thuật An Toàn</h3>
-            <p>Tín hiệu âm học của Fix My Speaker được hiệu chuẩn dựa trên mô hình vật lý vi cơ học chất lỏng và quy chuẩn an toàn điện thanh quốc tế.</p>
-          </div>
-          <div class="eeat-grid">
-            <div class="eeat-card">
-              <h4>Cộng Hưởng Helmholtz &amp; Động Lực Học Khí</h4>
-              <p>Khoang loa smartphone hoạt động như một bộ cộng hưởng Helmholtz. Ở tần số 165Hz, vận tốc luồng khí thoát đạt cực đại, đánh bật sức căng bề mặt của nước (72.8 mN/m) một cách nhẹ nhàng.</p>
-            </div>
-            <div class="eeat-card">
-              <h4>Tuân Thủ Tiêu Chuẩn Quốc Tế IEC 60268-5</h4>
-              <p>Mức áp suất âm thanh (SPL) và độ lệch màng rung được khống chế nghiêm ngặt trong ngưỡng an toàn, ngăn chặn hoàn toàn nguy cơ quá nhiệt cuộn cảm hoặc rách màng loa.</p>
-            </div>
-            <div class="eeat-card">
-              <h4>Kiểm Nghiệm Thực Tế Đạt Tỉ Lệ Phục Hồi 98%</h4>
-              <p>Qua hàng loạt thử nghiệm trên các dòng smartphone kháng nước IP67/IP68 phổ biến, 60 đến 120 giây phát âm thanh giúp phục hồi 98% độ trong trẻo ban đầu của loa.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Site Footer -->
@@ -1080,9 +1047,9 @@
           <span class="footer-sep">&bull;</span>
           <a href="/deep-clean/" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="deep_clean">Deep Clean</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">Tần Số Âm Thanh</a>
+          <a href="#frequency-spectrum" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="spectrum_table">Tần Số Âm Thanh</a>
           <span class="footer-sep">&bull;</span>
-          <a href="#playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">Cẩm Nang Dòng Máy</a>
+          <a href="#device-playbooks" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="device_playbooks">Cẩm Nang Dòng Máy</a>
           <span class="footer-sep">&bull;</span>
           <a href="#sound-test" data-ga-event="footer_click" data-ga-category="footer_resources" data-ga-label="sound_test">Kiểm Tra Âm Thanh</a>
           <span class="footer-sep">&bull;</span>

@@ -1703,3 +1703,448 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45);
 }
+
+/* =============================================================
+   Authority Content Blocks & Rich Design Components
+   ============================================================= */
+
+/* In-Page Sticky/Scrollable Navigation Jump Strip */
+.jump-nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1.25rem;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+
+.jump-nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.jump-nav-link:hover {
+  color: var(--primary);
+  background: rgba(2, 132, 199, 0.08);
+}
+
+/* Frequency Spectrum Table */
+.spectrum-table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  margin-top: 1.5rem;
+}
+
+.spectrum-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+
+.spectrum-table th,
+.spectrum-table td {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.9rem;
+}
+
+.spectrum-table th {
+  background: #f1f5f9;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.spectrum-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spectrum-table tr:hover td {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.spectrum-freq-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.freq-tag-sub { background: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
+.freq-tag-eject { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+.freq-tag-dust { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+.freq-tag-harmonics { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.freq-tag-diagnostic { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* Device Playbook Cards */
+.playbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.playbook-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+}
+
+.playbook-card:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.playbook-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.playbook-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(6, 182, 212, 0.12));
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.playbook-title-wrap h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.playbook-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(2, 132, 199, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+
+.playbook-steps {
+  list-style: none;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.playbook-steps li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 0.65rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.playbook-steps li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--lime);
+  font-weight: 800;
+}
+
+.playbook-pro-tip {
+  background: #f8fafc;
+  border-left: 3px solid var(--primary);
+  padding: 0.65rem 0.85rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+/* Debunking Myths Cards */
+.myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.myth-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.myth-card:hover {
+  border-color: rgba(239, 68, 68, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.06);
+}
+
+.myth-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.myth-tag {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+}
+
+.myth-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-decoration: line-through;
+  text-decoration-color: #dc2626;
+}
+
+.reality-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  margin-top: 0.85rem;
+}
+
+.reality-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.reality-text {
+  font-size: 0.88rem;
+  color: #166534;
+  line-height: 1.55;
+}
+
+/* Multi-Method Comparison Matrix */
+.matrix-table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  margin-top: 2rem;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 760px;
+}
+
+.matrix-table th,
+.matrix-table td {
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.9rem;
+}
+
+.matrix-table th {
+  background: #f1f5f9;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.matrix-table tr:hover td {
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.matrix-highlight-row {
+  background: rgba(2, 132, 199, 0.04);
+  font-weight: 600;
+}
+
+.matrix-highlight-row td {
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.grade-a { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.grade-b { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+.grade-c { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+.grade-f { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* When to Seek Professional Repair Box */
+.repair-guide-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.repair-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+}
+
+.repair-card.symptoms {
+  border-left: 4px solid #f59e0b;
+}
+
+.repair-card.lci {
+  border-left: 4px solid #ef4444;
+}
+
+.repair-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* EEAT Verification Box */
+.eeat-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 2.25rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+.eeat-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.eeat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.eeat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.eeat-card {
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.eeat-card strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.eeat-card p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Contextual Internal Linking Highlights */
+.context-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.context-link:hover {
+  color: #0369a1;
+  text-decoration-color: #0369a1;
+}
+
+@media (max-width: 768px) {
+  .repair-guide-container {
+    grid-template-columns: 1fr;
+  }
+  .jump-nav-bar {
+    border-radius: 16px;
+    padding: 0.65rem;
+  }
+}

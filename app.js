@@ -690,6 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Sound Diagnostic Buttons
   document.getElementById("testVoiceBtn")?.addEventListener("click", () => playDiagnosticTone(440, 2500));
+  document.getElementById("testBassBtn")?.addEventListener("click", () => playDiagnosticTone(120, 2500));
   document.getElementById("testTrebleBtn")?.addEventListener("click", () => playDiagnosticTone(2500, 2500));
   document.getElementById("testStereoBtn")?.addEventListener("click", playStereoCheck);
 

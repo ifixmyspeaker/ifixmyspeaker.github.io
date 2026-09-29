@@ -1,34 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Application & Dedicated Tools -->
   <url>
-    <loc>https://ifixmyspeaker.github.io/</loc>
-    <priority>1.0</priority>
+    <loc>https://ifixmyspeaker.com/</loc>
+    <priority>1.00</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/remove-water-from-speaker-sound/</loc>
+    <loc>https://ifixmyspeaker.com/remove-water-from-speaker-sound/</loc>
     <priority>0.95</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/deep-clean/</loc>
-    <priority>0.9</priority>
+    <loc>https://ifixmyspeaker.com/deep-clean/</loc>
+    <priority>0.90</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- International Multi-Language Editions -->
+  <url>
+    <loc>https://ifixmyspeaker.com/es/</loc>
+    <priority>0.85</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/about.html</loc>
-    <priority>0.8</priority>
+    <loc>https://ifixmyspeaker.com/id/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/contact.html</loc>
-    <priority>0.7</priority>
+    <loc>https://ifixmyspeaker.com/ar/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/privacy-policy.html</loc>
-    <priority>0.5</priority>
+    <loc>https://ifixmyspeaker.com/hi/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.github.io/terms.html</loc>
-    <priority>0.5</priority>
+    <loc>https://ifixmyspeaker.com/pt/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/fr/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/de/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ru/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ja/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/zh/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/it/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/tr/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/vi/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ko/</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Informational, Company & Legal Pages -->
+  <url>
+    <loc>https://ifixmyspeaker.com/about.html</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/contact.html</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/privacy-policy.html</loc>
+    <priority>0.50</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/terms.html</loc>
+    <priority>0.50</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>

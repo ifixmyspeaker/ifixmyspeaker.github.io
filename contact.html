@@ -24,7 +24,25 @@
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Fix My Speaker",
-    "url": "https://ifixmyspeaker.com/contact.html"
+    "url": "https://ifixmyspeaker.com/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Fix My Speaker",
+      "url": "https://ifixmyspeaker.com/",
+      "sameAs": [
+        "https://x.com/ifixmyspeaker",
+        "https://www.youtube.com/@iFixMySpeaker",
+        "https://www.facebook.com/iFixMySpeaker/",
+        "https://www.reddit.com/user/ifixmyspeaker/",
+        "https://www.pinterest.com/ifixmyspeaker/",
+        "https://medium.com/@ifixmyspeaker",
+        "https://bsky.app/profile/ifixmyspeaker.bsky.social",
+        "https://www.twitch.tv/ifixmyspeaker",
+        "https://soundcloud.com/ifix-my-speaker",
+        "https://about.me/fix-my-speaker",
+        "https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/"
+      ]
+    }
   }
   </script>
 </head>
@@ -89,34 +107,126 @@
           <strong>💡 Feature Suggestions:</strong>
           <p>If you would like custom frequencies for specialized tablets, marine radios, or wearables, let us know!</p>
         </div>
+        <div class="info-item">
+          <strong>🌐 Community Channels:</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Join discussion threads, report device bugs, or get technical assistance:</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <a href="https://www.reddit.com/user/ifixmyspeaker/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-reddit">Reddit</a>
+            <a href="https://x.com/ifixmyspeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-x">X / Twitter</a>
+            <a href="https://www.youtube.com/@iFixMySpeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-youtube">YouTube</a>
+            <a href="https://www.facebook.com/iFixMySpeaker/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-facebook">Facebook</a>
+            <a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-linkedin">LinkedIn</a>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
+  <!-- Redesigned Professional Footer -->
   <footer class="site-footer">
-    <div class="container footer-links">
-      <div class="footer-nav-row resources-row">
-        <a href="/#how-it-works">How It Works</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="/#sound-test">Sound Test</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="/#faq">FAQ</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="/remove-water-from-speaker-sound/">Water Eject Sound</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="/deep-clean/">Deep Clean</a>
+    <div class="container">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          <span>Fix My Speaker</span>
+        </a>
+        <p class="footer-tagline">Open-access acoustic maintenance and diagnostic laboratory based on calibrated resonance sound physics.</p>
       </div>
-      <div class="footer-nav-row legal-row">
-        <a href="/">Home</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="about.html">About Us</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="terms.html">Terms of Use</a>
-        <span class="footer-sep">&bull;</span>
-        <a href="contact.html">Contact Us</a>
+
+      <div class="footer-links">
+        <div class="footer-nav-row resources-row">
+          <a href="/#how-it-works">How It Works</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/#sound-test">Sound Test</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/#faq">FAQ</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/remove-water-from-speaker-sound/">Water Eject Sound</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="/deep-clean/">Deep Clean</a>
+        </div>
+        <div class="footer-nav-row legal-row">
+          <a href="/">Home</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="about.html">About Us</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="terms.html">Terms of Use</a>
+          <span class="footer-sep">&bull;</span>
+          <a href="contact.html">Contact Us</a>
+        </div>
       </div>
+
+      <!-- Official Community & Social Profiles -->
+      <div class="footer-social-section">
+        <div class="footer-social-heading">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+          <span>Official Social &amp; Community Channels</span>
+        </div>
+        <div class="footer-social-links">
+          <a href="https://x.com/ifixmyspeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-x" aria-label="Follow Fix My Speaker on X (Twitter)" title="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>X (Twitter)</span>
+          </a>
+          <a href="https://www.youtube.com/@iFixMySpeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-youtube" aria-label="Subscribe to Fix My Speaker on YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+          <a href="https://www.facebook.com/iFixMySpeaker/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-facebook" aria-label="Follow Fix My Speaker on Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.reddit.com/user/ifixmyspeaker/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-reddit" aria-label="Join Fix My Speaker on Reddit" title="Reddit">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .868.181 1.17.476 1.203-.838 2.846-1.396 4.654-1.482l.868-4.072a.375.375 0 0 1 .44-.294l3.076.649c.253-.454.743-.779 1.02-.779zm-7.618 6.55a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm5.216 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm-5.074 4.414c-.11 0-.214.045-.286.117-.16.16-.16.422 0 .582.805.805 2.152.923 2.644.923.492 0 1.839-.118 2.644-.923.16-.16.16-.422 0-.582a.412.412 0 0 0-.582 0c-.544.544-1.543.685-2.062.685-.519 0-1.518-.141-2.062-.685a.406.406 0 0 0-.296-.117z"/></svg>
+            <span>Reddit</span>
+          </a>
+          <a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-linkedin" aria-label="Connect with Clara Thompson on LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://about.me/fix-my-speaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-aboutme" aria-label="Fix My Speaker on about.me" title="about.me">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.524 4.477 10 10 10 5.524 0 10-4.476 10-10 0-5.523-4.476-10-10-10zm-1.8 14.85h-1.95V9.45H10.2v7.4zm-.97-8.38c-.65 0-1.15-.5-1.15-1.13s.5-1.14 1.15-1.14c.64 0 1.14.51 1.14 1.14 0 .63-.5 1.13-1.14 1.13zm6.67 8.38h-1.95v-4.14c0-1.02-.36-1.58-1.2-1.58-.88 0-1.37.58-1.37 1.62v4.1H9.4v-7.4h1.87v1.07h.03c.36-.67 1.13-1.22 2.22-1.22 1.61 0 2.38 1.05 2.38 2.82v4.73z"/></svg>
+            <span>about.me</span>
+          </a>
+          <a href="https://medium.com/@ifixmyspeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-medium" aria-label="Read technical articles on Medium" title="Medium">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+            <span>Medium</span>
+          </a>
+          <a href="https://soundcloud.com/ifix-my-speaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-soundcloud" aria-label="Listen to acoustic test frequencies on SoundCloud" title="SoundCloud">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.175 12.225c-.051 0-.094.044-.102.097l-.271 2.832.271 2.766c.008.056.051.097.102.097.056 0 .097-.041.103-.097l.307-2.766-.307-2.832c-.006-.053-.047-.097-.103-.097zm1.265-.662c-.066 0-.12.054-.128.12l-.248 3.49.248 3.37c.008.066.062.12.128.12.067 0 .121-.054.128-.12l.285-3.37-.285-3.49c-.007-.066-.061-.12-.128-.12zm1.378-.456c-.08 0-.146.065-.152.144l-.208 4.095.208 3.84c.006.079.072.144.152.144.081 0 .147-.065.152-.144l.243-3.84-.243-4.095c-.005-.079-.071-.144-.152-.144zm1.488-.564c-.095 0-.171.076-.176.17l-.168 4.793.168 4.28c.005.095.081.171.176.171.096 0 .172-.076.176-.171l.2-4.28-.2-4.793c-.004-.094-.08-.17-.176-.17zm1.597-.183c-.109 0-.196.087-.2.196l-.128 5.14.128 4.316c.004.11.091.197.2.197s.197-.087.2-.197l.159-4.316-.159-5.14c-.003-.109-.091-.196-.2-.196zm1.706-.525c-.123 0-.222.099-.224.221l-.089 5.834.089 4.345c.002.123.101.222.224.222s.222-.099.223-.222l.117-4.345-.117-5.834c-.001-.122-.1-.221-.223-.221zm1.816-.921c-.137 0-.247.111-.248.247l-.05 6.918.05 4.382c.001.137.111.248.248.248.138 0 .248-.111.248-.248l.076-4.382-.076-6.918c0-.136-.11-.247-.248-.247zm1.926-.285c-.152 0-.273.123-.273.274l-.01 7.337.01 4.41c0 .152.121.275.273.275s.274-.123.274-.275l.036-4.41-.036-7.337c0-.151-.122-.274-.274-.274zm4.498-3.08c-.732 0-1.418.232-1.982.632-.128.093-.207.24-.207.399v12.285c0 .168.136.304.304.304h7.94c2.81 0 5.09-2.28 5.09-5.09 0-2.613-1.975-4.767-4.52-5.048-.415-2.025-2.193-3.482-4.625-3.482z"/></svg>
+            <span>SoundCloud</span>
+          </a>
+          <a href="https://www.pinterest.com/ifixmyspeaker/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-pinterest" aria-label="Follow Fix My Speaker on Pinterest" title="Pinterest">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+            <span>Pinterest</span>
+          </a>
+          <a href="https://bsky.app/profile/ifixmyspeaker.bsky.social" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-bluesky" aria-label="Follow Fix My Speaker on Bluesky" title="Bluesky">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.74-1.782 7.823-5.69 1.083 3.908 2.81 10.88 7.823 5.69 4.557-5.073 1.082-6.498-2.83-7.078-.139-.016-.277-.034-.415-.056.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.479 0-.687-.139-1.86-.902-2.203-.659-.299-1.664-.621-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+            <span>Bluesky</span>
+          </a>
+          <a href="https://www.twitch.tv/ifixmyspeaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-twitch" aria-label="Watch Fix My Speaker on Twitch" title="Twitch">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+            <span>Twitch</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Author & Editorial Transparency Badge -->
+      <div class="footer-author-badge">
+        <span class="author-verified">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Lead Researcher:
+        </span>
+        <strong><a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer">Clara Thompson</a></strong>
+        <span class="footer-sep">&bull;</span>
+        <a href="https://about.me/fix-my-speaker" target="_blank" rel="noopener noreferrer">about.me Profile</a>
+        <span class="footer-sep">&bull;</span>
+        <a href="/about.html">Acoustic Standards &amp; Review Policy</a>
+      </div>
+
+      <p class="disclaimer">Disclaimer: Fix My Speaker is an online acoustic utility designed to help dislodge water and dust particles through sound vibrations. If your device suffered severe liquid immersion or internal hardware failure, please contact an authorized service technician.</p>
+      <p style="margin-top: 0.75rem; font-size: 0.8rem; color: #475569;">&copy; 2026 Fix My Speaker. All rights reserved.</p>
     </div>
   </footer>
   <script src="cookie-consent.js"></script>

@@ -21,17 +21,23 @@
     </div>
   `;
 
-  document.addEventListener("DOMContentLoaded", () => {
+  function initBanner() {
     document.body.appendChild(banner);
 
-    document.getElementById("acceptCookiesBtn").addEventListener("click", () => {
+    document.getElementById("acceptCookiesBtn")?.addEventListener("click", () => {
       localStorage.setItem(CONSENT_KEY, "accepted");
       banner.remove();
     });
 
-    document.getElementById("rejectCookiesBtn").addEventListener("click", () => {
+    document.getElementById("rejectCookiesBtn")?.addEventListener("click", () => {
       localStorage.setItem(CONSENT_KEY, "rejected_non_essential");
       banner.remove();
     });
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBanner);
+  } else {
+    initBanner();
+  }
 })();

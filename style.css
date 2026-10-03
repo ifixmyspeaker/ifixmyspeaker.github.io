@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap');
-
 :root {
-  --primary: #0284c7;
-  --primary-glow: rgba(2, 132, 199, 0.25);
+  --primary: #0274b3;
+  --primary-dark: #026aa2;
+  --primary-glow: rgba(2, 116, 179, 0.25);
   --cyan: #0891b2;
   --cyan-glow: rgba(8, 145, 178, 0.2);
   --lime: #16a34a;
@@ -673,7 +672,8 @@ body {
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
-.stat-card h3 {
+.stat-card h3,
+.stat-card .stat-number {
   font-family: var(--font-heading);
   font-size: 1.7rem;
   font-weight: 800;
@@ -684,7 +684,8 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.stat-card p {
+.stat-card p,
+.stat-card .stat-label {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
@@ -795,9 +796,9 @@ body {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--primary);
-  background: rgba(2, 132, 199, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.25);
+  color: #026aa2;
+  background: rgba(2, 116, 179, 0.09);
+  border: 1px solid rgba(2, 116, 179, 0.3);
   padding: 0.25rem 0.65rem;
   border-radius: 8px;
   margin-bottom: 0.85rem;
@@ -1115,7 +1116,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--primary);
+  color: #026aa2;
   margin-bottom: 1rem;
 }
 
@@ -1195,7 +1196,7 @@ body {
 }
 
 .footer-author-badge a {
-  color: var(--primary);
+  color: #026aa2;
   text-decoration: none;
   font-weight: 600;
 }
@@ -1212,7 +1213,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  color: #059669;
+  color: #047857;
   font-weight: 700;
 }
 
@@ -1543,12 +1544,12 @@ body {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: #fff;
+  background: #0274b3;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: #0ea5e9;
+  background: #0284c7;
   box-shadow: 0 0 12px var(--primary-glow);
 }
 
@@ -1585,7 +1586,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--primary);
+  color: #026aa2;
   margin-bottom: 1rem;
 }
 
@@ -1632,11 +1633,11 @@ body {
 }
 
 .footer-lang-link.active {
-  color: var(--primary);
+  color: #075985;
   background: #e0f2fe;
-  border-color: var(--primary);
+  border-color: #0274b3;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+  box-shadow: 0 2px 8px rgba(2, 116, 179, 0.18);
 }
 
 .footer-lang-link.active::before {
@@ -1770,9 +1771,9 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(2, 132, 199, 0.1);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  color: #0284c7;
+  background: rgba(2, 116, 179, 0.09);
+  border: 1px solid rgba(2, 116, 179, 0.25);
+  color: #026aa2;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.25rem 0.6rem;
@@ -1783,9 +1784,9 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(22, 163, 74, 0.1);
-  border: 1px solid rgba(22, 163, 74, 0.25);
-  color: #16a34a;
+  background: rgba(21, 128, 61, 0.1);
+  border: 1px solid rgba(21, 128, 61, 0.25);
+  color: #15803d;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.25rem 0.6rem;
@@ -2072,9 +2073,9 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
 
 .playbook-badge {
   font-size: 0.76rem;
-  font-weight: 600;
-  color: var(--primary);
-  background: rgba(2, 132, 199, 0.08);
+  font-weight: 700;
+  color: #026aa2;
+  background: rgba(2, 116, 179, 0.09);
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
 }
@@ -2145,9 +2146,9 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
 }
 
 .myth-tag {
-  background: rgba(239, 68, 68, 0.1);
-  color: #dc2626;
-  border: 1px solid rgba(239, 68, 68, 0.25);
+  background: rgba(185, 28, 28, 0.08);
+  color: #b91c1c;
+  border: 1px solid rgba(185, 28, 28, 0.25);
   font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -2345,7 +2346,7 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
 
 /* Contextual Internal Linking Highlights */
 .context-link {
-  color: var(--primary);
+  color: #026aa2;
   font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
@@ -2354,8 +2355,8 @@ html[dir="rtl"] .diagnostic-grid .diag-item {
 }
 
 .context-link:hover {
-  color: #0369a1;
-  text-decoration-color: #0369a1;
+  color: #075985;
+  text-decoration-color: #075985;
 }
 
 @media (max-width: 768px) {

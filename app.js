@@ -439,6 +439,12 @@ function completeCleaning() {
   updateUI(false);
   updateStatusText(t("complete"));
 
+  if (animFrameId) {
+    cancelAnimationFrame(animFrameId);
+    animFrameId = null;
+  }
+  drawIdleWaveform();
+
   trackGAEvent("cleaning_cycle_complete", {
     mode: currentMode,
     channel: currentSpeaker
@@ -469,6 +475,12 @@ function stopCleaning() {
   updateProgressRing(0);
   updateUI(false);
   updateStatusText(t("ready"));
+
+  if (animFrameId) {
+    cancelAnimationFrame(animFrameId);
+    animFrameId = null;
+  }
+  drawIdleWaveform();
 
   const timerSpan = document.getElementById("countdownTimer");
   if (timerSpan) timerSpan.textContent = "60s";
@@ -518,12 +530,55 @@ function sleep(ms) {
 // -------------------------------------------------------------
 // Real-Time Waveform Visualizer (Canvas Oscilloscope)
 // -------------------------------------------------------------
+function initCanvasDimensions() {
+  const canvas = document.getElementById("waveformCanvas");
+  if (!canvas) return;
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  const width = rect.width || 600;
+  const height = rect.height || 60;
+  canvas.width = Math.round(width * dpr);
+  canvas.height = Math.round(height * dpr);
+}
+
+function drawIdleWaveform() {
+  const canvas = document.getElementById("waveformCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const width = canvas.width;
+  const height = canvas.height;
+  const dpr = window.devicePixelRatio || 1;
+
+  ctx.clearRect(0, 0, width, height);
+  ctx.lineWidth = 2 * dpr;
+  ctx.strokeStyle = "rgba(6, 182, 212, 0.45)";
+  ctx.beginPath();
+  const mid = height / 2;
+  ctx.moveTo(0, mid);
+  for (let x = 0; x < width; x += 10 * dpr) {
+    ctx.lineTo(x, mid + Math.sin(x * 0.03) * (3 * dpr));
+  }
+  ctx.stroke();
+}
+
 function startWaveformVisualizer() {
   const canvas = document.getElementById("waveformCanvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
+  const dpr = window.devicePixelRatio || 1;
+
+  if (animFrameId) {
+    cancelAnimationFrame(animFrameId);
+    animFrameId = null;
+  }
 
   function draw() {
+    if (!isPlaying) {
+      drawIdleWaveform();
+      animFrameId = null;
+      return;
+    }
+
     animFrameId = requestAnimationFrame(draw);
 
     const width = canvas.width;
@@ -531,18 +586,8 @@ function startWaveformVisualizer() {
 
     ctx.clearRect(0, 0, width, height);
 
-    if (!isPlaying || !analyserNode) {
-      // Draw subtle idle breathing line
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = "rgba(6, 182, 212, 0.45)";
-      ctx.beginPath();
-      const mid = height / 2;
-      const t = Date.now() / 600;
-      ctx.moveTo(0, mid);
-      for (let x = 0; x < width; x += 10) {
-        ctx.lineTo(x, mid + Math.sin(x * 0.03 + t) * 3);
-      }
-      ctx.stroke();
+    if (!analyserNode) {
+      drawIdleWaveform();
       return;
     }
 
@@ -550,7 +595,7 @@ function startWaveformVisualizer() {
     const dataArray = new Uint8Array(bufferLength);
     analyserNode.getByteTimeDomainData(dataArray);
 
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 2.5 * dpr;
     ctx.strokeStyle = "#22c55e";
     ctx.shadowBlur = 10;
     ctx.shadowColor = "#06b6d4";
@@ -577,9 +622,7 @@ function startWaveformVisualizer() {
     ctx.shadowBlur = 0;
   }
 
-  if (!animFrameId) {
-    draw();
-  }
+  draw();
 }
 
 // -------------------------------------------------------------
@@ -640,14 +683,20 @@ function playStereoCheck() {
 // -------------------------------------------------------------
 // DOM Event Initializations
 // -------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  // Fix Canvas resolution for Retina Displays
+function initApp() {
+  // Batch Canvas resolution measurement to prevent forced reflows
   const canvas = document.getElementById("waveformCanvas");
   if (canvas) {
-    canvas.width = canvas.offsetWidth * window.devicePixelRatio || 600;
-    canvas.height = canvas.offsetHeight * window.devicePixelRatio || 60;
-    startWaveformVisualizer();
+    initCanvasDimensions();
+    drawIdleWaveform();
   }
+
+  window.addEventListener("resize", () => {
+    initCanvasDimensions();
+    if (!isPlaying) {
+      drawIdleWaveform();
+    }
+  }, { passive: true });
 
   // Master circular button tap
   document.getElementById("masterEjectBtn")?.addEventListener("click", startCleaning);
@@ -725,4 +774,10 @@ document.addEventListener("DOMContentLoaded", () => {
       event_label: label
     });
   });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" /></noscript>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0T1M3JLQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3R0T1M3JLQ');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Tone Generator — Free Frequency Sound Generator (20Hz–20,000Hz)</title>
+  <meta name="description" content="Generate pure sine, square, sawtooth, and triangle sound waves from 20Hz to 20,000Hz. Free online frequency tone generator for speaker testing, hearing tests, and acoustic tuning." />
+  <link rel="canonical" href="https://ifixmyspeaker.com/tone-generator/" />
+  <meta property="og:title" content="Online Tone Generator — Free Frequency Sound Generator" />
+  <meta property="og:description" content="Free precision frequency generator online. Real-time sine, square, and sawtooth waves from 20Hz to 20kHz with live oscilloscope." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ifixmyspeaker.com/tone-generator/" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fix My Speaker — Online Tone & Frequency Generator",
+    "url": "https://ifixmyspeaker.com/tone-generator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "High-precision Web Audio frequency generator synthesizing sine, square, sawtooth, and triangle waveforms from 20Hz to 20,000Hz with oscilloscope visualization.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can I use an online tone generator for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An online tone generator is used for testing speaker response, calibrating subwoofers, identifying room acoustic resonances, tuning musical instruments, conducting quick hearing threshold checks, and matching tinnitus frequencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is 165Hz the recommended frequency for water ejection?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "165Hz corresponds to the primary mechanical resonance point of micro-speaker drivers in smartphones, producing maximum cone excursion to dislodge fluid droplets trapped on acoustic grilles."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .tone-page-wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+    .tool-hero { text-align: center; margin-bottom: 2.5rem; }
+    .tool-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; background: linear-gradient(135deg, #0f172a 35%, #0284c7 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; }
+    .tool-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+    .generator-console { background: #ffffff; border: 1px solid var(--card-border); border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); margin-bottom: 3rem; }
+    .osc-wrap { width: 100%; height: 130px; background: #0f172a; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; position: relative; }
+    #oscCanvas { width: 100%; height: 100%; display: block; }
+    .osc-readout { position: absolute; top: 12px; left: 16px; color: #38bdf8; font-family: monospace; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; }
+    .freq-display-box { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .freq-input-group { display: flex; align-items: baseline; gap: 0.5rem; }
+    .freq-num-input { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: #0f172a; border: none; border-bottom: 2px solid var(--primary); width: 180px; text-align: center; background: transparent; outline: none; }
+    .freq-unit { font-size: 1.5rem; font-weight: 700; color: #0284c7; }
+    .stepper-btn-row { display: flex; gap: 0.4rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .step-btn { background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; padding: 0.45rem 0.85rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .step-btn:hover { background: #e2e8f0; color: #0f172a; }
+    .slider-container { margin: 1.5rem 0 2rem; }
+    .slider-container input[type=range] { width: 100%; accent-color: var(--primary); }
+    .slider-marks { display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b; font-weight: 600; margin-top: 0.35rem; }
+    .wave-btn-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.75rem; margin-bottom: 1.75rem; }
+    .wave-btn { background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; padding: 0.75rem; border-radius: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; font-size: 0.9rem; text-align: center; }
+    .wave-btn:hover { border-color: var(--primary); }
+    .wave-btn.active { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; border-color: transparent; }
+    .preset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.6rem; margin-bottom: 2rem; }
+    .preset-btn { background: #f8fafc; border: 1px solid #e2e8f0; color: #475569; padding: 0.65rem 0.5rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-align: center; transition: all 0.2s; }
+    .preset-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .preset-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .play-action-row { display: flex; gap: 1rem; justify-content: center; align-items: center; }
+    .main-play-btn { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #ffffff; border: none; padding: 1.1rem 3rem; border-radius: 14px; font-size: 1.2rem; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35); transition: transform 0.2s, box-shadow 0.2s; }
+    .main-play-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(2, 132, 199, 0.45); }
+    .main-play-btn.playing { background: #ef4444; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35); }
+    .guide-section { font-size: 1.05rem; line-height: 1.8; color: #1e293b; }
+    .guide-section h2 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin: 2.5rem 0 1rem; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+    .guide-section h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: #1e293b; }
+    .guide-section p { margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+  <div class="bg-glow-container"><div class="glow-orb orb-1"></div><div class="glow-orb orb-2"></div><div class="glow-orb orb-3"></div></div>
+
+  <nav class="navbar"><div class="container nav-wrapper">
+    <a href="/" class="logo"><div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div><span>Fix My Speaker</span></a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Speaker Cleaner</a></li>
+      <li><a href="/remove-water-from-speaker-sound/" class="nav-link">Water Eject</a></li>
+      <li><a href="/deep-clean/" class="nav-link">Deep Clean</a></li>
+      <li><a href="/speaker-sound-test/" class="nav-link">Sound Test</a></li>
+      <li><a href="/tone-generator/" class="nav-link active">Tone Generator</a></li>
+      <li><a href="/blog/" class="nav-link">Blog</a></li>
+      <li><a href="/faq/" class="nav-link">FAQ</a></li>
+      <li><a href="/about.html" class="nav-link">About</a></li>
+    </ul>
+  </div></nav>
+
+  <main class="tone-page-wrap">
+    <div class="tool-hero">
+      <div class="trust-badge-wrapper"><div class="trust-badge"><span class="badge-dot"></span><span>DSP Web Audio API Tone Generator</span></div></div>
+      <h1>Online Tone Generator</h1>
+      <p>Generate pure, mathematically precise sound waves from 20Hz to 20,000Hz. Select sine, square, triangle, or sawtooth waves with live oscilloscope visualization.</p>
+    </div>
+
+    <!-- Generator Interface -->
+    <section class="generator-console">
+      <div class="osc-wrap">
+        <canvas id="oscCanvas"></canvas>
+        <div class="osc-readout" id="oscReadout">440.00 Hz — SINE WAVE (MUTED)</div>
+      </div>
+
+      <!-- Frequency Input & Readout -->
+      <div class="freq-display-box">
+        <div class="freq-input-group">
+          <input type="number" id="freqNum" class="freq-num-input" value="440" min="20" max="20000" step="1" onchange="onManualFreqChange(this.value)" aria-label="Frequency in Hertz" />
+          <span class="freq-unit">Hz</span>
+        </div>
+      </div>
+
+      <!-- Stepper Buttons -->
+      <div class="stepper-btn-row">
+        <button type="button" class="step-btn" onclick="stepFreq(-100)">-100 Hz</button>
+        <button type="button" class="step-btn" onclick="stepFreq(-10)">-10 Hz</button>
+        <button type="button" class="step-btn" onclick="stepFreq(-1)">-1 Hz</button>
+        <button type="button" class="step-btn" onclick="stepFreq(1)">+1 Hz</button>
+        <button type="button" class="step-btn" onclick="stepFreq(10)">+10 Hz</button>
+        <button type="button" class="step-btn" onclick="stepFreq(100)">+100 Hz</button>
+      </div>
+
+      <!-- Logarithmic Frequency Slider -->
+      <div class="slider-container">
+        <input type="range" id="freqSlider" min="0" max="1000" value="447" oninput="onSliderMove(this.value)" aria-label="Frequency Slider" />
+        <div class="slider-marks">
+          <span>20 Hz</span>
+          <span>100 Hz</span>
+          <span>1 kHz</span>
+          <span>5 kHz</span>
+          <span>20 kHz</span>
+        </div>
+      </div>
+
+      <!-- Waveform Picker -->
+      <div class="control-section">
+        <span style="font-size:0.85rem; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:block;">Select Waveform Type</span>
+        <div class="wave-btn-row">
+          <button type="button" class="wave-btn active" id="btnSine" onclick="setWaveform('sine')">∿ Sine Wave</button>
+          <button type="button" class="wave-btn" id="btnSquare" onclick="setWaveform('square')">⊓ Square Wave</button>
+          <button type="button" class="wave-btn" id="btnTriangle" onclick="setWaveform('triangle')">⋀ Triangle Wave</button>
+          <button type="button" class="wave-btn" id="btnSawtooth" onclick="setWaveform('sawtooth')">⩘ Sawtooth Wave</button>
+        </div>
+      </div>
+
+      <!-- Popular Presets -->
+      <div class="control-section">
+        <span style="font-size:0.85rem; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; display:block;">Popular Audio &amp; Tuning Presets</span>
+        <div class="preset-grid">
+          <button type="button" class="preset-btn" onclick="setPreset(60, this)">60 Hz<br><small>Sub-Bass</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(165, this)">165 Hz<br><small>Water Eject</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(256, this)">256 Hz<br><small>Scientific C</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(432, this)">432 Hz<br><small>Verdi Tuning</small></button>
+          <button type="button" class="preset-btn active" onclick="setPreset(440, this)">440 Hz<br><small>Concert A</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(528, this)">528 Hz<br><small>Solfeggio</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(1000, this)">1,000 Hz<br><small>Test Tone</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(4000, this)">4,000 Hz<br><small>Ear Presence</small></button>
+          <button type="button" class="preset-btn" onclick="setPreset(10000, this)">10,000 Hz<br><small>Treble Air</small></button>
+        </div>
+      </div>
+
+      <!-- Play / Stop & Volume -->
+      <div class="play-action-row" style="margin-top:1.5rem;">
+        <button type="button" class="main-play-btn" id="playBtn" onclick="togglePlay()">▶ PLAY TONE</button>
+      </div>
+
+      <div style="margin-top:2rem; padding-top:1.25rem; border-top:1px solid #e2e8f0; display:flex; align-items:center; gap:1rem;">
+        <span style="font-size:0.9rem; font-weight:700; color:#475569;">Volume: <span id="toneVolLabel">70%</span></span>
+        <input type="range" min="0" max="1" step="0.01" value="0.7" oninput="setToneVolume(this.value)" style="flex:1; accent-color:var(--primary);" aria-label="Tone Volume" />
+      </div>
+    </section>
+
+    <!-- Comprehensive Guide -->
+    <article class="guide-section">
+      <h2>Applications of Audio Frequency Generation</h2>
+      <p>A tone generator synthesizes periodic electrical signals that loudspeaker voice coils convert into physical air pressure waves. Because the frequency can be tuned with single-Hertz precision, it serves numerous engineering and acoustic applications:</p>
+
+      <h3>1. Speaker Enclosure &amp; Diaphragm Resonance Testing</h3>
+      <p>Every speaker cavity has a natural resonant frequency where air resistance drops and mechanical excursion peaks. In smartphones, this peak sits between 160Hz and 175Hz. That is why our <a href="/" class="context-link">Fix My Speaker Cleaner</a> utilizes a 165Hz tone: it pushes the speaker cone to its farthest physical limits to eject water droplets without risking thermal burnout.</p>
+
+      <figure class="content-figure">
+        <img src="/images/waveform-harmonics-guide.svg" alt="Audio waveform harmonics guide showing Sine, Square, Triangle, and Sawtooth shapes" class="content-img" width="800" height="450" loading="lazy">
+        <figcaption class="content-caption">Figure 1: Waveform topology and harmonic distribution profiles in audio oscillator synthesis.</figcaption>
+      </figure>
+
+      <h3>2. Musical Instrument Tuning: 440Hz vs 432Hz</h3>
+      <p>The International Organization for Standardization (ISO 16) established <strong>440Hz</strong> as the standard concert pitch for note A4 in 1955. However, historical acoustic tuning frequently utilized <strong>432Hz</strong> (advocated by Italian composer Giuseppe Verdi), which some musicians consider warmer and more harmonious. Use our preset buttons above to compare the pitch difference side-by-side.</p>
+
+      <figure class="content-figure">
+        <img src="/images/frequency-healing-solfeggio.svg" alt="Precision frequency presets: 165Hz, 432Hz, 440Hz, and 528Hz acoustic functions" class="content-img" width="800" height="450" loading="lazy">
+        <figcaption class="content-caption">Figure 2: Presets guide: 165Hz water eject, 432Hz natural pitch, 440Hz ISO concert standard, and 528Hz Solfeggio tone.</figcaption>
+      </figure>
+
+      <h3>3. Hearing Range &amp; Age Threshold Checks</h3>
+      <p>A healthy infant ear can perceive frequencies from 20Hz to 20,000Hz. As human beings age, micro-cilia cells inside the inner ear cochlea degrade (a condition termed presbycusis):</p>
+      <ul>
+        <li><strong>Under 25 years old:</strong> Typically perceive up to 17,000Hz–18,000Hz.</li>
+        <li><strong>Ages 25 to 45:</strong> Upper hearing threshold often drops to 14,000Hz–15,000Hz.</li>
+        <li><strong>Ages 50+:</strong> Sensitivity above 12,000Hz is commonly attenuated.</li>
+      </ul>
+      <p><em>Safety Warning:</em> When testing high frequencies (above 8,000Hz), always keep volume moderate. High frequencies carry intense concentrated energy that can cause hearing fatigue if played too loudly through earphones.</p>
+
+      <h3>4. Tinnitus Sound Matching</h3>
+      <p>Millions of people experience subjective tinnitus—a persistent ringing, buzzing, or whistling tone inside the ear. Audiologists use precision tone generators to pitch-match the patient's tinnitus frequency (often concentrated around 4,000Hz to 8,000Hz) to design targeted acoustic notch therapy filters.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container">
+    <div class="footer-brand"><a href="/" class="footer-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg><span>Fix My Speaker</span></a><p class="footer-tagline">Open-access acoustic maintenance and diagnostic laboratory based on calibrated resonance sound physics.</p></div>
+    <div class="footer-links">
+      <div class="footer-nav-row resources-row"><a href="/">Speaker Cleaner</a><span class="footer-sep">&bull;</span><a href="/remove-water-from-speaker-sound/">Water Eject Sound</a><span class="footer-sep">&bull;</span><a href="/deep-clean/">Deep Clean</a><span class="footer-sep">&bull;</span><a href="/speaker-sound-test/">Sound Test</a><span class="footer-sep">&bull;</span><a href="/tone-generator/">Tone Generator</a><span class="footer-sep">&bull;</span><a href="/blog/">Blog</a><span class="footer-sep">&bull;</span><a href="/faq/">FAQ</a><span class="footer-sep">&bull;</span><a href="/press/">Press</a></div>
+      <div class="footer-nav-row legal-row"><a href="/">Home</a><span class="footer-sep">&bull;</span><a href="/about.html">About Us</a><span class="footer-sep">&bull;</span><a href="/privacy-policy.html">Privacy Policy</a><span class="footer-sep">&bull;</span><a href="/terms.html">Terms of Service</a><span class="footer-sep">&bull;</span><a href="/contact.html">Contact Us</a></div>
+    </div>
+    <div class="footer-author-badge"><span class="author-verified"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Reviewed by:</span> <strong><a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer">Clara Thompson</a></strong>, Lead Acoustic Research Specialist <span class="footer-sep">&bull;</span> <a href="/about.html">About &amp; Editorial Standards</a></div>
+    <p class="disclaimer">Disclaimer: Fix My Speaker is an online acoustic utility designed to help dislodge water and dust particles through sound vibrations. If your device suffered severe liquid immersion or internal hardware failure, please contact an authorized service technician.</p>
+    <p style="margin-top:.75rem;font-size:.8rem;color:#475569;">&copy; 2026 Fix My Speaker. All rights reserved.</p>
+  </div></footer>
+
+  <script src="../cookie-consent.js" defer></script>
+
+  <!-- Tone Generator Engine -->
+  <script>
+    let audioCtx = null;
+    let masterGain = null;
+    let oscillator = null;
+    let analyser = null;
+    let isPlaying = false;
+    let currentFreq = 440;
+    let currentWave = 'sine';
+    let canvas = document.getElementById('oscCanvas');
+    let canvasCtx = canvas.getContext('2d');
+    let animId = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(0.7, audioCtx.currentTime);
+
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+        masterGain.connect(analyser);
+        analyser.connect(audioCtx.destination);
+        drawWaveform();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function togglePlay() {
+      initAudio();
+      if (isPlaying) {
+        stopTone();
+      } else {
+        startTone();
+      }
+    }
+
+    function startTone() {
+      if (oscillator) {
+        try { oscillator.stop(); oscillator.disconnect(); } catch(e){}
+      }
+      oscillator = audioCtx.createOscillator();
+      oscillator.type = currentWave;
+      oscillator.frequency.setValueAtTime(currentFreq, audioCtx.currentTime);
+      oscillator.connect(masterGain);
+      oscillator.start();
+      isPlaying = true;
+
+      document.getElementById('playBtn').textContent = '⏹ STOP TONE';
+      document.getElementById('playBtn').classList.add('playing');
+      updateReadout();
+    }
+
+    function stopTone() {
+      if (oscillator) {
+        try { oscillator.stop(); oscillator.disconnect(); } catch(e){}
+        oscillator = null;
+      }
+      isPlaying = false;
+      document.getElementById('playBtn').textContent = '▶ PLAY TONE';
+      document.getElementById('playBtn').classList.remove('playing');
+      updateReadout();
+    }
+
+    function setToneVolume(val) {
+      document.getElementById('toneVolLabel').textContent = Math.round(val * 100) + '%';
+      if (masterGain && audioCtx) {
+        masterGain.gain.setTargetAtTime(parseFloat(val), audioCtx.currentTime, 0.03);
+      }
+    }
+
+    function setWaveform(wave) {
+      currentWave = wave;
+      document.querySelectorAll('.wave-btn').forEach(b => b.classList.remove('active'));
+      let btnMap = { sine: 'btnSine', square: 'btnSquare', triangle: 'btnTriangle', sawtooth: 'btnSawtooth' };
+      if (btnMap[wave]) document.getElementById(btnMap[wave]).classList.add('active');
+      if (oscillator && audioCtx) {
+        oscillator.type = wave;
+      }
+      updateReadout();
+    }
+
+    function setFrequency(freq) {
+      freq = Math.max(20, Math.min(20000, Math.round(freq)));
+      currentFreq = freq;
+      document.getElementById('freqNum').value = freq;
+
+      let minLog = Math.log(20);
+      let maxLog = Math.log(20000);
+      let sliderVal = ((Math.log(freq) - minLog) / (maxLog - minLog)) * 1000;
+      document.getElementById('freqSlider').value = sliderVal;
+
+      if (oscillator && audioCtx) {
+        oscillator.frequency.setTargetAtTime(freq, audioCtx.currentTime, 0.02);
+      }
+      updateReadout();
+    }
+
+    function onManualFreqChange(val) {
+      setFrequency(parseFloat(val) || 440);
+    }
+
+    function onSliderMove(sliderVal) {
+      let minLog = Math.log(20);
+      let maxLog = Math.log(20000);
+      let freq = Math.exp(minLog + (sliderVal / 1000) * (maxLog - minLog));
+      setFrequency(freq);
+    }
+
+    function stepFreq(delta) {
+      setFrequency(currentFreq + delta);
+    }
+
+    function setPreset(freq, btn) {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      setFrequency(freq);
+    }
+
+    function updateReadout() {
+      let state = isPlaying ? 'ACTIVE' : 'MUTED';
+      document.getElementById('oscReadout').textContent = currentFreq.toLocaleString() + ' Hz — ' + currentWave.toUpperCase() + ' (' + state + ')';
+    }
+
+    function drawWaveform() {
+      animId = requestAnimationFrame(drawWaveform);
+      if (!analyser) return;
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+      let bufferLength = analyser.frequencyBinCount;
+      let dataArray = new Uint8Array(bufferLength);
+      analyser.getByteTimeDomainData(dataArray);
+
+      canvasCtx.fillStyle = '#0f172a';
+      canvasCtx.fillRect(0, 0, width, height);
+
+      canvasCtx.lineWidth = 2.5;
+      canvasCtx.strokeStyle = isPlaying ? '#38bdf8' : '#334155';
+      canvasCtx.beginPath();
+
+      let sliceWidth = width * 1.0 / bufferLength;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        let v = dataArray[i] / 128.0;
+        let y = v * height / 2;
+        if (i === 0) {
+          canvasCtx.moveTo(x, y);
+        } else {
+          canvasCtx.lineTo(x, y);
+        }
+        x += sliceWidth;
+      }
+      canvasCtx.lineTo(width, height / 2);
+      canvasCtx.stroke();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" /></noscript>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0T1M3JLQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3R0T1M3JLQ');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaker Sound Test Online — Left/Right Stereo &amp; Frequency Diagnostic</title>
+  <meta name="description" content="Free online speaker sound test. Test left and right stereo channels, run 20Hz-20kHz frequency sweeps, check for distortion, and diagnose crackling mobile speakers." />
+  <link rel="canonical" href="https://ifixmyspeaker.com/speaker-sound-test/" />
+  <meta property="og:title" content="Speaker Sound Test Online — Left/Right Stereo &amp; Frequency Diagnostic" />
+  <meta property="og:description" content="Test your phone or laptop speakers online. Stereo channel pan, pink noise, and 20Hz-20,000Hz frequency sweeps." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ifixmyspeaker.com/speaker-sound-test/" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Fix My Speaker — Online Speaker Sound Test",
+    "url": "https://ifixmyspeaker.com/speaker-sound-test/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "description": "Interactive Web Audio utility for diagnosing stereo channel balance, harmonic distortion, and frequency response on mobile and desktop speakers.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the online speaker stereo test work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The tool uses the Web Audio API StereoPannerNode to route calibrated audio signals exclusively to the left or right audio channel, allowing you to isolate earphone channels or top/bottom smartphone speakers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a frequency sweep diagnose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 20Hz to 20,000Hz sweep tests your speaker diaphragm across the full audible range. Buzzing at low frequencies indicates trapped particles or loose chassis parts; dropouts at high frequencies indicate blown tweeter coils."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .tool-page-wrap { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+    .tool-hero { text-align: center; margin-bottom: 2.5rem; }
+    .tool-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; background: linear-gradient(135deg, #0f172a 35%, #0284c7 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; }
+    .tool-hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+    .test-console { background: #ffffff; border: 1px solid var(--card-border); border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); margin-bottom: 3rem; }
+    .canvas-wrap { width: 100%; height: 120px; background: #0f172a; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; position: relative; }
+    #visualizerCanvas { width: 100%; height: 100%; display: block; }
+    .status-overlay { position: absolute; top: 12px; left: 16px; color: #38bdf8; font-family: monospace; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; }
+    .control-section { margin-bottom: 1.75rem; }
+    .control-label { font-size: 0.9rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; display: block; }
+    .btn-grid-channel { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; }
+    .test-btn { background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 0.85rem 1rem; border-radius: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+    .test-btn:hover { background: #f1f5f9; border-color: #94a3b8; }
+    .test-btn.active { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #ffffff; border-color: transparent; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3); }
+    .tone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.6rem; }
+    .tone-btn { background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; padding: 0.65rem 0.5rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-align: center; transition: all 0.2s; }
+    .tone-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .tone-btn.active { background: #0284c7; color: #fff; border-color: #0284c7; }
+    .slider-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+    .slider-row input[type=range] { flex: 1; accent-color: var(--primary); }
+    .sweep-progress-bar { width: 100%; height: 8px; background: #e2e8f0; border-radius: 999px; overflow: hidden; margin-top: 0.75rem; }
+    .sweep-progress-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #0284c7, #06b6d4); transition: width 0.1s linear; }
+    .guide-section { font-size: 1.05rem; line-height: 1.8; color: #1e293b; }
+    .guide-section h2 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin: 2rem 0 1rem; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+    .guide-section h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: #1e293b; }
+    .guide-section p { margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+  <div class="bg-glow-container"><div class="glow-orb orb-1"></div><div class="glow-orb orb-2"></div><div class="glow-orb orb-3"></div></div>
+
+  <nav class="navbar"><div class="container nav-wrapper">
+    <a href="/" class="logo"><div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div><span>Fix My Speaker</span></a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Speaker Cleaner</a></li>
+      <li><a href="/remove-water-from-speaker-sound/" class="nav-link">Water Eject</a></li>
+      <li><a href="/deep-clean/" class="nav-link">Deep Clean</a></li>
+      <li><a href="/speaker-sound-test/" class="nav-link active">Sound Test</a></li>
+      <li><a href="/tone-generator/" class="nav-link">Tone Generator</a></li>
+      <li><a href="/blog/" class="nav-link">Blog</a></li>
+      <li><a href="/faq/" class="nav-link">FAQ</a></li>
+      <li><a href="/about.html" class="nav-link">About</a></li>
+    </ul>
+  </div></nav>
+
+  <main class="tool-page-wrap">
+    <div class="tool-hero">
+      <div class="trust-badge-wrapper"><div class="trust-badge"><span class="badge-dot"></span><span>Real-Time Web Audio API Diagnostic Console</span></div></div>
+      <h1>Speaker Sound Test Online</h1>
+      <p>Test stereo channel separation, detect harmonic distortion, and sweep the full 20Hz–20,000Hz audible acoustic range on your mobile phone, headphones, or laptop.</p>
+    </div>
+
+    <!-- Interactive Audio Console -->
+    <section class="test-console">
+      <div class="canvas-wrap">
+        <canvas id="visualizerCanvas"></canvas>
+        <div class="status-overlay" id="statusText">SYSTEM IDLE — SELECT A TEST</div>
+      </div>
+
+      <!-- Channel Routing -->
+      <div class="control-section">
+        <span class="control-label">1. Stereo Channel Separation Test</span>
+        <div class="btn-grid-channel">
+          <button type="button" class="test-btn" id="btnLeft" onclick="testChannel('left')">◀ Left Only</button>
+          <button type="button" class="test-btn" id="btnBoth" onclick="testChannel('both')">◀ Center (Both) ▶</button>
+          <button type="button" class="test-btn" id="btnRight" onclick="testChannel('right')">Right Only ▶</button>
+          <button type="button" class="test-btn" id="btnBounce" onclick="toggleBounce()">↔ Bounce (L/R)</button>
+        </div>
+      </div>
+
+      <!-- Frequency Sweep -->
+      <div class="control-section">
+        <span class="control-label">2. Full-Range Frequency Sweep (20Hz &rarr; 20,000Hz)</span>
+        <div style="display:flex; gap:0.75rem; align-items:center;">
+          <button type="button" class="test-btn" id="btnSweep" style="min-width:160px;" onclick="toggleSweep()">▶ Run 20Hz–20kHz Sweep</button>
+          <span id="sweepHzDisplay" style="font-family:monospace; font-weight:700; color:#0284c7; font-size:1.1rem;">20 Hz</span>
+        </div>
+        <div class="sweep-progress-bar"><div class="sweep-progress-fill" id="sweepProgress"></div></div>
+      </div>
+
+      <!-- Discrete Reference Tones -->
+      <div class="control-section">
+        <span class="control-label">3. Calibrated Reference Test Tones</span>
+        <div class="tone-grid">
+          <button type="button" class="tone-btn" onclick="playTone(60, this)">60 Hz<br><small>Sub-Bass</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(120, this)">120 Hz<br><small>Bass Kick</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(250, this)">250 Hz<br><small>Low-Mid</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(440, this)">440 Hz<br><small>Concert A</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(1000, this)">1 kHz<br><small>Reference</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(2500, this)">2.5 kHz<br><small>Clarity</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(5000, this)">5 kHz<br><small>Presence</small></button>
+          <button type="button" class="tone-btn" onclick="playTone(10000, this)">10 kHz<br><small>Air Treble</small></button>
+        </div>
+      </div>
+
+      <!-- Noise Generators & Stop -->
+      <div class="control-section" style="margin-bottom:0.5rem;">
+        <span class="control-label">4. Acoustic Noise &amp; Burn-In</span>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <button type="button" class="test-btn" id="btnPink" onclick="toggleNoise('pink')">🔊 Pink Noise</button>
+          <button type="button" class="test-btn" id="btnWhite" onclick="toggleNoise('white')">📻 White Noise</button>
+          <button type="button" class="test-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b; margin-left:auto;" onclick="stopAllAudio()">⏹ STOP AUDIO</button>
+        </div>
+      </div>
+
+      <!-- Volume control -->
+      <div class="control-section" style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #e2e8f0;">
+        <span class="control-label">Master Tool Volume: <span id="volLabel">70%</span></span>
+        <div class="slider-row">
+          <span style="font-size:0.85rem; color:#64748b;">0%</span>
+          <input type="range" id="volSlider" min="0" max="1" step="0.01" value="0.7" oninput="setMasterVolume(this.value)" aria-label="Master volume" />
+          <span style="font-size:0.85rem; color:#64748b;">100%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Guide Section -->
+    <article class="guide-section">
+      <h2>How to Interpret Speaker Diagnostic Results</h2>
+      <p>Acoustic diagnostics help isolate whether speaker defects stem from physical driver damage, liquid obstruction, debris contamination, or digital audio clipping. Follow this guide while running tests in the console above.</p>
+
+      <h3>1. Identifying Channel Imbalance</h3>
+      <p>Modern mobile phones operate in stereo mode during landscape video playback and gaming, delegating the top earpiece as the left channel and the bottom ported loudspeaker as the right channel. When running the <strong>Left Only</strong> and <strong>Right Only</strong> tests:</p>
+      <ul>
+        <li>If one channel sounds noticeably lower in volume or lacks high frequencies, check for pocket lint or facial sebum covering that specific grille opening.</li>
+        <li>If one channel is completely silent, check your operating system's Accessibility balance settings before assuming an internal amplifier failure.</li>
+      </ul>
+
+      <figure class="content-figure">
+        <img src="/images/speaker-channel-test-diagram.svg" alt="Stereo channel isolation diagram: Left top earpiece vs Right bottom speaker routing" class="content-img" width="800" height="450" loading="lazy">
+        <figcaption class="content-caption">Figure 1: Stereo acoustic channel routing between smartphone top earpiece and bottom loudspeaker.</figcaption>
+      </figure>
+
+      <h3>2. Listening for Buzzing and Rattling During Frequency Sweeps</h3>
+      <p>When running the <strong>20Hz to 20,000Hz sweep</strong>, listen carefully as the pitch glides from deep bass to ultrasonic treble:</p>
+      <ul>
+        <li><strong>Low-End Buzzing (40Hz to 180Hz):</strong> In micro-speakers, low bass generates large mechanical cone displacement. If you hear a vibrating buzzing sound, it indicates either dried water residue adhering to the diaphragm or loose lint vibrating in the acoustic chamber. Run our <a href="/" class="context-link">Water Eject Cleaner</a> or <a href="/deep-clean/" class="context-link">Deep Clean Sound</a> to clear it.</li>
+        <li><strong>Mid-Range Distortion (500Hz to 2,000Hz):</strong> A metallic buzz in speech frequencies typically signifies a warped or misaligned voice coil rubbing against the neodymium permanent magnet. This is hardware wear that requires replacement.</li>
+        <li><strong>High-Frequency Drop-off:</strong> Due to human ear anatomy and age, most adults lose sensitivity to frequencies above 15,000Hz. If a 10kHz tone sounds clear, your speaker's high-frequency transducer is healthy.</li>
+      </ul>
+
+      <figure class="content-figure">
+        <img src="/images/frequency-response-testing-chart.svg" alt="Audio frequency response testing spectrum from 20Hz sub-bass to 20kHz treble testing speaker distortion" class="content-img" width="800" height="450" loading="lazy">
+        <figcaption class="content-caption">Figure 2: Audio diagnostic frequency spectrum with 165Hz kinetic water ejection zone.</figcaption>
+      </figure>
+
+      <h3>3. Why Pink Noise is Used for Acoustic Testing</h3>
+      <p>Pink noise contains equal acoustic energy per octave (decaying at -3 dB per octave). Unlike pure sine tones that test single frequencies, pink noise exercises the entire speaker motor assembly uniformly without causing dangerous resonance spikes. Professional audio technicians use pink noise to burn in new transducers and inspect for loose enclosure rattles.</p>
+
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:1.5rem; margin:2rem 0;">
+        <h4 style="font-family:var(--font-heading); margin-bottom:0.5rem; color:#0f172a;">Need to Fix Trapped Water or Dirt?</h4>
+        <p style="margin-bottom:1rem; font-size:0.95rem; color:#475569;">If your test revealed muffled sound or crackling after moisture exposure, use our dedicated acoustic cleaning sound.</p>
+        <a href="/" class="btn" style="background:#0284c7; color:#fff; padding:0.6rem 1.25rem; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block;">Eject Water with 165Hz &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="container">
+    <div class="footer-brand"><a href="/" class="footer-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg><span>Fix My Speaker</span></a><p class="footer-tagline">Open-access acoustic maintenance and diagnostic laboratory based on calibrated resonance sound physics.</p></div>
+    <div class="footer-links">
+      <div class="footer-nav-row resources-row"><a href="/">Speaker Cleaner</a><span class="footer-sep">&bull;</span><a href="/remove-water-from-speaker-sound/">Water Eject Sound</a><span class="footer-sep">&bull;</span><a href="/deep-clean/">Deep Clean</a><span class="footer-sep">&bull;</span><a href="/speaker-sound-test/">Sound Test</a><span class="footer-sep">&bull;</span><a href="/tone-generator/">Tone Generator</a><span class="footer-sep">&bull;</span><a href="/blog/">Blog</a><span class="footer-sep">&bull;</span><a href="/faq/">FAQ</a><span class="footer-sep">&bull;</span><a href="/press/">Press</a></div>
+      <div class="footer-nav-row legal-row"><a href="/">Home</a><span class="footer-sep">&bull;</span><a href="/about.html">About Us</a><span class="footer-sep">&bull;</span><a href="/privacy-policy.html">Privacy Policy</a><span class="footer-sep">&bull;</span><a href="/terms.html">Terms of Service</a><span class="footer-sep">&bull;</span><a href="/contact.html">Contact Us</a></div>
+    </div>
+    <div class="footer-author-badge"><span class="author-verified"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Reviewed by:</span> <strong><a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer">Clara Thompson</a></strong>, Lead Acoustic Research Specialist <span class="footer-sep">&bull;</span> <a href="/about.html">About &amp; Editorial Standards</a></div>
+    <p class="disclaimer">Disclaimer: Fix My Speaker is an online acoustic utility designed to help dislodge water and dust particles through sound vibrations. If your device suffered severe liquid immersion or internal hardware failure, please contact an authorized service technician.</p>
+    <p style="margin-top:.75rem;font-size:.8rem;color:#475569;">&copy; 2026 Fix My Speaker. All rights reserved.</p>
+  </div></footer>
+
+  <script src="../cookie-consent.js" defer></script>
+
+  <!-- Interactive Web Audio Logic -->
+  <script>
+    let audioCtx = null;
+    let masterGain = null;
+    let pannerNode = null;
+    let currentOsc = null;
+    let currentNoise = null;
+    let analyser = null;
+    let sweepInterval = null;
+    let bounceInterval = null;
+    let isBouncing = false;
+    let isSweeping = false;
+    let canvas = document.getElementById('visualizerCanvas');
+    let canvasCtx = canvas.getContext('2d');
+    let animId = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(0.7, audioCtx.currentTime);
+
+        if (audioCtx.createStereoPanner) {
+          pannerNode = audioCtx.createStereoPanner();
+          pannerNode.pan.setValueAtTime(0, audioCtx.currentTime);
+          masterGain.connect(pannerNode);
+          pannerNode.connect(audioCtx.destination);
+        } else {
+          masterGain.connect(audioCtx.destination);
+        }
+
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 128;
+        masterGain.connect(analyser);
+        drawVisualizer();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function setMasterVolume(val) {
+      document.getElementById('volLabel').textContent = Math.round(val * 100) + '%';
+      if (masterGain && audioCtx) {
+        masterGain.gain.setTargetAtTime(parseFloat(val), audioCtx.currentTime, 0.05);
+      }
+    }
+
+    function stopAllAudio() {
+      if (currentOsc) {
+        try { currentOsc.stop(); currentOsc.disconnect(); } catch(e){}
+        currentOsc = null;
+      }
+      if (currentNoise) {
+        try { currentNoise.stop(); currentNoise.disconnect(); } catch(e){}
+        currentNoise = null;
+      }
+      if (sweepInterval) { clearInterval(sweepInterval); sweepInterval = null; }
+      if (bounceInterval) { clearInterval(bounceInterval); bounceInterval = null; }
+      isBouncing = false;
+      isSweeping = false;
+      document.getElementById('btnSweep').textContent = '▶ Run 20Hz–20kHz Sweep';
+      document.getElementById('btnBounce').classList.remove('active');
+      document.getElementById('sweepProgress').style.width = '0%';
+      document.querySelectorAll('.test-btn, .tone-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('statusText').textContent = 'SYSTEM IDLE — SELECT A TEST';
+    }
+
+    function testChannel(channel) {
+      initAudio();
+      stopAllAudio();
+      if (channel === 'left') {
+        if (pannerNode) pannerNode.pan.setValueAtTime(-1, audioCtx.currentTime);
+        document.getElementById('btnLeft').classList.add('active');
+        document.getElementById('statusText').textContent = 'TESTING LEFT CHANNEL ONLY (440Hz SINE)';
+      } else if (channel === 'right') {
+        if (pannerNode) pannerNode.pan.setValueAtTime(1, audioCtx.currentTime);
+        document.getElementById('btnRight').classList.add('active');
+        document.getElementById('statusText').textContent = 'TESTING RIGHT CHANNEL ONLY (440Hz SINE)';
+      } else {
+        if (pannerNode) pannerNode.pan.setValueAtTime(0, audioCtx.currentTime);
+        document.getElementById('btnBoth').classList.add('active');
+        document.getElementById('statusText').textContent = 'TESTING CENTER / BOTH CHANNELS (440Hz SINE)';
+      }
+      startOscillator(440, 'sine');
+    }
+
+    function toggleBounce() {
+      initAudio();
+      if (isBouncing) {
+        stopAllAudio();
+        return;
+      }
+      stopAllAudio();
+      isBouncing = true;
+      document.getElementById('btnBounce').classList.add('active');
+      document.getElementById('statusText').textContent = 'STEREO BOUNCE (ALTERNATING LEFT & RIGHT)';
+      startOscillator(440, 'sine');
+      let side = -1;
+      if (pannerNode) pannerNode.pan.setValueAtTime(side, audioCtx.currentTime);
+      bounceInterval = setInterval(() => {
+        side = side === -1 ? 1 : -1;
+        if (pannerNode && audioCtx) {
+          pannerNode.pan.setValueAtTime(side, audioCtx.currentTime);
+        }
+        document.getElementById('statusText').textContent = side === -1 ? 'BOUNCE: ◀ LEFT CHANNEL' : 'BOUNCE: RIGHT CHANNEL ▶';
+      }, 500);
+    }
+
+    function playTone(freq, btn) {
+      initAudio();
+      stopAllAudio();
+      if (btn) btn.classList.add('active');
+      if (pannerNode) pannerNode.pan.setValueAtTime(0, audioCtx.currentTime);
+      document.getElementById('statusText').textContent = 'PLAYING ' + freq + ' Hz PURE SINE TONE';
+      startOscillator(freq, 'sine');
+    }
+
+    function startOscillator(freq, type) {
+      currentOsc = audioCtx.createOscillator();
+      currentOsc.type = type || 'sine';
+      currentOsc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      currentOsc.connect(masterGain);
+      currentOsc.start();
+    }
+
+    function toggleSweep() {
+      initAudio();
+      if (isSweeping) {
+        stopAllAudio();
+        return;
+      }
+      stopAllAudio();
+      isSweeping = true;
+      document.getElementById('btnSweep').textContent = '⏹ Stop Sweep';
+      document.getElementById('btnSweep').classList.add('active');
+      if (pannerNode) pannerNode.pan.setValueAtTime(0, audioCtx.currentTime);
+
+      startOscillator(20, 'sine');
+      let startHz = 20;
+      let endHz = 20000;
+      let durationSec = 15;
+      let startTime = audioCtx.currentTime;
+
+      currentOsc.frequency.setValueAtTime(startHz, startTime);
+      currentOsc.frequency.exponentialRampToValueAtTime(endHz, startTime + durationSec);
+
+      let stepMs = 50;
+      let elapsedMs = 0;
+      let totalMs = durationSec * 1000;
+
+      sweepInterval = setInterval(() => {
+        elapsedMs += stepMs;
+        let progress = Math.min(1, elapsedMs / totalMs);
+        let currentHz = Math.round(startHz * Math.pow(endHz / startHz, progress));
+        document.getElementById('sweepProgress').style.width = (progress * 100) + '%';
+        document.getElementById('sweepHzDisplay').textContent = currentHz.toLocaleString() + ' Hz';
+        document.getElementById('statusText').textContent = 'FREQUENCY SWEEP: ' + currentHz.toLocaleString() + ' Hz';
+
+        if (progress >= 1) {
+          stopAllAudio();
+        }
+      }, stepMs);
+    }
+
+    function toggleNoise(type) {
+      initAudio();
+      stopAllAudio();
+      let btn = type === 'pink' ? document.getElementById('btnPink') : document.getElementById('btnWhite');
+      btn.classList.add('active');
+      document.getElementById('statusText').textContent = 'GENERATING ' + type.toUpperCase() + ' NOISE';
+
+      let bufferSize = 2 * audioCtx.sampleRate;
+      let noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      let output = noiseBuffer.getChannelData(0);
+
+      if (type === 'white') {
+        for (let i = 0; i < bufferSize; i++) {
+          output[i] = Math.random() * 2 - 1;
+        }
+      } else {
+        let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          let white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555179;
+          b1 = 0.99332 * b1 + white * 0.0750759;
+          b2 = 0.96900 * b2 + white * 0.1538520;
+          b3 = 0.86650 * b3 + white * 0.3104856;
+          b4 = 0.55000 * b4 + white * 0.5329522;
+          b5 = -0.7616 * b5 - white * 0.0168980;
+          output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
+          b6 = white * 0.115926;
+        }
+      }
+
+      currentNoise = audioCtx.createBufferSource();
+      currentNoise.buffer = noiseBuffer;
+      currentNoise.loop = true;
+      currentNoise.connect(masterGain);
+      currentNoise.start();
+    }
+
+    function drawVisualizer() {
+      animId = requestAnimationFrame(drawVisualizer);
+      if (!analyser) return;
+
+      let width = canvas.width = canvas.offsetWidth;
+      let height = canvas.height = canvas.offsetHeight;
+      let bufferLength = analyser.frequencyBinCount;
+      let dataArray = new Uint8Array(bufferLength);
+      analyser.getByteTimeDomainData(dataArray);
+
+      canvasCtx.fillStyle = '#0f172a';
+      canvasCtx.fillRect(0, 0, width, height);
+
+      canvasCtx.lineWidth = 2;
+      canvasCtx.strokeStyle = '#38bdf8';
+      canvasCtx.beginPath();
+
+      let sliceWidth = width * 1.0 / bufferLength;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        let v = dataArray[i] / 128.0;
+        let y = v * height / 2;
+        if (i === 0) {
+          canvasCtx.moveTo(x, y);
+        } else {
+          canvasCtx.lineTo(x, y);
+        }
+        x += sliceWidth;
+      }
+      canvasCtx.lineTo(width, height / 2);
+      canvasCtx.stroke();
+    }
+  </script>
+</body>
+</html>

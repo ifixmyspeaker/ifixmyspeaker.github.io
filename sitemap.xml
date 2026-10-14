@@ -1,113 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Application & Dedicated Tools -->
+  <!-- Core Application & Dedicated Interactive Tools -->
   <url>
     <loc>https://ifixmyspeaker.com/</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>1.00</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://ifixmyspeaker.com/remove-water-from-speaker-sound/</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.95</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://ifixmyspeaker.com/deep-clean/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.90</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/speaker-sound-test/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.90</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/tone-generator/</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.90</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- International Multi-Language Editions -->
+  <!-- Editorial Blog Hub & In-Depth Guides -->
   <url>
-    <loc>https://ifixmyspeaker.com/es/</loc>
+    <loc>https://ifixmyspeaker.com/blog/</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ifixmyspeaker.com/id/</loc>
+    <loc>https://ifixmyspeaker.com/blog/how-to-fix-water-damaged-phone-speaker/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/blog/how-to-test-phone-speaker/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/blog/how-to-clean-iphone-speaker/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/blog/how-to-clean-android-speaker/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/blog/how-to-clean-airpods/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/blog/eject-water-from-speaker-iphone-shortcut/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Master FAQ Page -->
+  <url>
+    <loc>https://ifixmyspeaker.com/faq/</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.85</priority>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- Press & Media Kit -->
   <url>
-    <loc>https://ifixmyspeaker.com/ar/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/hi/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/pt/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/fr/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/de/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/ru/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/ja/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/zh/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/it/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/tr/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/vi/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://ifixmyspeaker.com/ko/</loc>
-    <priority>0.85</priority>
-    <changefreq>weekly</changefreq>
+    <loc>https://ifixmyspeaker.com/press/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <!-- Informational, Company & Legal Pages -->
   <url>
     <loc>https://ifixmyspeaker.com/about.html</loc>
-    <priority>0.70</priority>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ifixmyspeaker.com/contact.html</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.70</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ifixmyspeaker.com/privacy-policy.html</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.50</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://ifixmyspeaker.com/terms.html</loc>
+    <lastmod>2026-10-14</lastmod>
     <priority>0.50</priority>
     <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- International Multi-Language Editions -->
+  <url>
+    <loc>https://ifixmyspeaker.com/es/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/id/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ar/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/hi/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/pt/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/fr/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/de/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ru/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ja/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/zh/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/it/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/tr/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/vi/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://ifixmyspeaker.com/ko/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.75</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

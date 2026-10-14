@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1020"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#162032"/>
+    </linearGradient>
+    <linearGradient id="earbudWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="70%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <filter id="shadow6" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgGrad6)" rx="16"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#334155" stroke-width="1.5" rx="15"/>
+
+  <!-- Title Badge -->
+  <rect x="210" y="22" width="380" height="34" rx="17" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2"/>
+  <text x="400" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="1">AIRPODS &amp; EARBUDS ACOUSTIC MESH ANATOMY</text>
+
+  <!-- Left: Earbud Illustration -->
+  <g transform="translate(130, 90)" filter="url(#shadow6)">
+    <!-- Earbud Stem -->
+    <path d="M 120 180 L 120 300 C 120 310, 140 310, 140 300 L 140 180 Z" fill="url(#earbudWhite)" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Stem Charging Contacts -->
+    <rect x="122" y="295" width="16" height="5" rx="2" fill="#d97706"/>
+    <!-- Stem Mic Vent -->
+    <ellipse cx="130" cy="230" rx="3" ry="8" fill="#1e293b"/>
+
+    <!-- Earbud Body Head -->
+    <path d="M 100 120 C 100 70, 160 50, 200 80 C 230 100, 240 140, 220 170 C 200 200, 140 200, 120 180 Z" fill="url(#earbudWhite)" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <!-- Outward Mic Grille (ANC Vent) -->
+    <rect x="155" y="65" width="30" height="10" rx="5" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+
+    <!-- Sound Port & Mesh (Facing Left) -->
+    <path d="M 105 110 C 80 110, 60 125, 55 140 C 60 155, 80 165, 105 165 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Main Acoustic Mesh (Black oval) -->
+    <ellipse cx="75" cy="138" rx="16" ry="20" fill="#030712" stroke="#38bdf8" stroke-width="2"/>
+    <ellipse cx="75" cy="138" rx="12" ry="15" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- Detachable Silicone Tip Outline (Dashed) -->
+    <path d="M 75 110 C 40 100, 15 120, 15 138 C 15 156, 40 176, 75 166" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+    <!-- Callout Lines from earbud -->
+    <!-- Line to Silicone Tip -->
+    <line x1="30" y1="138" x2="-20" y2="138" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="30" cy="138" r="4" fill="#38bdf8"/>
+
+    <!-- Line to Main Acoustic Mesh -->
+    <line x1="75" y1="158" x2="75" y2="250" stroke="#06b6d4" stroke-width="1.5"/>
+    <line x1="75" y1="250" x2="-10" y2="250" stroke="#06b6d4" stroke-width="1.5"/>
+    <circle cx="75" cy="158" r="4" fill="#06b6d4"/>
+
+    <!-- Line to ANC Vent -->
+    <line x1="170" y1="65" x2="170" y2="10" stroke="#10b981" stroke-width="1.5"/>
+    <line x1="170" y1="10" x2="250" y2="10" stroke="#10b981" stroke-width="1.5"/>
+    <circle cx="170" cy="65" r="4" fill="#10b981"/>
+  </g>
+
+  <!-- Right Side Callout Cards -->
+  <g transform="translate(420, 80)">
+    <!-- Card 1: Main Speaker Mesh -->
+    <rect x="0" y="0" width="340" height="92" rx="10" fill="#111827" stroke="#06b6d4" stroke-width="1.5"/>
+    <rect x="12" y="10" width="70" height="20" rx="4" fill="#083344"/>
+    <text x="47" y="24" font-family="sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">PRIMARY</text>
+    <text x="90" y="25" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Acoustic Driver Mesh</text>
+    <text x="12" y="48" font-family="sans-serif" font-size="11" fill="#cbd5e1">Traps 95% of earwax (cerumen) buildup causing muffled sound or unequal volume balance between ears.</text>
+    <text x="12" y="76" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Clean with: Blu-Tack putty &amp; 165Hz tone</text>
+
+    <!-- Card 2: ANC External Vent -->
+    <rect x="0" y="105" width="340" height="92" rx="10" fill="#111827" stroke="#10b981" stroke-width="1.5"/>
+    <rect x="12" y="115" width="70" height="20" rx="4" fill="#064e3b"/>
+    <text x="47" y="129" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">ANC MIC</text>
+    <text x="90" y="130" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">External Noise Vent</text>
+    <text x="12" y="153" font-family="sans-serif" font-size="11" fill="#cbd5e1">Monitors ambient environmental noise for Active Noise Cancellation. When clogged, ANC whistles or fails.</text>
+    <text x="12" y="181" font-family="sans-serif" font-size="11" font-weight="700" fill="#34d399">Clean with: Dry anti-static nylon brush only</text>
+
+    <!-- Card 3: Silicone Ear Tip -->
+    <rect x="0" y="210" width="340" height="92" rx="10" fill="#111827" stroke="#818cf8" stroke-width="1.5"/>
+    <rect x="12" y="220" width="70" height="20" rx="4" fill="#312e81"/>
+    <text x="47" y="234" font-family="sans-serif" font-size="10" font-weight="700" fill="#a5b4fc" text-anchor="middle">SILICONE</text>
+    <text x="90" y="235" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Detachable Ear Tips</text>
+    <text x="12" y="258" font-family="sans-serif" font-size="11" fill="#cbd5e1">Must be pulled off the earbud body before washing. Safe to rinse with warm soapy water.</text>
+    <text x="12" y="286" font-family="sans-serif" font-size="11" font-weight="700" fill="#a5b4fc">Ensure 100% dry before snapping back on</text>
+  </g>
+
+  <!-- Left Bottom Small Tag -->
+  <g transform="translate(60, 375)">
+    <rect x="0" y="0" width="280" height="36" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="140" y="22" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">AirPods Pro 1/2, Max, &amp; Galaxy Buds</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="560" y="398" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Earbud Acoustic Maintenance Guide • iFixMySpeaker Lab</text>
+</svg>

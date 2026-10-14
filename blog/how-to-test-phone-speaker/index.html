@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" /></noscript>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0T1M3JLQ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3R0T1M3JLQ');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Test Your Phone Speaker — 5 Diagnostic Methods (2026)</title>
+  <meta name="description" content="Is your phone speaker crackling, quiet, or muffled? Use these 5 diagnostic laboratory methods—including stereo balance tests and frequency sweeps—to identify hardware failure vs software bugs." />
+  <link rel="canonical" href="https://ifixmyspeaker.com/blog/how-to-test-phone-speaker/" />
+  <meta property="og:title" content="How to Test Your Phone Speaker — 5 Diagnostic Methods" />
+  <meta property="og:description" content="Step-by-step diagnostic guide for testing iPhone and Android speakers. Frequency sweeps, stereo balance, and manufacturer secret codes." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ifixmyspeaker.com/blog/how-to-test-phone-speaker/" />
+  <link rel="stylesheet" href="../../style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Test Your Phone Speaker — 5 Diagnostic Methods",
+    "description": "Practical guide to diagnosing smartphone speaker distortion, channel imbalance, frequency attenuation, and voice coil failure.",
+    "author": {
+      "@type": "Person",
+      "name": "Clara Thompson",
+      "jobTitle": "Lead Acoustic Research Specialist",
+      "url": "https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Fix My Speaker Project",
+      "url": "https://ifixmyspeaker.com/"
+    },
+    "datePublished": "2026-10-14T08:00:00+00:00",
+    "dateModified": "2026-10-14T08:00:00+00:00",
+    "mainEntityOfPage": "https://ifixmyspeaker.com/blog/how-to-test-phone-speaker/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does my phone speaker crackle at high volumes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Speaker crackling at high volume is typically caused by three issues: dried particulate matter or sand vibrating against the speaker cone, liquid bridging the acoustic mesh, or physical voice coil deformation (coil rub) where the coil rubs against the magnet gap."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my top ear speaker or bottom loudspeaker is blown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run a stereo channel pan test. Modern smartphones use the earpiece as the left channel and bottom loudspeaker as the right channel. Playing an isolated left-only tone tests the earpiece; an isolated right-only tone tests the bottom speaker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the secret Samsung speaker test code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On Samsung devices, open the Phone dialer and input *#0*#. This launches the Hardware Diagnostic menu. Tap 'Speaker' to test both top and bottom speakers independently at peak amplitude."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    .article-wrap { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-muted); }
+    .article-meta .author-badge { font-weight: 700; color: #0f172a; }
+    .article-header h1 { font-family: var(--font-heading); font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; line-height: 1.25; margin-bottom: 1.25rem; color: #0f172a; }
+    .lead-box { font-size: 1.15rem; line-height: 1.7; color: #334155; background: rgba(2, 132, 199, 0.05); border-left: 4px solid var(--primary); padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 2.5rem; }
+    .article-body { font-size: 1.05rem; line-height: 1.8; color: #1e293b; }
+    .article-body h2 { font-family: var(--font-heading); font-size: 1.65rem; font-weight: 800; margin: 2.5rem 0 1rem; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+    .article-body h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin: 1.75rem 0 0.75rem; color: #1e293b; }
+    .article-body p { margin-bottom: 1.4rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.6rem; }
+    .step-card { background: #ffffff; border: 1px solid var(--card-border); border-radius: 14px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04); }
+    .step-number { display: inline-flex; width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #fff; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; margin-right: 0.5rem; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+    .comparison-table th, .comparison-table td { border: 1px solid #cbd5e1; padding: 0.85rem 1rem; text-align: left; }
+    .comparison-table th { background: #f8fafc; font-weight: 700; color: #0f172a; }
+    .cta-tool-block { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #ffffff; border-radius: 16px; padding: 2.5rem 2rem; text-align: center; margin: 3rem 0; }
+    .cta-tool-block h3 { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .cta-tool-block p { font-size: 1.05rem; max-width: 580px; margin: 0 auto 1.5rem; color: rgba(255, 255, 255, 0.9); }
+    .cta-tool-block .btn { background: #ffffff; color: #0284c7; font-weight: 800; padding: 0.85rem 2rem; border-radius: 12px; text-decoration: none; display: inline-block; box-shadow: 0 4px 14px rgba(0,0,0,0.15); transition: transform 0.2s; }
+  </style>
+</head>
+<body>
+  <div class="bg-glow-container"><div class="glow-orb orb-1"></div><div class="glow-orb orb-2"></div><div class="glow-orb orb-3"></div></div>
+
+  <nav class="navbar"><div class="container nav-wrapper">
+    <a href="/" class="logo"><div class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div><span>Fix My Speaker</span></a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Speaker Cleaner</a></li>
+      <li><a href="/remove-water-from-speaker-sound/" class="nav-link">Water Eject</a></li>
+      <li><a href="/deep-clean/" class="nav-link">Deep Clean</a></li>
+      <li><a href="/speaker-sound-test/" class="nav-link">Sound Test</a></li>
+      <li><a href="/tone-generator/" class="nav-link">Tone Generator</a></li>
+      <li><a href="/blog/" class="nav-link active">Blog</a></li>
+      <li><a href="/faq/" class="nav-link">FAQ</a></li>
+      <li><a href="/about.html" class="nav-link">About</a></li>
+    </ul>
+  </div></nav>
+
+  <article class="article-wrap">
+    <div class="article-meta">
+      <span class="author-badge">By Clara Thompson</span>
+      <span>&bull;</span>
+      <span>Lead Acoustic Research Specialist</span>
+      <span>&bull;</span>
+      <span>Updated October 2026</span>
+      <span>&bull;</span>
+      <span>6 min read</span>
+    </div>
+
+    <header class="article-header">
+      <h1>How to Test Your Phone Speaker — 5 Diagnostic Methods</h1>
+    </header>
+
+    <div class="lead-box">
+      <strong>Diagnostic Summary:</strong> Smartphone speakers are delicate micro-electromechanical transducers subjected to drops, moisture, pocket lint, and extreme volume demands. Before concluding that your phone speaker is blown and spending $150+ on screen or speaker module replacements, run these 5 laboratory diagnostic tests to pinpoint the exact failure mechanism.
+    </div>
+
+    <div class="article-body">
+      <h2>Why Generic Music Playback is Ineffective for Audio Testing</h2>
+      <p>Most smartphone users test their speakers by simply playing a pop song on Spotify or YouTube. However, modern commercial music is heavily compressed, multi-layered, and spans dozens of shifting frequencies simultaneously. When a song plays, psychoacoustic masking conceals subtle voice coil scraping, harmonic distortion, or single-frequency mechanical buzzing.</p>
+
+      <p>True audio engineers evaluate micro-speakers using pure sine sweeps, discrete reference frequencies, and isolated channel routing. By testing specific acoustic bands in isolation, you can identify whether an issue is caused by physical dust buildup, trapped water droplets, blown coil suspension, or a simple software audio balance glitch.</p>
+
+      <h2>The 5 Empirical Diagnostic Methods</h2>
+
+      <figure class="content-figure">
+        <img src="/images/speaker-channel-test-diagram.svg" alt="Stereo audio channel isolation test comparing top earpiece and bottom loudspeaker frequency ranges" class="content-img" width="800" height="450" loading="eager">
+        <figcaption class="content-caption">Figure 1: Stereo acoustic channel routing between top earpiece and bottom loudspeaker in modern smartphones.</figcaption>
+      </figure>
+
+      <div class="step-card">
+        <h3><span class="step-number">1</span> Stereo Channel Isolation &amp; Separation Test</h3>
+        <p>Nearly all modern smartphones (Apple iPhone, Samsung Galaxy, Google Pixel, Xiaomi, OnePlus) utilize a dual-speaker stereo configuration:</p>
+        <ul>
+          <li><strong>Earpiece Speaker (Top bezel):</strong> Primarily tuned for high-mid and treble frequencies (800Hz to 12,000Hz) to maximize voice clarity during calls.</li>
+          <li><strong>Main Loudspeaker (Bottom port):</strong> Designed with a larger acoustic resonant cavity for low-end bass and mid-range fullness (120Hz to 4,000Hz).</li>
+        </ul>
+        <p>To determine if only one transducer is damaged, navigate to our <a href="/speaker-sound-test/" class="context-link">Online Speaker Sound Test</a> and run the <strong>Stereo Panning Test</strong>. Listen to the Left channel alone, then the Right channel alone. If the bottom speaker is crystal clear but the top earpiece crackles, you have isolated the defect to the earpiece acoustic mesh.</p>
+      </div>
+
+      <div class="step-card">
+        <h3><span class="step-number">2</span> Dynamic Full-Spectrum Frequency Sweep (20Hz to 20,000Hz)</h3>
+        <p>A continuous sine sweep smoothly ascends through the entire spectrum of human hearing. As the pitch rises, observe closely for specific audio artifacts:</p>
+        <ul>
+          <li><strong>60Hz – 250Hz (Bass Band):</strong> Heavy physical diaphragm excursion occurs here. If you hear a loud buzzing or vibrating rattle at low frequencies, there is likely loose lint, dried water residue, or a dislodged speaker gasket vibrating against the chassis.</li>
+          <li><strong>1,000Hz – 3,000Hz (Mid-range Speech):</strong> If vocal tones sound harsh, muffled, or distorted, water may still be trapped across the acoustic damping mesh.</li>
+          <li><strong>8,000Hz – 15,000Hz (High Treble):</strong> If high-frequency chimes are completely absent, the micro-tweeter voice coil wire may have suffered a thermal open-circuit burn.</li>
+        </ul>
+        <p>You can run a calibrated frequency sweep directly on our <a href="/speaker-sound-test/" class="context-link">Speaker Sound Test Tool</a> or test specific frequencies on the <a href="/tone-generator/" class="context-link">Tone Generator</a>.</p>
+      </div>
+
+      <figure class="content-figure">
+        <img src="/images/frequency-response-testing-chart.svg" alt="Audio frequency response testing spectrum from 20Hz sub-bass to 20kHz treble testing speaker health" class="content-img" width="800" height="450" loading="lazy">
+        <figcaption class="content-caption">Figure 2: Audio diagnostic frequency spectrum and test tones for speaker distortion analysis.</figcaption>
+      </figure>
+
+      <div class="cta-tool-block">
+        <h3>Test Your Speaker in Real Time</h3>
+        <p>Run our interactive Web Audio stereo channel test and frequency sweep directly in your mobile browser. Zero install required.</p>
+        <a href="/speaker-sound-test/" class="btn">Launch Speaker Sound Test &rarr;</a>
+      </div>
+
+      <div class="step-card">
+        <h3><span class="step-number">3</span> Discrete Reference Frequency Check</h3>
+        <p>Testing individual pure sine waves isolates acoustic anomalies at exact calibration points:</p>
+        <ul>
+          <li><strong>165Hz Pulse:</strong> Tests maximum cone excursion. If the phone was wet, run this tone on our <a href="/" class="context-link">Water Eject Cleaner</a> to dislodge liquid droplets.</li>
+          <li><strong>440Hz (Concert Pitch A):</strong> Tests pure fundamental tone generation without harmonic distortion.</li>
+          <li><strong>1,000Hz (Acoustic Reference Standard):</strong> The international benchmark for speech intelligibility and volume calibration.</li>
+          <li><strong>2,500Hz:</strong> Highlights ear speaker resonance and checks for high-frequency squeal.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <h3><span class="step-number">4</span> Built-In Hardware Diagnostic Codes (Secret Menus)</h3>
+        <p>Android manufacturers build secret engineering test suites into device firmware that bypass the operating system's software EQ and Dolby Atmos processing:</p>
+        <ul>
+          <li><strong>Samsung Galaxy:</strong> Open the Phone dialer and type <code>*#0*#</code>. Tap the <strong>Speaker</strong> button. The phone will play a loud dual-channel audio test. Tap again to test individual transducers.</li>
+          <li><strong>Xiaomi / Redmi:</strong> Dial <code>*#*#6484#*#*</code> to access the CIT (Customer Integration Test) menu. Select "Speaker Test" to run automated hardware diagnostics.</li>
+          <li><strong>Google Pixel:</strong> Open the Phone app and dial <code>*#*#7287#*#*</code> or use Android 14+ Settings &gt; System &gt; Diagnostics.</li>
+          <li><strong>Apple iPhone:</strong> Apple does not provide a public dialer code, but you can check Settings &gt; Accessibility &gt; Audio &amp; Visual &gt; Balance slider to ensure audio is not unintentionally panned to one ear.</li>
+        </ul>
+      </div>
+
+      <div class="step-card">
+        <h3><span class="step-number">5</span> Visual Inspection with Magnification &amp; Lighting</h3>
+        <p>Before assuming internal hardware failure, use a high-powered flashlight and smartphone camera zoom or a 10x magnifying glass to inspect the exterior speaker grille openings. Over 60% of "low volume" complaints stem from packed pocket lint, makeup residue, dead skin cells, or earwax forming an opaque barrier over the acoustic mesh pores.</p>
+        <p>If you see physical debris, read our guide on <a href="/blog/how-to-clean-iphone-speaker/" class="context-link">How to Clean iPhone Speaker Grilles</a> or <a href="/blog/how-to-clean-android-speaker/" class="context-link">How to Clean Android Speakers</a> to safely remove the debris without piercing the mesh.</p>
+      </div>
+
+      <h2>Speaker Diagnostic Troubleshooting Matrix</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Observed Symptom</th>
+            <th>Probable Root Cause</th>
+            <th>Recommended Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Muffled, underwater sound; quiet volume</strong></td>
+            <td>Trapped liquid droplets bridging the acoustic mesh pores</td>
+            <td>Run <a href="/remove-water-from-speaker-sound/" class="context-link">165Hz Water Eject Sound</a> for 3 cycles with speaker angled downward.</td>
+          </tr>
+          <tr>
+            <td><strong>Rattling / Buzzing at low bass frequencies</strong></td>
+            <td>Loose lint or debris trapped against the moving cone</td>
+            <td>Run <a href="/deep-clean/" class="context-link">Deep Clean Sweep</a> to vibrate dry particles loose, then brush gently.</td>
+          </tr>
+          <tr>
+            <td><strong>Harsh crackling / Static at high volumes</strong></td>
+            <td>Deformed voice coil rubbing against the neodymium magnet</td>
+            <td>Voice coil mechanical damage; requires speaker module replacement.</td>
+          </tr>
+          <tr>
+            <td><strong>Only earpiece works; bottom speaker completely silent</strong></td>
+            <td>Blown amplifier channel, software audio balance shift, or physical coil fracture</td>
+            <td>Verify Accessibility balance settings; if balance is centered, seek hardware repair.</td>
+          </tr>
+          <tr>
+            <td><strong>Hissing or humming when no audio plays</strong></td>
+            <td>Ground loop or audio DAC pre-amp component failure</td>
+            <td>Perform a full device restart; test in Safe Mode to rule out third-party app bugs.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Next Steps After Diagnostic Testing</h2>
+      <p>If your diagnostics indicate trapped moisture, immediately run our <a href="/" class="context-link">Free Fix My Speaker Cleaner</a>. If testing revealed dry dust or lint buildup, proceed to our <a href="/deep-clean/" class="context-link">Deep Clean Audio Utility</a>. For further guidance on maintaining acoustic integrity, visit our <a href="/faq/" class="context-link">Frequently Asked Questions</a>.</p>
+    </div>
+
+    <!-- EEAT Author Profile Card -->
+    <div class="author-profile-card">
+      <div class="author-header">
+        <div class="author-avatar">
+          <img src="/images/clara-thompson.jpg" alt="Clara Thompson, Lead Acoustic Research Specialist at iFixMySpeaker" class="author-avatar-img" width="68" height="68" loading="lazy">
+        </div>
+        <div class="author-info">
+          <h3>Clara Thompson</h3>
+          <span class="author-title">Lead Acoustic Specialist &amp; Technical Architect</span>
+        </div>
+      </div>
+      <p class="author-bio">Clara Thompson leads acoustic wave research and audio transducer diagnostic engineering for Fix My Speaker. With a background in mechanical vibration physics and signal processing, Clara calibrated the 165Hz pulse waveform and harmonic frequency sweep protocols to safely maximize acoustic radiation pressure without overheating smartphone speaker coils. She oversees editorial integrity, benchmark testing across Apple and Android flagships, and international audio safety guidelines.</p>
+      <div class="author-social-row">
+        <a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://about.me/fix-my-speaker" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-aboutme">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.524 4.477 10 10 10 5.524 0 10-4.476 10-10 0-5.523-4.476-10-10-10zm-1.8 14.85h-1.95V9.45H10.2v7.4zm-.97-8.38c-.65 0-1.15-.5-1.15-1.13s.5-1.14 1.15-1.14c.64 0 1.14.51 1.14 1.14 0 .63-.5 1.13-1.14 1.13zm6.67 8.38h-1.95v-4.14c0-1.02-.36-1.58-1.2-1.58-.88 0-1.37.58-1.37 1.62v4.1H9.4v-7.4h1.87v1.07h.03c.36-.67 1.13-1.22 2.22-1.22 1.61 0 2.38 1.05 2.38 2.82v4.73z"/></svg>
+          <span>about.me</span>
+        </a>
+        <a href="/about.html" class="footer-social-btn">
+          <span>About Editorial Standards</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <footer class="site-footer"><div class="container">
+    <div class="footer-brand"><a href="/" class="footer-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg><span>Fix My Speaker</span></a><p class="footer-tagline">Open-access acoustic maintenance and diagnostic laboratory based on calibrated resonance sound physics.</p></div>
+    <div class="footer-links">
+      <div class="footer-nav-row resources-row"><a href="/">Speaker Cleaner</a><span class="footer-sep">&bull;</span><a href="/remove-water-from-speaker-sound/">Water Eject Sound</a><span class="footer-sep">&bull;</span><a href="/deep-clean/">Deep Clean</a><span class="footer-sep">&bull;</span><a href="/speaker-sound-test/">Sound Test</a><span class="footer-sep">&bull;</span><a href="/tone-generator/">Tone Generator</a><span class="footer-sep">&bull;</span><a href="/blog/">Blog</a><span class="footer-sep">&bull;</span><a href="/faq/">FAQ</a><span class="footer-sep">&bull;</span><a href="/press/">Press</a></div>
+      <div class="footer-nav-row legal-row"><a href="/">Home</a><span class="footer-sep">&bull;</span><a href="/about.html">About Us</a><span class="footer-sep">&bull;</span><a href="/privacy-policy.html">Privacy Policy</a><span class="footer-sep">&bull;</span><a href="/terms.html">Terms of Service</a><span class="footer-sep">&bull;</span><a href="/contact.html">Contact Us</a></div>
+    </div>
+    <div class="footer-author-badge"><span class="author-verified"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>Reviewed by:</span> <strong><a href="https://www.linkedin.com/in/clara-thompson-fix-my-speaker-sound/" target="_blank" rel="noopener noreferrer">Clara Thompson</a></strong>, Lead Acoustic Research Specialist <span class="footer-sep">&bull;</span> <a href="/about.html">About &amp; Editorial Standards</a></div>
+    <p class="disclaimer">Disclaimer: Fix My Speaker is an online acoustic utility designed to help dislodge water and dust particles through sound vibrations. If your device suffered severe liquid immersion or internal hardware failure, please contact an authorized service technician.</p>
+    <p style="margin-top:.75rem;font-size:.8rem;color:#475569;">&copy; 2026 Fix My Speaker. All rights reserved.</p>
+  </div></footer>
+
+  <script src="../../cookie-consent.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="25%" stop-color="#f59e0b"/>
+      <stop offset="45%" stop-color="#06b6d4"/>
+      <stop offset="70%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="curveArea" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0"/>
+    </linearGradient>
+    <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgGrad2)" rx="16"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#334155" stroke-width="1.5" rx="15"/>
+
+  <!-- Title Badge -->
+  <rect x="220" y="22" width="360" height="34" rx="17" fill="#1e293b" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="400" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="1">AUDIO DIAGNOSTIC FREQUENCY SPECTRUM</text>
+
+  <!-- Chart Grid Area -->
+  <g stroke="#1e293b" stroke-width="1">
+    <!-- Horizontal dB Lines -->
+    <line x1="70" y1="90" x2="740" y2="90"/>
+    <line x1="70" y1="145" x2="740" y2="145"/>
+    <line x1="70" y1="200" x2="740" y2="200"/>
+    <line x1="70" y1="255" x2="740" y2="255"/>
+    <line x1="70" y1="310" x2="740" y2="310"/>
+
+    <!-- Vertical Logarithmic Freq Lines -->
+    <line x1="70" y1="90" x2="70" y2="310"/>
+    <line x1="170" y1="90" x2="170" y2="310"/>
+    <line x1="310" y1="90" x2="310" y2="310"/>
+    <line x1="480" y1="90" x2="480" y2="310"/>
+    <line x1="620" y1="90" x2="620" y2="310"/>
+    <line x1="740" y1="90" x2="740" y2="310"/>
+  </g>
+
+  <!-- Y-Axis Labels -->
+  <text x="58" y="94" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="end">+10 dB</text>
+  <text x="58" y="149" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="end">0 dB</text>
+  <text x="58" y="204" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="end">-10 dB</text>
+  <text x="58" y="259" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="end">-20 dB</text>
+  <text x="58" y="314" font-family="sans-serif" font-size="10" fill="#64748b" text-anchor="end">-30 dB</text>
+
+  <!-- X-Axis Labels -->
+  <text x="70" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">20 Hz</text>
+  <text x="170" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">165 Hz</text>
+  <text x="310" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">1 kHz</text>
+  <text x="480" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">4 kHz</text>
+  <text x="620" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">10 kHz</text>
+  <text x="740" y="332" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">20 kHz</text>
+
+  <!-- Water Ejection Zone Highlight (140-185Hz) -->
+  <rect x="140" y="90" width="60" height="220" fill="#0891b2" opacity="0.18"/>
+  <rect x="140" y="90" width="60" height="220" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <rect x="142" y="96" width="56" height="20" rx="4" fill="#06b6d4"/>
+  <text x="170" y="110" font-family="sans-serif" font-size="10" font-weight="800" fill="#042f2e" text-anchor="middle">EJECT ZONE</text>
+
+  <!-- Frequency Curve Area Fill -->
+  <path d="M 70 300 Q 110 280, 140 200 T 170 120 T 230 160 T 310 145 T 480 135 T 620 150 T 700 210 L 740 280 L 740 310 L 70 310 Z" fill="url(#curveArea)"/>
+
+  <!-- Frequency Response Trace Line -->
+  <path d="M 70 300 Q 110 280, 140 200 T 170 120 T 230 160 T 310 145 T 480 135 T 620 150 T 700 210 L 740 280" fill="none" stroke="url(#curveGrad)" stroke-width="3.5" filter="url(#glow2)"/>
+
+  <!-- Resonance Peak Marker (165Hz) -->
+  <circle cx="170" cy="120" r="6" fill="#06b6d4" stroke="#ffffff" stroke-width="2" filter="url(#glow2)"/>
+  <text x="170" y="80" font-family="sans-serif" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle">165 Hz Peak</text>
+  <text x="170" y="66" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Maximum Kinetic Thrust</text>
+
+  <!-- Vocal Presence Marker (1kHz-4kHz) -->
+  <circle cx="480" cy="135" r="5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="480" y="115" font-family="sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">Vocal Clarity (3-4kHz)</text>
+
+  <!-- Bottom Frequency Classification Badges -->
+  <g transform="translate(70, 360)">
+    <!-- Sub-bass -->
+    <rect x="0" y="0" width="125" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="62" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#ef4444" text-anchor="middle">Sub-Bass (20-80Hz)</text>
+    <text x="62" y="38" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Felt vibration only</text>
+
+    <!-- Acoustic Ejection -->
+    <rect x="135" y="0" width="135" height="52" rx="8" fill="#083344" stroke="#06b6d4" stroke-width="1.2"/>
+    <text x="202" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">Water Eject (165Hz)</text>
+    <text x="202" y="38" font-family="sans-serif" font-size="9" fill="#a5f3fc" text-anchor="middle">Diaphragm max stroke</text>
+
+    <!-- Midrange -->
+    <rect x="280" y="0" width="135" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="347" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">Midrange (300-3kHz)</text>
+    <text x="347" y="38" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Speech &amp; ear speaker</text>
+
+    <!-- Presence & Treble -->
+    <rect x="425" y="0" width="120" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="485" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#3b82f6" text-anchor="middle">Treble (4-12kHz)</text>
+    <text x="485" y="38" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">High definition sound</text>
+
+    <!-- Air & Ultrasonic -->
+    <rect x="555" y="0" width="115" height="52" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="612" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#a855f7" text-anchor="middle">Air (12-20kHz)</text>
+    <text x="612" y="38" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Harmonics limit</text>
+  </g>
+
+  <!-- Technical spec credit -->
+  <text x="400" y="435" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Frequency Analysis based on AES-17 Audio Standards • iFixMySpeaker Lab Calibration</text>
+</svg>

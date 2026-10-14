@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a1024"/>
@@ -25,77 +25,93 @@
   <!-- 4 Stage Markers -->
   <!-- Stage 1 -->
   <circle cx="120" cy="130" r="14" fill="#064e3b" stroke="#10b981" stroke-width="3"/>
-  <text x="120" y="135" font-family="sans-serif" font-size="12" font-weight="900" fill="#a7f3d0" text-anchor="middle">1</text>
+  <text x="120" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#a7f3d0" text-anchor="middle">1</text>
 
   <!-- Stage 2 -->
   <circle cx="280" cy="130" r="14" fill="#083344" stroke="#06b6d4" stroke-width="3"/>
-  <text x="280" y="135" font-family="sans-serif" font-size="12" font-weight="900" fill="#67e8f9" text-anchor="middle">2</text>
+  <text x="280" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#67e8f9" text-anchor="middle">2</text>
 
   <!-- Stage 3 -->
   <circle cx="480" cy="130" r="14" fill="#451a03" stroke="#f59e0b" stroke-width="3"/>
-  <text x="480" y="135" font-family="sans-serif" font-size="12" font-weight="900" fill="#fde68a" text-anchor="middle">3</text>
+  <text x="480" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#fde68a" text-anchor="middle">3</text>
 
   <!-- Stage 4 -->
   <circle cx="680" cy="130" r="14" fill="#450a0a" stroke="#ef4444" stroke-width="3"/>
-  <text x="680" y="135" font-family="sans-serif" font-size="12" font-weight="900" fill="#fecaca" text-anchor="middle">4</text>
+  <text x="680" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#fecaca" text-anchor="middle">4</text>
 
   <!-- 4 Stage Detail Cards -->
   <!-- Card 1: 0 - 15 Mins -->
   <g transform="translate(45, 170)">
     <rect x="0" y="0" width="160" height="210" rx="10" fill="#062e22" stroke="#10b981" stroke-width="1.5"/>
     <rect x="10" y="10" width="140" height="24" rx="4" fill="#064e3b"/>
-    <text x="80" y="26" font-family="sans-serif" font-size="11" font-weight="800" fill="#a7f3d0" text-anchor="middle">0 – 15 MINUTES</text>
-    <text x="80" y="52" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">The Golden Window</text>
-    <text x="12" y="74" font-family="sans-serif" font-size="10" fill="#d1fae5">Water is trapped only on the outer acoustic mesh by surface tension.</text>
+    <text x="80" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#a7f3d0" text-anchor="middle">0 – 15 MINUTES</text>
+    <text x="80" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">The Golden Window</text>
+    <text x="12" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#d1fae5">
+      <tspan x="12" dy="0">Water is trapped only</tspan>
+      <tspan x="12" dy="12">on outer mesh pores</tspan>
+      <tspan x="12" dy="12">by surface tension.</tspan>
+    </text>
     <rect x="10" y="115" width="140" height="80" rx="6" fill="#042018"/>
-    <text x="16" y="132" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">ACTION:</text>
-    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#a7f3d0">• Power down</text>
-    <text x="16" y="164" font-family="sans-serif" font-size="10" fill="#a7f3d0">• Dry exterior</text>
-    <text x="16" y="180" font-family="sans-serif" font-size="10" fill="#a7f3d0">• Run 165Hz Ejection</text>
+    <text x="16" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#34d399">ACTION:</text>
+    <text x="16" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#a7f3d0">• Power down</text>
+    <text x="16" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#a7f3d0">• Dry exterior</text>
+    <text x="16" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#a7f3d0">• Run 165Hz Ejection</text>
   </g>
 
   <!-- Card 2: 15 - 60 Mins -->
   <g transform="translate(225, 170)">
     <rect x="0" y="0" width="160" height="210" rx="10" fill="#08283b" stroke="#06b6d4" stroke-width="1.5"/>
     <rect x="10" y="10" width="140" height="24" rx="4" fill="#083344"/>
-    <text x="80" y="26" font-family="sans-serif" font-size="11" font-weight="800" fill="#67e8f9" text-anchor="middle">15 – 60 MINUTES</text>
-    <text x="80" y="52" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Capillary Seepage</text>
-    <text x="12" y="74" font-family="sans-serif" font-size="10" fill="#cffafe">Micro-droplets bypass speaker port gaskets into the driver back-cavity.</text>
+    <text x="80" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#67e8f9" text-anchor="middle">15 – 60 MINUTES</text>
+    <text x="80" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Capillary Seepage</text>
+    <text x="12" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#cffafe">
+      <tspan x="12" dy="0">Micro-droplets bypass</tspan>
+      <tspan x="12" dy="12">gaskets into speaker</tspan>
+      <tspan x="12" dy="12">driver back-cavity.</tspan>
+    </text>
     <rect x="10" y="115" width="140" height="80" rx="6" fill="#041a27"/>
-    <text x="16" y="132" font-family="sans-serif" font-size="10" font-weight="700" fill="#38bdf8">ACTION:</text>
-    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#67e8f9">• Continuous tone cycles</text>
-    <text x="16" y="164" font-family="sans-serif" font-size="10" fill="#67e8f9">• Keep speaker facing down</text>
-    <text x="16" y="180" font-family="sans-serif" font-size="10" fill="#ef4444">• NEVER plug in charger</text>
+    <text x="16" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#38bdf8">ACTION:</text>
+    <text x="16" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#67e8f9">• Continuous tones</text>
+    <text x="16" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#67e8f9">• Speaker facing down</text>
+    <text x="16" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#ef4444">• NEVER plug in charger</text>
   </g>
 
   <!-- Card 3: 1 - 24 Hours -->
   <g transform="translate(405, 170)">
     <rect x="0" y="0" width="160" height="210" rx="10" fill="#2d1c0b" stroke="#f59e0b" stroke-width="1.5"/>
     <rect x="10" y="10" width="140" height="24" rx="4" fill="#451a03"/>
-    <text x="80" y="26" font-family="sans-serif" font-size="11" font-weight="800" fill="#fde68a" text-anchor="middle">1 – 24 HOURS</text>
-    <text x="80" y="52" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Corrosion Starts</text>
-    <text x="12" y="74" font-family="sans-serif" font-size="10" fill="#fef3c7">Moisture mixes with minerals; voice coil enamel begins breaking down.</text>
+    <text x="80" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#fde68a" text-anchor="middle">1 – 24 HOURS</text>
+    <text x="80" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Corrosion Starts</text>
+    <text x="12" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#fef3c7">
+      <tspan x="12" dy="0">Moisture mixes with</tspan>
+      <tspan x="12" dy="12">minerals; voice coil</tspan>
+      <tspan x="12" dy="12">enamel breaks down.</tspan>
+    </text>
     <rect x="10" y="115" width="140" height="80" rx="6" fill="#1c0f04"/>
-    <text x="16" y="132" font-family="sans-serif" font-size="10" font-weight="700" fill="#fbbf24">ACTION:</text>
-    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#fde68a">• Seal in silica gel pack</text>
-    <text x="16" y="164" font-family="sans-serif" font-size="10" fill="#fde68a">• Cool fan airflow</text>
-    <text x="16" y="180" font-family="sans-serif" font-size="10" fill="#ef4444">• Do NOT use raw rice</text>
+    <text x="16" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#fbbf24">ACTION:</text>
+    <text x="16" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#fde68a">• Seal in silica gel pack</text>
+    <text x="16" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#fde68a">• Cool fan airflow</text>
+    <text x="16" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#ef4444">• Do NOT use raw rice</text>
   </g>
 
   <!-- Card 4: 24+ Hours -->
   <g transform="translate(585, 170)">
     <rect x="0" y="0" width="160" height="210" rx="10" fill="#2d0f0f" stroke="#ef4444" stroke-width="1.5"/>
     <rect x="10" y="10" width="140" height="24" rx="4" fill="#450a0a"/>
-    <text x="80" y="26" font-family="sans-serif" font-size="11" font-weight="800" fill="#fca5a5" text-anchor="middle">24+ HOURS</text>
-    <text x="80" y="52" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Permanent Damage</text>
-    <text x="12" y="74" font-family="sans-serif" font-size="10" fill="#fee2e2">Galvanic rust eats solder contacts; acoustic diaphragm deforms.</text>
+    <text x="80" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#fca5a5" text-anchor="middle">24+ HOURS</text>
+    <text x="80" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Permanent Damage</text>
+    <text x="12" y="69" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#fee2e2">
+      <tspan x="12" dy="0">Galvanic corrosion eats</tspan>
+      <tspan x="12" dy="12">contacts; acoustic</tspan>
+      <tspan x="12" dy="12">diaphragm deforms.</tspan>
+    </text>
     <rect x="10" y="115" width="140" height="80" rx="6" fill="#1a0404"/>
-    <text x="16" y="132" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171">STATUS:</text>
-    <text x="16" y="148" font-family="sans-serif" font-size="10" fill="#fca5a5">• Severe muffling / crackle</text>
-    <text x="16" y="164" font-family="sans-serif" font-size="10" fill="#fca5a5">• Hardware replacement</text>
-    <text x="16" y="180" font-family="sans-serif" font-size="10" fill="#fca5a5">• Requires micro-soldering</text>
+    <text x="16" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#f87171">STATUS:</text>
+    <text x="16" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#fca5a5">• Severe sound muffling</text>
+    <text x="16" y="164" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#fca5a5">• Hardware repair needed</text>
+    <text x="16" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#fca5a5">• Driver replacement</text>
   </g>
 
   <!-- Footer -->
-  <text x="400" y="420" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Empirical Acoustic Research • Smartphone Liquid Ingress &amp; Corrosion Kinetics</text>
+  <text x="400" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Empirical Acoustic Research • Smartphone Liquid Ingress &amp; Corrosion Kinetics</text>
 </svg>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a122c"/>
@@ -18,35 +18,35 @@
   <g transform="translate(45, 75)">
     <rect x="0" y="0" width="335" height="320" rx="14" fill="#181e2e" stroke="#64748b" stroke-width="1.5"/>
     <rect x="15" y="15" width="305" height="44" rx="8" fill="#1e293b"/>
-    <text x="167" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#cbd5e1" text-anchor="middle">iOS Siri Water Eject Shortcut</text>
-    <text x="167" y="52" font-family="sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Requires Shortcuts App &amp; iCloud Link</text>
+    <text x="167" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#cbd5e1" text-anchor="middle">iOS Siri Water Eject Shortcut</text>
+    <text x="167" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Requires Shortcuts App &amp; iCloud Link</text>
 
     <!-- Row 1 -->
     <g transform="translate(15, 75)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#0f172a"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Setup Friction</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0">4-step install; iCloud untrusted shortcut warning</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Setup Friction</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#e2e8f0">4-step install; iCloud untrusted shortcut prompt</text>
     </g>
 
     <!-- Row 2 -->
     <g transform="translate(15, 132)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#0f172a"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Sound Generation</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0">Fixed recorded audio clip (pre-rendered MP3)</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Sound Generation</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#e2e8f0">Fixed recorded audio clip (pre-rendered MP3)</text>
     </g>
 
     <!-- Row 3 -->
     <g transform="translate(15, 189)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#0f172a"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Cross-Device Compatibility</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" fill="#f87171">&#x2717; Apple iOS Only (No Android or PC support)</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Cross-Device Compatibility</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#f87171">&#x2717; Apple iOS Only (No Android or PC support)</text>
     </g>
 
     <!-- Row 4 -->
     <g transform="translate(15, 246)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#0f172a"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Offline Capability</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" fill="#e2e8f0">Requires local stored shortcut database</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#94a3b8">Offline Capability</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#e2e8f0">Requires local stored shortcut database</text>
     </g>
   </g>
 
@@ -54,38 +54,38 @@
   <g transform="translate(420, 75)">
     <rect x="0" y="0" width="335" height="320" rx="14" fill="#0c1d2e" stroke="#06b6d4" stroke-width="1.8"/>
     <rect x="15" y="15" width="305" height="44" rx="8" fill="#083344"/>
-    <text x="167" y="38" font-family="sans-serif" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">iFixMySpeaker Web Audio API</text>
-    <text x="167" y="52" font-family="sans-serif" font-size="10" fill="#67e8f9" text-anchor="middle">Native Browser Hardware Oscillator</text>
+    <text x="167" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">iFixMySpeaker Web Audio API</text>
+    <text x="167" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#67e8f9" text-anchor="middle">Native Browser Hardware Oscillator</text>
 
     <!-- Row 1 -->
     <g transform="translate(15, 75)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#06253b"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Zero Friction Access</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" font-weight="600" fill="#ffffff">Instant 1-Tap Execution (No install, No apps)</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Zero Friction Access</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">Instant 1-Tap browser play (No install needed)</text>
     </g>
 
     <!-- Row 2 -->
     <g transform="translate(15, 132)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#06253b"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Pure Acoustic Synthesis</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" font-weight="600" fill="#ffffff">Live 165Hz sine oscillator at 100% full excursion</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Pure Acoustic Synthesis</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">Live 165Hz sine wave at 100% full excursion</text>
     </g>
 
     <!-- Row 3 -->
     <g transform="translate(15, 189)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#06253b"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Universal Cross-Platform</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" font-weight="600" fill="#34d399">&#x2713; iPhone, Android, Mac, Windows, Smart TVs</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Universal Cross-Platform</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#34d399">&#x2713; iPhone, Android, Mac, Windows, Smart TVs</text>
     </g>
 
     <!-- Row 4 -->
     <g transform="translate(15, 246)">
       <rect x="0" y="0" width="305" height="48" rx="6" fill="#06253b"/>
-      <text x="15" y="20" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">PWA Offline Mode</text>
-      <text x="15" y="36" font-family="sans-serif" font-size="12" font-weight="600" fill="#ffffff">Works 100% offline via Service Worker cache</text>
+      <text x="15" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8">PWA Offline Mode</text>
+      <text x="15" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600" fill="#ffffff">Works 100% offline via Service Worker cache</text>
     </g>
   </g>
 
   <!-- Footer -->
-  <text x="400" y="425" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Benchmark Study • Audio Subsystem Latency &amp; Kinetic Ejection Performance</text>
+  <text x="400" y="425" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Benchmark Study • Audio Subsystem Latency &amp; Kinetic Ejection Performance</text>
 </svg>

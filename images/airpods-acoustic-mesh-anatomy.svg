@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a1020"/>
@@ -67,34 +67,43 @@
     <!-- Card 1: Main Speaker Mesh -->
     <rect x="0" y="0" width="340" height="92" rx="10" fill="#111827" stroke="#06b6d4" stroke-width="1.5"/>
     <rect x="12" y="10" width="70" height="20" rx="4" fill="#083344"/>
-    <text x="47" y="24" font-family="sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">PRIMARY</text>
-    <text x="90" y="25" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Acoustic Driver Mesh</text>
-    <text x="12" y="48" font-family="sans-serif" font-size="11" fill="#cbd5e1">Traps 95% of earwax (cerumen) buildup causing muffled sound or unequal volume balance between ears.</text>
-    <text x="12" y="76" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8">Clean with: Blu-Tack putty &amp; 165Hz tone</text>
+    <text x="47" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#38bdf8" text-anchor="middle">PRIMARY</text>
+    <text x="90" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Acoustic Driver Mesh</text>
+    <text x="12" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#cbd5e1">
+      <tspan x="12" dy="0">Traps 95% of earwax (cerumen) buildup causing muffled</tspan>
+      <tspan x="12" dy="14">sound or unequal volume balance between ears.</tspan>
+    </text>
+    <text x="12" y="77" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#38bdf8">Clean with: Blu-Tack putty &amp; 165Hz tone</text>
 
     <!-- Card 2: ANC External Vent -->
     <rect x="0" y="105" width="340" height="92" rx="10" fill="#111827" stroke="#10b981" stroke-width="1.5"/>
     <rect x="12" y="115" width="70" height="20" rx="4" fill="#064e3b"/>
-    <text x="47" y="129" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">ANC MIC</text>
-    <text x="90" y="130" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">External Noise Vent</text>
-    <text x="12" y="153" font-family="sans-serif" font-size="11" fill="#cbd5e1">Monitors ambient environmental noise for Active Noise Cancellation. When clogged, ANC whistles or fails.</text>
-    <text x="12" y="181" font-family="sans-serif" font-size="11" font-weight="700" fill="#34d399">Clean with: Dry anti-static nylon brush only</text>
+    <text x="47" y="129" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#34d399" text-anchor="middle">ANC MIC</text>
+    <text x="90" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">External Noise Vent</text>
+    <text x="12" y="151" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#cbd5e1">
+      <tspan x="12" dy="0">Monitors ambient environmental noise for ANC.</tspan>
+      <tspan x="12" dy="14">When clogged, ANC whistles or fails to isolate noise.</tspan>
+    </text>
+    <text x="12" y="182" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#34d399">Clean with: Dry anti-static nylon brush only</text>
 
     <!-- Card 3: Silicone Ear Tip -->
     <rect x="0" y="210" width="340" height="92" rx="10" fill="#111827" stroke="#818cf8" stroke-width="1.5"/>
     <rect x="12" y="220" width="70" height="20" rx="4" fill="#312e81"/>
-    <text x="47" y="234" font-family="sans-serif" font-size="10" font-weight="700" fill="#a5b4fc" text-anchor="middle">SILICONE</text>
-    <text x="90" y="235" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Detachable Ear Tips</text>
-    <text x="12" y="258" font-family="sans-serif" font-size="11" fill="#cbd5e1">Must be pulled off the earbud body before washing. Safe to rinse with warm soapy water.</text>
-    <text x="12" y="286" font-family="sans-serif" font-size="11" font-weight="700" fill="#a5b4fc">Ensure 100% dry before snapping back on</text>
+    <text x="47" y="234" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#a5b4fc" text-anchor="middle">SILICONE</text>
+    <text x="90" y="235" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Detachable Ear Tips</text>
+    <text x="12" y="256" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#cbd5e1">
+      <tspan x="12" dy="0">Must be detached from earbud body before cleaning.</tspan>
+      <tspan x="12" dy="14">Safe to rinse thoroughly with warm soapy water.</tspan>
+    </text>
+    <text x="12" y="287" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#a5b4fc">Ensure 100% dry before snapping back on</text>
   </g>
 
   <!-- Left Bottom Small Tag -->
   <g transform="translate(60, 375)">
     <rect x="0" y="0" width="280" height="36" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
-    <text x="140" y="22" font-family="sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">AirPods Pro 1/2, Max, &amp; Galaxy Buds</text>
+    <text x="140" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">AirPods Pro 1/2, Max, &amp; Galaxy Buds</text>
   </g>
 
   <!-- Footer -->
-  <text x="560" y="398" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Earbud Acoustic Maintenance Guide • iFixMySpeaker Lab</text>
+  <text x="560" y="398" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Earbud Acoustic Maintenance Guide • iFixMySpeaker Lab</text>
 </svg>

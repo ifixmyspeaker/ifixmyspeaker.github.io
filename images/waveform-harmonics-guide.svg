@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#080e1c"/>
@@ -26,62 +26,74 @@
   <g transform="translate(45, 75)">
     <rect x="0" y="0" width="340" height="150" rx="12" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
     <rect x="15" y="12" width="75" height="22" rx="4" fill="#083344"/>
-    <text x="52" y="27" font-family="sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">SINE</text>
-    <text x="100" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Pure Fundamental</text>
+    <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">SINE</text>
+    <text x="100" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Pure Fundamental</text>
 
     <!-- Wave scope box -->
     <rect x="15" y="45" width="310" height="60" rx="6" fill="#030712" stroke="#1e293b" stroke-width="1"/>
     <!-- Sine curve -->
     <path d="M 25 75 Q 60 48, 95 75 T 165 75 T 235 75 T 305 75" fill="none" stroke="#06b6d4" stroke-width="2.5" filter="url(#waveGlow)"/>
-    <text x="25" y="125" font-family="sans-serif" font-size="10" fill="#94a3b8">Zero overtone distortion. Ideal for smooth kinetic diaphragm oscillation and liquid ejection.</text>
-    <text x="25" y="139" font-family="sans-serif" font-size="10" font-weight="600" fill="#38bdf8">Default Mode: 165Hz Water Ejection Sound</text>
+    <text x="25" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#94a3b8">
+      <tspan x="25" dy="0">Zero overtone distortion. Smooth kinetic oscillation</tspan>
+      <tspan x="25" dy="12">specifically calibrated for liquid &amp; moisture ejection.</tspan>
+    </text>
+    <text x="25" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#38bdf8">Default Mode: 165Hz Water Ejection Pulse</text>
   </g>
 
   <!-- 2. Square Wave -->
   <g transform="translate(415, 75)">
     <rect x="0" y="0" width="340" height="150" rx="12" fill="#0f172a" stroke="#ef4444" stroke-width="1.5"/>
     <rect x="15" y="12" width="75" height="22" rx="4" fill="#450a0a"/>
-    <text x="52" y="27" font-family="sans-serif" font-size="11" font-weight="700" fill="#f87171" text-anchor="middle">SQUARE</text>
-    <text x="100" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Odd Harmonics</text>
+    <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#f87171" text-anchor="middle">SQUARE</text>
+    <text x="100" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Odd Harmonics</text>
 
     <!-- Wave scope box -->
     <rect x="15" y="45" width="310" height="60" rx="6" fill="#030712" stroke="#1e293b" stroke-width="1"/>
     <!-- Square path -->
     <path d="M 25 90 L 25 58 L 60 58 L 60 90 L 95 90 L 95 58 L 130 58 L 130 90 L 165 90 L 165 58 L 200 58 L 200 90 L 235 90 L 235 58 L 270 58 L 270 90 L 305 90" fill="none" stroke="#ef4444" stroke-width="2.2" filter="url(#waveGlow)"/>
-    <text x="25" y="125" font-family="sans-serif" font-size="10" fill="#94a3b8">Abrupt voltage transition. Aggressive diaphragm stroke for stubborn deep-dust clearing.</text>
-    <text x="25" y="139" font-family="sans-serif" font-size="10" font-weight="600" fill="#f87171">High acoustic energy and mechanical impact</text>
+    <text x="25" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#94a3b8">
+      <tspan x="25" dy="0">Abrupt voltage transitions create aggressive excursion strokes</tspan>
+      <tspan x="25" dy="12">ideal for dislodging stubborn trapped grime &amp; pocket dust.</tspan>
+    </text>
+    <text x="25" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#f87171">High acoustic energy and mechanical impact</text>
   </g>
 
   <!-- 3. Triangle Wave -->
   <g transform="translate(45, 245)">
     <rect x="0" y="0" width="340" height="150" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
     <rect x="15" y="12" width="75" height="22" rx="4" fill="#064e3b"/>
-    <text x="52" y="27" font-family="sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">TRIANGLE</text>
-    <text x="100" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Mellow Harmonics</text>
+    <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#34d399" text-anchor="middle">TRIANGLE</text>
+    <text x="100" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Mellow Harmonics</text>
 
     <!-- Wave scope box -->
     <rect x="15" y="45" width="310" height="60" rx="6" fill="#030712" stroke="#1e293b" stroke-width="1"/>
     <!-- Triangle path -->
     <path d="M 25 75 L 45 55 L 85 95 L 125 55 L 165 95 L 205 55 L 245 95 L 285 55 L 305 75" fill="none" stroke="#10b981" stroke-width="2.5" filter="url(#waveGlow)"/>
-    <text x="25" y="125" font-family="sans-serif" font-size="10" fill="#94a3b8">Odd harmonics dropping at 1/f². Warm tone suitable for earpiece speaker testing.</text>
-    <text x="25" y="139" font-family="sans-serif" font-size="10" font-weight="600" fill="#34d399">Calibrated for voice coil linearity test</text>
+    <text x="25" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#94a3b8">
+      <tspan x="25" dy="0">Odd harmonics dropping at 1/f². Warm musical timbre</tspan>
+      <tspan x="25" dy="12">designed for telephone earpiece &amp; mic frequency sweeps.</tspan>
+    </text>
+    <text x="25" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#34d399">Calibrated for voice coil linearity test</text>
   </g>
 
   <!-- 4. Sawtooth Wave -->
   <g transform="translate(415, 245)">
     <rect x="0" y="0" width="340" height="150" rx="12" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5"/>
     <rect x="15" y="12" width="75" height="22" rx="4" fill="#451a03"/>
-    <text x="52" y="27" font-family="sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">SAWTOOTH</text>
-    <text x="100" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">All Even &amp; Odd Harmonics</text>
+    <text x="52" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">SAWTOOTH</text>
+    <text x="100" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff">All Even &amp; Odd Harmonics</text>
 
     <!-- Wave scope box -->
     <rect x="15" y="45" width="310" height="60" rx="6" fill="#030712" stroke="#1e293b" stroke-width="1"/>
     <!-- Sawtooth path -->
     <path d="M 25 90 L 60 58 L 60 90 L 95 58 L 95 90 L 130 58 L 130 90 L 165 58 L 165 90 L 200 58 L 200 90 L 235 58 L 235 90 L 270 58 L 270 90 L 305 58" fill="none" stroke="#f59e0b" stroke-width="2.2" filter="url(#waveGlow)"/>
-    <text x="25" y="125" font-family="sans-serif" font-size="10" fill="#94a3b8">Buzzy, rich acoustic profile. Excellent for revealing speaker grille buzz and loose frame rattles.</text>
-    <text x="25" y="139" font-family="sans-serif" font-size="10" font-weight="600" fill="#fbbf24">Acoustic distortion &amp; rattle inspection</text>
+    <text x="25" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#94a3b8">
+      <tspan x="25" dy="0">Rich harmonic overtone spectrum. Excellent for diagnosing</tspan>
+      <tspan x="25" dy="12">speaker grille rattle, loose housing buzzing, &amp; distortion.</tspan>
+    </text>
+    <text x="25" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#fbbf24">Acoustic distortion &amp; rattle inspection</text>
   </g>
 
   <!-- Footer -->
-  <text x="400" y="425" font-family="sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Web Audio API Synthesis • iFixMySpeaker Tone Generator Architecture</text>
+  <text x="400" y="425" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Web Audio API Synthesis • iFixMySpeaker Tone Generator Architecture</text>
 </svg>
